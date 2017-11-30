@@ -15,5 +15,10 @@ namespace AppOrdineMediciCaserta
             InitializeComponent();
             BindingContext = new MainPageModelView();
         }
+
+        private void listEventi_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+
+        }
     }
 }

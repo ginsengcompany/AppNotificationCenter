@@ -23,7 +23,10 @@ namespace AppOrdineMediciCaserta.Services
             try
             {
                 var isValid = JToken.Parse(response);
-                Items = JsonConvert.DeserializeObject<List<T>>(response);
+               // JArray jObject = JArray.Parse(response);
+                JArray jArray = (JArray)jObject["rows"];
+                Items = JsonConvert.DeserializeObject<List<T>>(jArray.ToString()) as List<T>;
+               // Items = JsonConvert.DeserializeObject<List<T>>(response);
                 return Items;
             }
             catch (Exception)
