@@ -39,6 +39,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\DatiEvento.cs" />
     <Compile Include="ModelViews\LoginModelView.cs" />
     <Compile Include="ModelViews\MainPageModelView.cs" />
     <Compile Include="ModelViews\PaginaEventiAccettatiModelView.cs" />
@@ -87,7 +88,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Database\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\VisualizzaEventoInDettaglio.xaml">
