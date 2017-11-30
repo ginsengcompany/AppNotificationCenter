@@ -15,12 +15,7 @@ namespace AppOrdineMediciCaserta.ModelViews
         private void OnPropertychanged([CallerMemberName] string name = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-            
+
         }
-        
-        /*
-         * http://192.168.125.4:3000/getEventi
-         * 
-         */
     }
 }

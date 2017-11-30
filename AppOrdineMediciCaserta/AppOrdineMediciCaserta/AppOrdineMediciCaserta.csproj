@@ -45,6 +45,7 @@
     <Compile Include="ModelViews\PaginaEventiAccettatiModelView.cs" />
     <Compile Include="ModelViews\VisualizzaEventiInDettaglioModelView.cs" />
     <Compile Include="Services\REST.cs" />
+    <Compile Include="Services\URL.cs" />
     <Compile Include="Views\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>

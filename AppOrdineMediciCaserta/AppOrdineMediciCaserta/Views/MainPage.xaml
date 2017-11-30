@@ -5,7 +5,7 @@
              x:Class="AppOrdineMediciCaserta.MainPage">
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="listEventi" ItemsSource="{Binding ListaEventi}">
+            <ListView x:Name="listEventi" ItemsSource="{Binding ListaEventi}" HasUnevenRows="True" ItemTapped="listEventi_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -17,9 +17,9 @@
                                     <Label Text="{Binding luogo}"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal">
-                                    <Button Text="Conferma"/>
-                                    <Button Text="Elimina"/>
-                                    <Button Text="Informazioni"/>
+                                    <Button Text="Conferma" IsVisible="{Binding Visibile}"/>
+                                    <Button Text="Elimina" IsVisible="{Binding Visibile}"/>
+                                    <Button Text="Informazioni" IsVisible="{Binding Visibile}"/>
                                 </StackLayout>
                             </StackLayout>
                         </ViewCell>
