@@ -23,9 +23,9 @@ namespace AppOrdineMediciCaserta.Services
             try
             {
                 var isValid = JToken.Parse(response);
-               // JArray jObject = JArray.Parse(response);
-                JArray jArray = (JArray)jObject["rows"];
-                Items = JsonConvert.DeserializeObject<List<T>>(jArray.ToString()) as List<T>;
+                // JArray jObject = JArray.Parse(response);
+
+                Items = JsonConvert.DeserializeObject<>;
                // Items = JsonConvert.DeserializeObject<List<T>>(response);
                 return Items;
             }
