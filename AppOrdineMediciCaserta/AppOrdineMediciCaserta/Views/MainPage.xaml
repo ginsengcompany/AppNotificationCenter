@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AppOrdineMediciCaserta"
+             x:Class="AppOrdineMediciCaserta.MainPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="listEventi" ItemsSource="{Binding ListaEventi}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="{Binding titolo}"/>
+                                <Label Text="{Binding informazioni}"/>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding data}"/>
+                                    <Label Text="{Binding luogo}"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Button Text="Conferma"/>
+                                    <Button Text="Elimina"/>
+                                    <Button Text="Informazioni"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

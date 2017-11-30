@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppOrdineMediciCaserta.Views.VisualizzaEventoInDettaglio">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout HorizontalOptions="CenterAndExpand">
+                <Image Source="{Binding ImmagineLogo, Mode=TwoWay}" HorizontalOptions="CenterAndExpand" ></Image>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="{Binding Titolo}" BackgroundColor="Black" HorizontalOptions="CenterAndExpand"></Label>
+                <Label Text="{Binding Sottotitolo}" BackgroundColor="Black" HorizontalOptions="CenterAndExpand"></Label>
+                <Label Text="{Binding Data}" BackgroundColor="Black" HorizontalOptions="CenterAndExpand"></Label>
+                <Label Text="{Binding Luogo}" BackgroundColor="Black" HorizontalOptions="CenterAndExpand"></Label>
+                <Label Text="{Binding Informazioni}" BackgroundColor="Black" HorizontalOptions="CenterAndExpand"></Label>
+                <Label Text="{Binding Relatori}" BackgroundColor="Black" HorizontalOptions="CenterAndExpand"></Label>
+                <Label Text="{Binding Descrizione}" BackgroundColor="Black" HorizontalOptions="CenterAndExpand"></Label>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+ 
