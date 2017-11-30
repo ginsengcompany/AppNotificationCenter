@@ -13,7 +13,7 @@ namespace AppOrdineMediciCaserta
         {
             InitializeComponent();
 
-            MainPage = new AppOrdineMediciCaserta.MainPage();
+            MainPage = new AppOrdineMediciCaserta.Views.VisualizzaEventoInDettaglio();
         }
 
         protected override void OnStart()
