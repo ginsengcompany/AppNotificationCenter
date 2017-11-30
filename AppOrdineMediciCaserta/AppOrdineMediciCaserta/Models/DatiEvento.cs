@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace AppOrdineMediciCaserta.Models
 {
@@ -15,7 +16,7 @@ namespace AppOrdineMediciCaserta.Models
         public string Informazioni { get; set; }
         public string Relatori { get; set; }
         public string Descrizione { get; set; }
-        public string Immagine { get; set; }
+        public ImageSource Immagine { get; set; }
     }
 }
-/
+
