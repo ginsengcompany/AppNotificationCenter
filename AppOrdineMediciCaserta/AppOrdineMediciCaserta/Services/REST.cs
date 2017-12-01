@@ -23,10 +23,8 @@ namespace AppOrdineMediciCaserta.Services
             try
             {
                 var isValid = JToken.Parse(response);
-               // JArray jObject = JArray.Parse(response);
-                JArray jArray = (JArray)jObject["rows"];
-                Items = JsonConvert.DeserializeObject<List<T>>(jArray.ToString()) as List<T>;
-               // Items = JsonConvert.DeserializeObject<List<T>>(response);
+                JArray jObject = JArray.Parse(response);
+                Items = JsonConvert.DeserializeObject<List<T>>(response);
                 return Items;
             }
             catch (Exception)
@@ -73,7 +71,26 @@ namespace AppOrdineMediciCaserta.Services
                 Item = JsonConvert.DeserializeObject<T>(response);
                 return Item;
             }
-            catch (Exception a)
+            catch (Exception)
+            {
+                return default(T);
+            }
+        }
+
+        public async Task<T> getJsonObject(string url)
+        {
+            T Item;
+            HttpClient client = new HttpClient();
+            var uri = new Uri(string.Format(url, string.Empty));
+            var response = await client.GetStringAsync(uri);
+            warning = response;
+            try
+            {
+                var isValid = JToken.Parse(response);
+                Item = JsonConvert.DeserializeObject<T>(response);
+                return Item;
+            }
+            catch (Exception)
             {
                 return default(T);
             }
