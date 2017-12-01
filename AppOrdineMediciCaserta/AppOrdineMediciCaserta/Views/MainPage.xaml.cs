@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppOrdineMediciCaserta.ModelViews;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,12 @@ namespace AppOrdineMediciCaserta
         public MainPage()
         {
             InitializeComponent();
+            BindingContext = new MainPageModelView();
+        }
+
+        private void listEventi_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+
         }
     }
 }
