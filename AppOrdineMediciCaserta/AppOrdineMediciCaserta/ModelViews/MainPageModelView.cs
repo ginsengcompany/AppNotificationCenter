@@ -8,6 +8,8 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace AppOrdineMediciCaserta.ModelViews
 {
@@ -16,6 +18,8 @@ namespace AppOrdineMediciCaserta.ModelViews
         public event PropertyChangedEventHandler PropertyChanged;
 
         private List<DatiEvento> listaEventi = new List<DatiEvento>();
+
+        private DatiEvento dettagli;
 
         private String visibile = "false";
 
@@ -56,13 +60,35 @@ namespace AppOrdineMediciCaserta.ModelViews
             REST<Object, ListaDatiEvento> connessione = new REST<Object, ListaDatiEvento>();
             ListaDatiEvento List = new ListaDatiEvento();
             List = await connessione.getJsonObject(URL.Eventi);
-            Debug.WriteLine(List);
+            foreach (var i in List.rows)
+            {
+                listaEventi.Add(i);
+            }
+            ListaEventi = listaEventi;
         }
         /*Costruttore del metodo, avvia la connessione*/
         public MainPageModelView()
         {
-           leggiDati();
-           
+
+            leggiDati();
+        }
+
+        public void displayButtons(DatiEvento x)
+        {
+            dettagli = x;
+            foreach (var i in listaEventi)
+            {
+                if (i == x)
+                    i.Visible = "true";
+                else
+                    i.Visible = "false";
+            }
+            ListaEventi = listaEventi;
+        }
+
+        public DatiEvento dettaglio()
+        {
+            return dettagli;
         }
 
     }

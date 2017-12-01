@@ -39,7 +39,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\DatiEvento.cs"/>
+    <Compile Include="Models\DatiEvento.cs" />
     <Compile Include="Database\Database.cs" />
     <Compile Include="Database\Data\LoginData.cs" />
     <Compile Include="Database\Models\TbLogin.cs" />

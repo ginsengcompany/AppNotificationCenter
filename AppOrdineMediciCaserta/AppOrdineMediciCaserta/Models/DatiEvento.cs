@@ -7,11 +7,11 @@ using Xamarin.Forms;
 
 namespace AppOrdineMediciCaserta.Models
 {
-    class ListaDatiEvento
+    public class ListaDatiEvento
     {
         public List<DatiEvento> rows { get; set; }
     }
-    class DatiEvento
+    public class DatiEvento
     {
         public string titolo { get; set; }
         public string sottotitolo { get; set; }
@@ -21,6 +21,7 @@ namespace AppOrdineMediciCaserta.Models
         public string relatori { get; set; }
         public string descrizione { get; set; }
         public ImageSource immagine { get; set; }
+        public string Visible { get; set; } = "false";
     }
 }
 
