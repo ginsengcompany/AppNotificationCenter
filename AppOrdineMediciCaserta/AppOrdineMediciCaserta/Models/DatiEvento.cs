@@ -9,6 +9,7 @@ namespace AppOrdineMediciCaserta.Models
 {
     class ListaDatiEvento
     {
+        int aldo;
         public List<DatiEvento> rows { get; set; }
     }
     class DatiEvento
