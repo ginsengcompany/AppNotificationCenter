@@ -3,6 +3,7 @@ using AppOrdineMediciCaserta.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -14,12 +15,12 @@ namespace AppOrdineMediciCaserta.ModelViews
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private List<ListaDatiEvento> listaEventi = new List<ListaDatiEvento>();
+        private List<DatiEvento> listaEventi = new List<DatiEvento>();
 
         private String visibile = "false";
 
         /* Setta la lista da visualizare nel Binding*/
-        public List<ListaDatiEvento> ListaEventi
+        public List<DatiEvento> ListaEventi
         {
             get
             {
@@ -27,7 +28,7 @@ namespace AppOrdineMediciCaserta.ModelViews
             }
             set
             {
-                listaEventi = new List<ListaDatiEvento>(value);
+                listaEventi = new List<DatiEvento>(value);
                 OnPropertychanged();
             }
         }
@@ -53,7 +54,9 @@ namespace AppOrdineMediciCaserta.ModelViews
         public async void leggiDati()
         {
             REST<Object, ListaDatiEvento> connessione = new REST<Object, ListaDatiEvento>();
-            ListaEventi = await connessione.GetJson(URL.Eventi);
+            ListaDatiEvento List = new ListaDatiEvento();
+            List = await connessione.getJsonObject(URL.Eventi);
+            Debug.WriteLine(List);
         }
         /*Costruttore del metodo, avvia la connessione*/
         public MainPageModelView()
