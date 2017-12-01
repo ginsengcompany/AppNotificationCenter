@@ -39,6 +39,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\DatiEvento.cs"/>
     <Compile Include="Database\Database.cs" />
     <Compile Include="Database\Data\LoginData.cs" />
     <Compile Include="Database\Models\TbLogin.cs" />
@@ -48,6 +49,7 @@
     <Compile Include="ModelViews\PaginaEventiAccettatiModelView.cs" />
     <Compile Include="ModelViews\VisualizzaEventiInDettaglioModelView.cs" />
     <Compile Include="Services\REST.cs" />
+    <Compile Include="Services\URL.cs" />
     <Compile Include="Views\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
