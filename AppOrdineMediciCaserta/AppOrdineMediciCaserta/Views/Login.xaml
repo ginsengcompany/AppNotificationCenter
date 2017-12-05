@@ -6,7 +6,7 @@
         <StackLayout Orientation="Vertical">
             <Image Source="logoOrdineMedici.png" HorizontalOptions="Center"/>
             <Entry Placeholder="Inserisci la matricola" Text="{Binding matricola}" />
-            <Button Clicked="Button_Clicked" Text="Accedi" />
+            <Button Clicked="Button_Clicked" Text="Accedi" BorderColor="Black" BorderRadius="15" BorderWidth="2" BackgroundColor="White" TextColor="Black"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
