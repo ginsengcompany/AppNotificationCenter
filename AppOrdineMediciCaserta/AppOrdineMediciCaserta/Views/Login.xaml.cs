@@ -28,5 +28,6 @@ namespace AppOrdineMediciCaserta.Views
             if (access == true)
                 App.Current.MainPage = new NavigationPage(new MainPage());
         }
+
     }
 }

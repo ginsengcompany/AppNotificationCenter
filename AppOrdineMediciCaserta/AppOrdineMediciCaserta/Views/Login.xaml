@@ -3,10 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppOrdineMediciCaserta.Views.Login">
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical">
+        <StackLayout Padding="0,30,0,0" BackgroundColor="#f0ffff">
             <Image Source="logoOrdineMedici.png" HorizontalOptions="Center"/>
-            <Entry Placeholder="Inserisci la matricola" Text="{Binding matricola}" />
-            <Button Clicked="Button_Clicked" Text="Accedi" BorderColor="Black" BorderRadius="15" BorderWidth="2" BackgroundColor="White" TextColor="Black"/>
+            <StackLayout BackgroundColor="#f0ffff" Padding="0,30,0,0" Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="Center">
+                <Entry  Placeholder="Inserisci la matricola" Text="{Binding matricola}" HorizontalTextAlignment="Center" 
+                       WidthRequest="400" TextColor="Black" FontAttributes="Italic" FontSize="Medium" />
+            </StackLayout>
+            <StackLayout BackgroundColor="#f0ffff" Padding="0,20,0,0"  Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="Center">
+                <Image Source="button1.png">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Button_Clicked" NumberOfTapsRequired="1"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
