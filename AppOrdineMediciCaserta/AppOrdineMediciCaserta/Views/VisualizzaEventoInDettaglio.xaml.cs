@@ -14,13 +14,15 @@ namespace AppOrdineMediciCaserta.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class VisualizzaEventoInDettaglio : ContentPage
     {
-        private DatiEvento evento;
+         DatiEvento evento;
 
         public VisualizzaEventoInDettaglio(DatiEvento x)
         {
             InitializeComponent();
             evento = x;
-            BindingContext = new ModelViews.VisualizzaEventiInDettaglioModelView();
+            BindingContext = new ModelViews.VisualizzaEventiInDettaglioModelView(evento);
+
         }
+        
     }
 }

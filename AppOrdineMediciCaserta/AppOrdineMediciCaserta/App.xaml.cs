@@ -14,9 +14,9 @@ namespace AppOrdineMediciCaserta
         public App()
         {
             InitializeComponent();
-            MainPage = new MainPage();
             Database.Database.Initialize();
             //check();
+            MainPage = new NavigationPage(new MainPage());
         }
 
         private void check()

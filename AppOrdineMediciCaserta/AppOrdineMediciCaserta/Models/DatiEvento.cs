@@ -20,7 +20,7 @@ namespace AppOrdineMediciCaserta.Models
         public string informazioni { get; set; }
         public string relatori { get; set; }
         public string descrizione { get; set; }
-        public ImageSource immagine { get; set; }
+        public string immagine { get; set; }
         public string Visible { get; set; } = "false";
     }
 }
