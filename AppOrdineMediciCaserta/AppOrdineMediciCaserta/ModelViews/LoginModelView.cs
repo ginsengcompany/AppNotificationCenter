@@ -42,8 +42,6 @@ namespace AppOrdineMediciCaserta.ModelViews
             }
         }
 
-        public ICommand accesso { get; private set; }
-
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged([CallerMemberName] string name = "")
@@ -53,19 +51,25 @@ namespace AppOrdineMediciCaserta.ModelViews
 
         public LoginModelView()
         {
-            accesso = new Command(login);
             matricola = "";
             token = "";
         }
 
-        private async void login()
+        public async Task<bool> login()
         {
             REST<Medico, bool> rest = new REST<Medico, bool>();
             bool response = await rest.PostJson("http://192.168.125.4:3000/cercaMatricola", user);
             if (response)
+            {
                 await App.Current.MainPage.DisplayAlert("Login", "Login Effettuata con successo", "OK");
+                return true;
+            }
             else
+            {
                 await App.Current.MainPage.DisplayAlert("Login", "Login Fallita", "OK");
+                return false;
+            }
+               
         }
     }
 }

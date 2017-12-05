@@ -109,7 +109,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Views\VisualizzaEventoInDettaglio.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

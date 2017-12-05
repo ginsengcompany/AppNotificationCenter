@@ -1,21 +1,148 @@
-﻿using System;
+﻿using AppOrdineMediciCaserta.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace AppOrdineMediciCaserta.ModelViews
 {
     class VisualizzaEventiInDettaglioModelView : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
+        string titolo,sottotitolo, data, luogo, informazioni, relatori, descrizione;
+        ImageSource immagine;
+        public DatiEvento dettagliEvento;
 
+        public VisualizzaEventiInDettaglioModelView(DatiEvento evento)
+        {
+            this.dettagliEvento = evento;
+            inserimentoDati();
+        }
+        
         private void OnPropertychanged([CallerMemberName] string name = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
 
         }
+        public string Titolo
+        {
+            set
+            {
+                titolo = value;
+                OnPropertychanged();
+            }
+            get
+            {
+                return titolo;
+            }
+
+        }
+        public string Sottotitolo
+        {
+            set
+            {
+                sottotitolo = value;
+                OnPropertychanged();
+            }
+            get
+            {
+                return sottotitolo;
+            }
+        }
+        public string Data
+        {
+            set
+            {
+                data = value;
+                OnPropertychanged();
+            }
+            get
+            {
+                return data;
+            }
+        }
+        public string Luogo
+        {
+            set
+            {
+                luogo = value;
+                OnPropertychanged();
+            }
+            get
+            {
+                return luogo;
+            }
+        }
+        public string Informazioni
+        {
+            set
+            {
+                informazioni = value;
+                OnPropertychanged();
+            }
+            get
+            {
+                return informazioni;
+            }
+        }
+        public string Relatori
+        {
+            set
+            {
+                relatori = value;
+                OnPropertychanged();
+            }
+            get
+            {
+                return relatori;
+            }
+        }
+        public string Descrizione
+        {
+            set
+            {
+                descrizione = value;
+                OnPropertychanged();
+            }
+            get
+            {
+                return descrizione;
+            }
+        }
+        public ImageSource Immagine
+        {
+            set
+            {
+                immagine = value;
+                OnPropertychanged();
+            }
+            get
+            {
+                return immagine;
+            }
+        }
+        public void inserimentoDati()
+        {
+            Titolo = dettagliEvento.titolo;
+            Sottotitolo = dettagliEvento.sottotitolo;
+            Relatori = dettagliEvento.relatori;
+
+
+            Data = dettagliEvento.data.Substring(0, 10);
+            Luogo = dettagliEvento.luogo;
+            Informazioni = dettagliEvento.informazioni;
+            Descrizione = dettagliEvento.descrizione;
+            string img = "";
+            img = dettagliEvento.immagine.Substring(23);
+            Immagine = Xamarin.Forms.ImageSource.FromStream(
+           () => new MemoryStream(Convert.FromBase64String(img)));
+       
+        }
     }
 }
+

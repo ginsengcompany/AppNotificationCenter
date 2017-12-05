@@ -204,6 +204,42 @@
   <ItemGroup>
     <BundleResource Include="Resources\logoOrdineMedici.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logoLuogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logoLuogo2x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logoLuogo3x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logoDescrizione.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logoDescrizione2x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logoDescrizione3x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logoInfo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logoInfo2x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logoInfo3x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logoRelatore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logoRelatore2x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logoRelatore3x.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

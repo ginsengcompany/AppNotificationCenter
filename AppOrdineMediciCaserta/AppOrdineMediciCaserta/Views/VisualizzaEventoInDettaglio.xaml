@@ -1,20 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppOrdineMediciCaserta.Views.VisualizzaEventoInDettaglio">
+             x:Class="AppOrdineMediciCaserta.Views.VisualizzaEventoInDettaglio"
+             Title="{Binding Data}">
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical">
-            <StackLayout HorizontalOptions="CenterAndExpand">
-                <Image Source="{Binding ImmagineLogo, Mode=TwoWay}" HorizontalOptions="CenterAndExpand" ></Image>
+        <StackLayout>
+            <StackLayout Padding="20" >
+                <Image Source="{Binding Immagine}"></Image>
             </StackLayout>
             <StackLayout>
-                <Label Text="{Binding Titolo}" BackgroundColor="Black" HorizontalOptions="CenterAndExpand"></Label>
-                <Label Text="{Binding Sottotitolo}" BackgroundColor="Black" HorizontalOptions="CenterAndExpand"></Label>
-                <Label Text="{Binding Data}" BackgroundColor="Black" HorizontalOptions="CenterAndExpand"></Label>
-                <Label Text="{Binding Luogo}" BackgroundColor="Black" HorizontalOptions="CenterAndExpand"></Label>
-                <Label Text="{Binding Informazioni}" BackgroundColor="Black" HorizontalOptions="CenterAndExpand"></Label>
-                <Label Text="{Binding Relatori}" BackgroundColor="Black" HorizontalOptions="CenterAndExpand"></Label>
-                <Label Text="{Binding Descrizione}" BackgroundColor="Black" HorizontalOptions="CenterAndExpand"></Label>
+                <Label Text="{Binding Titolo}" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Large"></Label>
+                <Label Text="{Binding Sottotitolo}" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Medium"></Label>
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="logoLuogo"></Image>
+                        <Label Text="Luogo evento:" FontSize="Medium" FontAttributes="Bold"></Label>
+                    </StackLayout>
+                  
+                    <Label Text="{Binding Luogo}"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="logoInfo"></Image>
+                        <Label Text="Informazione evento:" FontSize="Medium" FontAttributes="Bold"></Label>
+                    </StackLayout>
+                    <Label Text="{Binding Informazioni}"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="logoRelatore"></Image>
+                        <Label Text="Relatori evento:" FontSize="Medium" FontAttributes="Bold"></Label>
+                    </StackLayout>
+                    <Label Text="{Binding Relatori}"></Label>
+                </StackLayout>
+                <StackLayout >
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="logoDescrizione"></Image>
+                        <Label Text="Descrizione evento:" FontSize="Medium" FontAttributes="Bold"></Label>
+                    </StackLayout>
+                    <Label Text="{Binding Descrizione}"></Label>
+                </StackLayout>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
