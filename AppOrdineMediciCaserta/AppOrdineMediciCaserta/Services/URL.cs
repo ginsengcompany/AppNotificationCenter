@@ -8,6 +8,6 @@ namespace AppOrdineMediciCaserta.Services
 {
     public static class URL
     {
-        public static string Eventi = "http://192.168.125.4:3000/getEventi";
+        public static string Eventi = "http://192.168.125.3:3000/getEventi";
     }
 }
