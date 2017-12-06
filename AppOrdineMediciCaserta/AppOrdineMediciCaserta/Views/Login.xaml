@@ -16,8 +16,9 @@
                     </Image.GestureRecognizers>
                 </Image>
             </StackLayout>
-            <StackLayout BackgroundColor="#f0ffff" Padding="0,30,0,0" Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="Center">
-                <ActivityIndicator x:Name="Caricamento"  Color="#4b8b80" IsVisible="True"  IsRunning="False" />
+            <StackLayout Padding="0,20,0,0">
+                <ProgressBar x:Name="Load"  IsEnabled="False" IsVisible="False" WidthRequest="400" HeightRequest="25" VerticalOptions="Center" HorizontalOptions="Center">
+                </ProgressBar>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
