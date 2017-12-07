@@ -24,9 +24,13 @@ namespace AppOrdineMediciCaserta.Views
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
+            Load.IsVisible = true;
+            Load.IsEnabled = true;
+            await Load.ProgressTo(1, 1500, Easing.Linear);
             bool access = await z.login();
             if (access == true)
                 App.Current.MainPage = new NavigationPage(new MainPage());
         }
+
     }
 }
