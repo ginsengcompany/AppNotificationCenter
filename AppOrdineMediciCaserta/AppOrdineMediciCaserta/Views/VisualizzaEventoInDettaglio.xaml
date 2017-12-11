@@ -4,44 +4,46 @@
              x:Class="AppOrdineMediciCaserta.Views.VisualizzaEventoInDettaglio"
              Title="{Binding Data}">
     <ContentPage.Content>
+        <ScrollView>
         <StackLayout>
             <StackLayout Padding="20" >
                 <Image Source="{Binding Immagine}"></Image>
             </StackLayout>
             <StackLayout>
-                <Label Text="{Binding Titolo}" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Large"></Label>
+                <Label Text="{Binding Titolo}" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Large" ></Label>
                 <Label Text="{Binding Sottotitolo}" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Medium"></Label>
                 <StackLayout>
-                    <StackLayout Orientation="Horizontal">
-                        <Image Source="logoLuogo"></Image>
-                        <Label Text="Luogo evento:" FontSize="Medium" FontAttributes="Bold"></Label>
+                    <StackLayout Orientation="Horizontal" Padding="10,0,0,10">
+                        <Image Source="logoLuogo" VerticalOptions="Center"></Image>
+                        <Label Text="Luogo evento:" FontSize="Medium" FontAttributes="Bold" TextColor="#4b8b80" VerticalOptions="Center" VerticalTextAlignment="Center"></Label>
                     </StackLayout>
                   
                     <Label Text="{Binding Luogo}"></Label>
                 </StackLayout>
                 <StackLayout>
-                    <StackLayout Orientation="Horizontal">
+                    <StackLayout Orientation="Horizontal" Padding="10,0,0,10">
                         <Image Source="logoInfo"></Image>
-                        <Label Text="Informazione evento:" FontSize="Medium" FontAttributes="Bold"></Label>
+                        <Label Text="Informazione evento:" FontSize="Medium" FontAttributes="Bold" TextColor="#4b8b80"></Label>
                     </StackLayout>
                     <Label Text="{Binding Informazioni}"></Label>
                 </StackLayout>
                 <StackLayout>
-                    <StackLayout Orientation="Horizontal">
-                        <Image Source="logoRelatore"></Image>
-                        <Label Text="Relatori evento:" FontSize="Medium" FontAttributes="Bold"></Label>
+                    <StackLayout Orientation="Horizontal" Padding="10,0,0,10">
+                        <Image Source="logoRelatore" VerticalOptions="Center"></Image>
+                        <Label Text="Relatori evento:" FontSize="Medium" FontAttributes="Bold" TextColor="#4b8b80" VerticalOptions="Center" VerticalTextAlignment="Center"></Label>
                     </StackLayout>
                     <Label Text="{Binding Relatori}"></Label>
                 </StackLayout>
                 <StackLayout >
-                    <StackLayout Orientation="Horizontal">
+                    <StackLayout Orientation="Horizontal" Padding="10,0,0,10">
                         <Image Source="logoDescrizione"></Image>
-                        <Label Text="Descrizione evento:" FontSize="Medium" FontAttributes="Bold"></Label>
+                        <Label Text="Descrizione evento:" FontSize="Medium" FontAttributes="Bold" TextColor="#4b8b80"></Label>
                     </StackLayout>
                     <Label Text="{Binding Descrizione}"></Label>
                 </StackLayout>
             </StackLayout>
         </StackLayout>
+            </ScrollView>
     </ContentPage.Content>
 </ContentPage>
  
