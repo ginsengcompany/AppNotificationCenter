@@ -5,21 +5,32 @@
              x:Class="AppOrdineMediciCaserta.MainPage">
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="listEventi" ItemsSource="{Binding ListaEventi}" HasUnevenRows="True" ItemSelected="listEventi_ItemSelected">
+            <ListView x:Name="listEventi"  ItemsSource="{Binding ListaEventi}" HasUnevenRows="True" ItemSelected="listEventi_ItemSelected" SeparatorColor="Black" SeparatorVisibility="Default" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Orientation="Vertical">
-                                <Label Text="{Binding titolo}"/>
-                                <Label Text="{Binding informazioni}"/>
+                        <ViewCell >
+                            <StackLayout Orientation="Vertical" BackgroundColor="#e8e8e8" Padding="10" Margin="10">
                                 <StackLayout Orientation="Horizontal">
-                                    <Label Text="{Binding data}"/>
-                                    <Label Text="{Binding luogo}"/>
+                                    <Label Text="Titolo evento: " FontAttributes="Bold" FontSize="Large" VerticalOptions="Center" VerticalTextAlignment="Center"></Label>
+                                    <Label Text="{Binding titolo}" FontAttributes="Italic" FontSize="Medium" VerticalOptions="Center" VerticalTextAlignment="Center"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal">
-                                    <Button Text="Conferma" IsVisible="{Binding Visible}"/>
-                                    <Button Text="Elimina" IsVisible="{Binding Visible}"/>
-                                    <Button Text="Informazioni" Clicked="Button_Clicked" IsVisible="{Binding Visible}"/>
+                                    <Label Text="{Binding informazioni}" FontAttributes="Italic" IsVisible="{Binding Visible}" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+                                </StackLayout >
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Data:" FontSize="Large" FontAttributes="Bold" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+                                    <Label Text="{Binding data}" FontSize="Medium" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+                                </StackLayout>
+                                  <StackLayout Orientation="Horizontal">
+                                    <Label Text="Luogo:" FontSize="Large" FontAttributes="Bold" IsVisible="{Binding Visible}" VerticalOptions="Center" VerticalTextAlignment="Center"></Label>
+                                    <Label Text="{Binding luogo}" FontSize="Medium"  IsVisible="{Binding Visible}" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+                                </StackLayout>
+                                    
+                                
+                                <StackLayout Orientation="Horizontal">
+                                    <Button Text="Conferma" IsVisible="{Binding Visible}" BackgroundColor="#4b8b80" TextColor="White"/>
+                                    <Button Text="Elimina" IsVisible="{Binding Visible}"  BackgroundColor="#4b8b80" TextColor="White"/>
+                                    <Button Text="Informazioni" Clicked="Button_Clicked" IsVisible="{Binding Visible}"  BackgroundColor="#4b8b80" TextColor="White"/>
                                 </StackLayout>
                             </StackLayout>
                         </ViewCell>
