@@ -10,8 +10,15 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Orientation="Vertical">
-                                <Label Text="{Binding titolo}"/>
-                                <Label Text="{Binding informazioni}"/>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Titolo evento: " FontAttributes="Bold"></Label>
+                                    <Label Text="{Binding titolo}" FontAttributes="Italic"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Informazioni evento: " FontAttributes="Bold"></Label>
+                                    <Label Text="{Binding informazioni}" FontAttributes="Italic"/>
+                                </StackLayout>
+                                
                                 <StackLayout Orientation="Horizontal">
                                     <Label Text="{Binding data}"/>
                                     <Label Text="{Binding luogo}"/>
