@@ -5,11 +5,14 @@ using System.Linq;
 using System.Text;
 using AppOrdineMediciCaserta.Views;
 using Xamarin.Forms;
+using Com.OneSignal;
 
 namespace AppOrdineMediciCaserta
 {
     public partial class App : Application
     {
+
+        private const string APP_ID_ONE_SIGNAL = "b560b667-aa97-4980-a740-c8fc7925e208";
 
         public App()
         {
@@ -24,7 +27,9 @@ namespace AppOrdineMediciCaserta
             if (user)
                 MainPage = new NavigationPage(new MainPage());
             else
-                MainPage = new NavigationPage(new MainPage());
+                MainPage = new Login();
+            OneSignal.Current.StartInit(APP_ID_ONE_SIGNAL)
+                  .EndInit();
         }
 
         private bool checkUser()
