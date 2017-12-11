@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppOrdineMediciCaserta.Views.VisualizzaEventoInDettaglio"
@@ -14,33 +14,40 @@
                 <Label Text="{Binding Titolo}" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Large" ></Label>
                 <Label Text="{Binding Sottotitolo}" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Medium"></Label>
                 <StackLayout>
-                    <StackLayout Orientation="Horizontal" Padding="10,0,0,10">
+                    <StackLayout Orientation="Horizontal" Padding="10,0,10,0">
                         <Image Source="logoLuogo" VerticalOptions="Center"></Image>
                         <Label Text="Luogo evento:" FontSize="Medium" FontAttributes="Bold" TextColor="#4b8b80" VerticalOptions="Center" VerticalTextAlignment="Center"></Label>
                     </StackLayout>
-                  
-                    <Label Text="{Binding Luogo}"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <StackLayout Orientation="Horizontal" Padding="10,0,0,10">
-                        <Image Source="logoInfo"></Image>
-                        <Label Text="Informazione evento:" FontSize="Medium" FontAttributes="Bold" TextColor="#4b8b80"></Label>
+                    <StackLayout Orientation="Horizontal" Padding="10,0,10,0">
+                        <Label Text="{Binding Luogo}"></Label>
                     </StackLayout>
-                    <Label Text="{Binding Informazioni}"></Label>
                 </StackLayout>
                 <StackLayout>
-                    <StackLayout Orientation="Horizontal" Padding="10,0,0,10">
+                    <StackLayout Orientation="Horizontal" Padding="10,0,10,0">
+                        <Image Source="logoInfo" VerticalOptions="Center"></Image>
+                        <Label Text="Informazione evento:" FontSize="Medium" FontAttributes="Bold" TextColor="#4b8b80" VerticalOptions="Center" VerticalTextAlignment="Center\1\"></Label>
+                    </StackLayout>
+                        <StackLayout Orientation="Horizontal" Padding="10,0,10,0">
+                    <Label Text="{Binding Informazioni}"></Label>
+                        </StackLayout>
+                </StackLayout>
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal" Padding="10,0,10,0">
                         <Image Source="logoRelatore" VerticalOptions="Center"></Image>
                         <Label Text="Relatori evento:" FontSize="Medium" FontAttributes="Bold" TextColor="#4b8b80" VerticalOptions="Center" VerticalTextAlignment="Center"></Label>
                     </StackLayout>
+                        <StackLayout Orientation="Horizontal" Padding="10,0,10,0">
                     <Label Text="{Binding Relatori}"></Label>
+                            </StackLayout>
                 </StackLayout>
                 <StackLayout >
-                    <StackLayout Orientation="Horizontal" Padding="10,0,0,10">
-                        <Image Source="logoDescrizione"></Image>
-                        <Label Text="Descrizione evento:" FontSize="Medium" FontAttributes="Bold" TextColor="#4b8b80"></Label>
+                    <StackLayout Orientation="Horizontal" Padding="10,0,10,0">
+                        <Image Source="logoDescrizione" VerticalOptions="Center"></Image>
+                        <Label Text="Descrizione evento:" FontSize="Medium" FontAttributes="Bold" TextColor="#4b8b80" VerticalOptions="Center" VerticalTextAlignment="Center"></Label>
                     </StackLayout>
+                        <StackLayout Orientation="Horizontal" Padding="10,0,10,0">
                     <Label Text="{Binding Descrizione}"></Label>
+                            </StackLayout>
                 </StackLayout>
             </StackLayout>
             </ScrollView>
