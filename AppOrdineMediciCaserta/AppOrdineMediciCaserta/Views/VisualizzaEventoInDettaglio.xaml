@@ -4,12 +4,13 @@
              x:Class="AppOrdineMediciCaserta.Views.VisualizzaEventoInDettaglio"
              Title="{Binding Data}">
     <ContentPage.Content>
-        <ScrollView>
-        <StackLayout>
+        <StackLayout VerticalOptions="FillAndExpand">
             <StackLayout Padding="20" >
                 <Image Source="{Binding Immagine}"></Image>
             </StackLayout>
-            <StackLayout>
+            <ScrollView>
+
+                <StackLayout>
                 <Label Text="{Binding Titolo}" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Large" ></Label>
                 <Label Text="{Binding Sottotitolo}" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Medium"></Label>
                 <StackLayout>
@@ -42,8 +43,9 @@
                     <Label Text="{Binding Descrizione}"></Label>
                 </StackLayout>
             </StackLayout>
-        </StackLayout>
             </ScrollView>
+        </StackLayout>
+           
     </ContentPage.Content>
 </ContentPage>
  
