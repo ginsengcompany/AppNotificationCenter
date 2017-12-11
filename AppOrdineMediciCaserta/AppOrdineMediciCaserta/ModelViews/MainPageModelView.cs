@@ -60,7 +60,7 @@ namespace AppOrdineMediciCaserta.ModelViews
             REST<Object, ListaDatiEvento> connessione = new REST<Object, ListaDatiEvento>();
             ListaDatiEvento List = new ListaDatiEvento();
             List = await connessione.getJsonObject(URL.Eventi);
-            foreach (var i in List.rows)
+            foreach (var i in List.data)
             {
                 listaEventi.Add(i);
             }

@@ -58,7 +58,7 @@ namespace AppOrdineMediciCaserta.ModelViews
         public async Task<bool> login()
         {
             REST<Medico, bool> rest = new REST<Medico, bool>();
-            bool response = await rest.PostJson("http://192.168.125.4:3000/cercaMatricola", user);
+            bool response = await rest.PostJson(URL.Login, user);
             if (response)
             {
                 await App.Current.MainPage.DisplayAlert("Login", "Login Effettuata con successo", "OK");
