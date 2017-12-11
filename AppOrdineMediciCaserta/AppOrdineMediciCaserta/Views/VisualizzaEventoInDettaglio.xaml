@@ -25,7 +25,7 @@
                 <StackLayout>
                     <StackLayout Orientation="Horizontal" Padding="10,0,10,0">
                         <Image Source="logoInfo" VerticalOptions="Center"></Image>
-                        <Label Text="Informazione evento:" FontSize="Medium" FontAttributes="Bold" TextColor="#4b8b80" VerticalOptions="Center" VerticalTextAlignment="Center\1\"></Label>
+                        <Label Text="Informazione evento:" FontSize="Medium" FontAttributes="Bold" TextColor="#4b8b80" VerticalOptions="Center" VerticalTextAlignment="Center"></Label>
                     </StackLayout>
                         <StackLayout Orientation="Horizontal" Padding="10,0,10,0">
                     <Label Text="{Binding Informazioni}"></Label>
