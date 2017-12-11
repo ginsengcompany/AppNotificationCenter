@@ -24,7 +24,7 @@ namespace AppOrdineMediciCaserta
             if (user)
                 MainPage = new NavigationPage(new MainPage());
             else
-                MainPage = new Login();
+                MainPage = new NavigationPage(new MainPage());
         }
 
         private bool checkUser()
