@@ -138,7 +138,14 @@ namespace AppOrdineMediciCaserta.ModelViews
             Informazioni = dettagliEvento.informazioni;
             Descrizione = dettagliEvento.descrizione;
             string img = "";
-            img = dettagliEvento.immagine.Substring(23);
+            if (dettagliEvento.immagine.Contains("jpeg;"))
+            {
+                img = dettagliEvento.immagine.Substring(23);
+            }
+            else if (dettagliEvento.immagine.Contains("png;") || dettagliEvento.immagine.Contains("jpg;"))
+            {
+                img = dettagliEvento.immagine.Substring(22);
+            }
             Immagine = Xamarin.Forms.ImageSource.FromStream(
            () => new MemoryStream(Convert.FromBase64String(img)));
        
