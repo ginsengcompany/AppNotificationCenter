@@ -5,15 +5,15 @@
              xmlns:ci="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
              x:Class="AppOrdineMediciCaserta.MainPage"
              xmlns:customControls="clr-namespace:AppOrdineMediciCaserta.CostomControls;assembly=AppOrdineMediciCaserta"
-            
+            BackgroundColor="White"
              Title="EVENTI"
              >
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="listEventi"  ItemsSource="{Binding ListaEventi}" HasUnevenRows="True" ItemSelected="listEventi_ItemSelected" SeparatorColor="Black" SeparatorVisibility="Default" >
+            <ListView x:Name="listEventi" BackgroundColor="White" ItemsSource="{Binding ListaEventi}" HasUnevenRows="True" ItemSelected="listEventi_ItemSelected"  SeparatorColor="Black" SeparatorVisibility="Default" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <customControls:ExtendedViewCell SelectedBackgroundColor="Teal">
+                        <customControls:ExtendedViewCell SelectedBackgroundColor="White">
                         <ViewCell.View >
                             <StackLayout  BackgroundColor="#e8e8e8" Padding="10" Margin="10">
                             <StackLayout Orientation="Horizontal">
