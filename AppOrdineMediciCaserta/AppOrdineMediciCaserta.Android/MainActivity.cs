@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using ImageCircle.Forms.Plugin.Droid;
 
 namespace AppOrdineMediciCaserta.Droid
 {
@@ -21,6 +22,8 @@ namespace AppOrdineMediciCaserta.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
+            ImageCircleRenderer.Init();
+
         }
     }
 }

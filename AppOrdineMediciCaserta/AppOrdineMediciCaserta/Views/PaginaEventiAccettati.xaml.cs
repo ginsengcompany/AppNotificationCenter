@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace AppOrdineMediciCaserta.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PaginaEventiAccettai : ContentPage
+    public partial class PaginaEventiAccettati : ContentPage
     {
-        public PaginaEventiAccettai()
+        public PaginaEventiAccettati()
         {
             InitializeComponent();
         }

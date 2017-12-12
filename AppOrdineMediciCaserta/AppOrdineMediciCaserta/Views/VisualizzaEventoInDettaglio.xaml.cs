@@ -1,5 +1,7 @@
-﻿using System;
+﻿using AppOrdineMediciCaserta.Models;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,10 +14,15 @@ namespace AppOrdineMediciCaserta.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class VisualizzaEventoInDettaglio : ContentPage
     {
-        public VisualizzaEventoInDettaglio()
+         DatiEvento evento;
+
+        public VisualizzaEventoInDettaglio(DatiEvento x)
         {
             InitializeComponent();
-            BindingContext = new ModelViews.VisualizzaEventiInDettaglioModelView();
+            evento = x;
+            BindingContext = new ModelViews.VisualizzaEventiInDettaglioModelView(evento);
+
         }
+        
     }
 }
