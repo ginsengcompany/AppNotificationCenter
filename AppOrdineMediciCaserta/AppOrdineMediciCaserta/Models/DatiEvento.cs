@@ -22,6 +22,7 @@ namespace AppOrdineMediciCaserta.Models
         public string descrizione { get; set; }
         public string immagine { get; set; }
         public string Visible { get; set; } = "false";
+        public ImageSource Immagine { get; set; }
     }
 }
 

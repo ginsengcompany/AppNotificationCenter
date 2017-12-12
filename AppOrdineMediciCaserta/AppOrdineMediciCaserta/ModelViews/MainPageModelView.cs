@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -20,6 +21,8 @@ namespace AppOrdineMediciCaserta.ModelViews
         private List<DatiEvento> listaEventi = new List<DatiEvento>();
 
         private DatiEvento dettagli;
+        ImageSource immagine;
+
 
         private String visibile = "false";
 
@@ -36,6 +39,7 @@ namespace AppOrdineMediciCaserta.ModelViews
                 OnPropertychanged();
             }
         }
+    
 
         public string Visibile
         {
@@ -62,7 +66,19 @@ namespace AppOrdineMediciCaserta.ModelViews
             List = await connessione.getJsonObject(URL.Eventi);
             foreach (var i in List.data)
             {
-                listaEventi.Add(i);
+                string img = "";
+                if (i.immagine.Contains("jpeg;"))
+                {
+                    img = i.immagine.Substring(23);
+                }
+                else if (i.immagine.Contains("png;") || i.immagine.Contains("jpg;"))
+                {
+                    img = i.immagine.Substring(22);
+                }
+                immagine = Xamarin.Forms.ImageSource.FromStream(
+                    () => new MemoryStream(Convert.FromBase64String(img)));
+                i.Immagine = immagine;
+            listaEventi.Add(i);
             }
             ListaEventi = listaEventi;
         }
@@ -90,6 +106,7 @@ namespace AppOrdineMediciCaserta.ModelViews
         {
             return dettagli;
         }
+      
 
     }
 }

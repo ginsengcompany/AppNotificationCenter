@@ -1,38 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:AppOrdineMediciCaserta"
-             x:Class="AppOrdineMediciCaserta.MainPage">
+             xmlns:local="clr-namespace:AppOrdineMediciCaserta" 
+             xmlns:ci="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             x:Class="AppOrdineMediciCaserta.MainPage"
+             Title="EVENTI"
+             >
     <ContentPage.Content>
         <StackLayout>
             <ListView x:Name="listEventi"  ItemsSource="{Binding ListaEventi}" HasUnevenRows="True" ItemSelected="listEventi_ItemSelected" SeparatorColor="Black" SeparatorVisibility="Default" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell >
-                            <StackLayout Orientation="Vertical" BackgroundColor="#e8e8e8" Padding="10" Margin="10">
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Text="Titolo evento: " FontAttributes="Bold" FontSize="Large" VerticalOptions="Center" VerticalTextAlignment="Center"></Label>
-                                    <Label Text="{Binding titolo}" FontAttributes="Italic" FontSize="Medium" VerticalOptions="Center" VerticalTextAlignment="Center"/>
-                                </StackLayout>
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Text="{Binding informazioni}" FontAttributes="Italic" IsVisible="{Binding Visible}" VerticalOptions="Center" VerticalTextAlignment="Center"/>
-                                </StackLayout >
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Text="Data:" FontSize="Large" FontAttributes="Bold" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+                            <StackLayout  BackgroundColor="#e8e8e8" Padding="10" Margin="10">
+                            <StackLayout Orientation="Horizontal">
+                                <ci:CircleImage   
+                                    HeightRequest="50"   
+                                    WidthRequest="50"   
+                                    Source="{Binding Immagine}"   
+                                    Aspect="AspectFill">
+                                </ci:CircleImage>
+                                <StackLayout Orientation="Vertical">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding titolo}" FontAttributes="Bold" FontSize="Medium" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
                                     <Label Text="{Binding data}" FontSize="Medium" VerticalOptions="Center" VerticalTextAlignment="Center"/>
                                 </StackLayout>
                                   <StackLayout Orientation="Horizontal">
-                                    <Label Text="Luogo:" FontSize="Large" FontAttributes="Bold" IsVisible="{Binding Visible}" VerticalOptions="Center" VerticalTextAlignment="Center"></Label>
                                     <Label Text="{Binding luogo}" FontSize="Medium"  IsVisible="{Binding Visible}" VerticalOptions="Center" VerticalTextAlignment="Center"/>
                                 </StackLayout>
                                     
                                 
+                               </StackLayout>
+                            </StackLayout>
                                 <StackLayout Orientation="Horizontal">
-                                    <Button Text="Conferma" IsVisible="{Binding Visible}" BackgroundColor="#4b8b80" TextColor="White"/>
-                                    <Button Text="Elimina" IsVisible="{Binding Visible}"  BackgroundColor="#4b8b80" TextColor="White"/>
-                                    <Button Text="Informazioni" Clicked="Button_Clicked" IsVisible="{Binding Visible}"  BackgroundColor="#4b8b80" TextColor="White"/>
+                                    <Button Text="Conferma" IsVisible="{Binding Visible}" BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center"/>
+                                    <Button Text="Elimina" IsVisible="{Binding Visible}"  BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center"/>
+                                    <Button Text="Informazioni" Clicked="Button_Clicked" IsVisible="{Binding Visible}"  BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center"/>
                                 </StackLayout>
                             </StackLayout>
+                            
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

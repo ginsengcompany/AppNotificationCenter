@@ -5,18 +5,23 @@
              Title="{Binding Data}">
     <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand">
-            <StackLayout Padding="20" >
-                <Image Source="{Binding Immagine}"></Image>
-            </StackLayout>
-            <ScrollView>
+            <Grid>
 
+                <Image Source="{Binding Immagine}" HorizontalOptions="Fill" HeightRequest="375" Aspect="AspectFill"  Grid.Row="0"></Image>
+                <StackLayout BackgroundColor="Black" Opacity="0.9" Grid.Row="0" VerticalOptions="EndAndExpand">
+                    <Label Text="{Binding Titolo}" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Large"  TextColor="#4b8b80" ></Label>
+                <Label Text="{Binding Sottotitolo}" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Medium" TextColor="White"></Label>
+                </StackLayout>
+            </Grid>    
+            <ScrollView>
+            <StackLayout>
+        
                 <StackLayout>
-                <Label Text="{Binding Titolo}" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Large" ></Label>
-                <Label Text="{Binding Sottotitolo}" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Medium"></Label>
-                <StackLayout>
+                    <StackLayout>
+                        
                     <StackLayout Orientation="Horizontal" Padding="10,0,10,0">
                         <Image Source="logoLuogo" VerticalOptions="Center"></Image>
-                        <Label Text="Luogo evento:" FontSize="Medium" FontAttributes="Bold" TextColor="#4b8b80" VerticalOptions="Center" VerticalTextAlignment="Center"></Label>
+                        <Label Text="Luogo evento" FontSize="Medium" FontAttributes="Bold" TextColor="#4b8b80" VerticalOptions="Center" VerticalTextAlignment="Center"></Label>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal" Padding="10,0,10,0">
                         <Label Text="{Binding Luogo}"></Label>
@@ -25,7 +30,7 @@
                 <StackLayout>
                     <StackLayout Orientation="Horizontal" Padding="10,0,10,0">
                         <Image Source="logoInfo" VerticalOptions="Center"></Image>
-                        <Label Text="Informazione evento:" FontSize="Medium" FontAttributes="Bold" TextColor="#4b8b80" VerticalOptions="Center" VerticalTextAlignment="Center"></Label>
+                        <Label Text="Informazione evento" FontSize="Medium" FontAttributes="Bold" TextColor="#4b8b80" VerticalOptions="Center" VerticalTextAlignment="Center"></Label>
                     </StackLayout>
                         <StackLayout Orientation="Horizontal" Padding="10,0,10,0">
                     <Label Text="{Binding Informazioni}"></Label>
@@ -34,7 +39,7 @@
                 <StackLayout>
                     <StackLayout Orientation="Horizontal" Padding="10,0,10,0">
                         <Image Source="logoRelatore" VerticalOptions="Center"></Image>
-                        <Label Text="Relatori evento:" FontSize="Medium" FontAttributes="Bold" TextColor="#4b8b80" VerticalOptions="Center" VerticalTextAlignment="Center"></Label>
+                        <Label Text="Relatori evento" FontSize="Medium" FontAttributes="Bold" TextColor="#4b8b80" VerticalOptions="Center" VerticalTextAlignment="Center"></Label>
                     </StackLayout>
                         <StackLayout Orientation="Horizontal" Padding="10,0,10,0">
                     <Label Text="{Binding Relatori}"></Label>
@@ -43,16 +48,18 @@
                 <StackLayout >
                     <StackLayout Orientation="Horizontal" Padding="10,0,10,0">
                         <Image Source="logoDescrizione" VerticalOptions="Center"></Image>
-                        <Label Text="Descrizione evento:" FontSize="Medium" FontAttributes="Bold" TextColor="#4b8b80" VerticalOptions="Center" VerticalTextAlignment="Center"></Label>
+                        <Label Text="Descrizione evento" FontSize="Medium" FontAttributes="Bold" TextColor="#4b8b80" VerticalOptions="Center" VerticalTextAlignment="Center"></Label>
                     </StackLayout>
                         <StackLayout Orientation="Horizontal" Padding="10,0,10,0">
-                    <Label Text="{Binding Descrizione}"></Label>
+                    <Label Text="{Binding Descrizione}" FontSize="15" HorizontalTextAlignment="Center"></Label>
                             </StackLayout>
                 </StackLayout>
             </StackLayout>
+                       
+
+        </StackLayout>
             </ScrollView>
         </StackLayout>
-           
     </ContentPage.Content>
 </ContentPage>
  
