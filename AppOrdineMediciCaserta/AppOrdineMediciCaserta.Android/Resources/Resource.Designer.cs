@@ -4113,6 +4113,9 @@ namespace AppOrdineMediciCaserta.Droid
 			// aapt resource value: 0x7f070000
 			public const int consumer_onesignal_keep = 2131165184;
 			
+			// aapt resource value: 0x7f070001
+			public const int onesignal_default_sound = 2131165185;
+			
 			static Raw()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
