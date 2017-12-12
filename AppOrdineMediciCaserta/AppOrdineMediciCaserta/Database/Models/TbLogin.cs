@@ -10,9 +10,17 @@ namespace AppOrdineMediciCaserta.Database.Models
     [Table("login")]
     public class TbLogin
     {
-        [PrimaryKey, NotNull, Column("user")]
-        public string user { get; set; }
+        [PrimaryKey, NotNull, Column("matricola")]
+        public string matricola { get; set; }
         [NotNull,Column("token")]
         public string token { get; set; }
+
+        public TbLogin() { }
+
+        public TbLogin(string matricola, string token)
+        {
+            this.matricola = matricola;
+            this.token = token;
+        }
     }
 }

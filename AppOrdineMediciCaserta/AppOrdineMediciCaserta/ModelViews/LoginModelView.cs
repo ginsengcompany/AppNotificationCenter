@@ -1,4 +1,6 @@
-﻿using AppOrdineMediciCaserta.Models;
+﻿using AppOrdineMediciCaserta.Database.Data;
+using AppOrdineMediciCaserta.Database.Models;
+using AppOrdineMediciCaserta.Models;
 using AppOrdineMediciCaserta.Services;
 using System;
 using System.Collections.Generic;
@@ -10,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
+using Com.OneSignal;
 
 namespace AppOrdineMediciCaserta.ModelViews
 {
@@ -57,6 +60,11 @@ namespace AppOrdineMediciCaserta.ModelViews
 
         public async Task<bool> login()
         {
+            OneSignal.Current.IdsAvailable(((string userID, string pushToken) =>
+            {
+                user.token = userID;
+            }));
+            LoginData.insertUser(new TbLogin(user.matricola,user.token));
             REST<Medico, bool> rest = new REST<Medico, bool>();
             bool response = await rest.PostJson(URL.Login, user);
             if (response)
