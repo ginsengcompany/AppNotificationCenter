@@ -39,6 +39,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CostomControls\ExtendedViewCell.cs" />
     <Compile Include="Models\DatiEvento.cs" />
     <Compile Include="Database\Database.cs" />
     <Compile Include="Database\Data\LoginData.cs" />
