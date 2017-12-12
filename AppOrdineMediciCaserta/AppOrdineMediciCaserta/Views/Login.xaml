@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppOrdineMediciCaserta.Views.Login">
     <ContentPage.Content>
-        <StackLayout Padding="0,20,0,0" BackgroundColor="#f0ffff">
+        <StackLayout Padding="20,20,20,20" BackgroundColor="#f0ffff">
             <Image Source="logoOrdineMedici.png" HorizontalOptions="Center"/>
             <StackLayout BackgroundColor="#f0ffff" Padding="0,20,0,0" Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="Center">
                 <Entry  Placeholder="Inserisci la matricola" Text="{Binding matricola}" HorizontalTextAlignment="Center" 

@@ -20,13 +20,14 @@ namespace AppOrdineMediciCaserta.Views
             InitializeComponent();
             z = new LoginModelView();
             BindingContext = z;
+
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
             Load.IsVisible = true;
             Load.IsEnabled = true;
-            await Load.ProgressTo(1, 1500, Easing.Linear);
+            await Load.ProgressTo(1, 1500, Easing.SinIn);
             bool access = await z.login();
             if (access == true)
                 App.Current.MainPage = new NavigationPage(new MainPage());
