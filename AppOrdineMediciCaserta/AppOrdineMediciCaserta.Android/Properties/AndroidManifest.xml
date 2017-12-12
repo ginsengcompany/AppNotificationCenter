@@ -4,5 +4,16 @@
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 	<uses-permission android:name="android.permission.INTERNET" />
-	<application android:label="AppOrdineMediciCaserta.Android"></application>
+  <permission android:name="com.companyname.AppOrdineMediciCaserta.permission.C2D_MESSAGE"
+            android:protectionLevel="signature" />
+  <uses-permission android:name="com.companyname.AppOrdineMediciCaserta.permission.C2D_MESSAGE" />
+	<application android:label="AppOrdineMediciCaserta.Android">
+    <receiver android:name="com.onesignal.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+      <intent-filter>
+        <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+        <category android:name="com.companyname.AppOrdineMediciCaserta" />
+      </intent-filter>
+    </receiver>
+  </application>
 </manifest>
