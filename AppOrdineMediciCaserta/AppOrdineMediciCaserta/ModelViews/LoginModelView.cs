@@ -64,12 +64,12 @@ namespace AppOrdineMediciCaserta.ModelViews
             {
                 user.token = userID;
             }));
-            LoginData.insertUser(new TbLogin(user.matricola,user.token));
             REST<Medico, bool> rest = new REST<Medico, bool>();
             bool response = await rest.PostJson(URL.Login, user);
             if (response)
             {
                 await App.Current.MainPage.DisplayAlert("Login", "Login Effettuata con successo", "OK");
+                LoginData.insertUser(new TbLogin(user.matricola, user.token));
                 return true;
             }
             else
