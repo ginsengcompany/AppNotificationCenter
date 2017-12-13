@@ -13,8 +13,7 @@
             <ListView x:Name="listEventi" BackgroundColor="White" ItemsSource="{Binding ListaEventi}" HasUnevenRows="True" ItemTapped="ListEventi_OnItemTapped" SeparatorColor="Black" SeparatorVisibility="Default" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <customControls:ExtendedViewCell SelectedBackgroundColor="Red">
-                        <ViewCell.View >
+                        <ViewCell>
                             <StackLayout  BackgroundColor="#e8e8e8" Padding="10" Margin="10">
                             <StackLayout Orientation="Horizontal">
                                 <ci:CircleImage   
@@ -44,8 +43,7 @@
                                 </StackLayout>
                             </StackLayout>
                             
-                        </ViewCell.View>
-                        </customControls:ExtendedViewCell>
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
