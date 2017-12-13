@@ -10,7 +10,10 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using AppOrdineMediciCaserta.Database.Data;
+using AppOrdineMediciCaserta.Database.Models;
 using Xamarin.Forms;
+using Com.OneSignal;
 
 namespace AppOrdineMediciCaserta.ModelViews
 {
@@ -21,6 +24,9 @@ namespace AppOrdineMediciCaserta.ModelViews
         private List<DatiEvento> listaEventi = new List<DatiEvento>();
 
         private DatiEvento dettagli;
+        private Medico user = new Medico();
+        private TbLogin medico;
+        private string token;
         ImageSource immagine;
 
 
@@ -61,17 +67,20 @@ namespace AppOrdineMediciCaserta.ModelViews
         /*Effettua la connessione per ricevere i dati dal server*/
         public async void leggiDati()
         {
-            REST<Object, ListaDatiEvento> connessione = new REST<Object, ListaDatiEvento>();
-            ListaDatiEvento List = new ListaDatiEvento();
-            List = await connessione.getJsonObject(URL.Eventi);
-            foreach (var i in List.data)
+            REST<Object, DatiEvento> connessione = new REST<Object, DatiEvento>();
+            List<DatiEvento> List = new List<DatiEvento>();
+            var medico = await LoginData.getUser();
+            user.matricola = medico[0].matricola;
+            user.token = medico[0].token;
+            List = await connessione.PostJsonList(URL.Eventi,user);
+            foreach (var i in List)
             {
                 string img = "";
                 if (i.immagine.Contains("jpeg;"))
                 {
                     img = i.immagine.Substring(23);
                 }
-                else if (i.immagine.Contains("png;") || i.immagine.Contains("jpg;"))
+                else
                 {
                     img = i.immagine.Substring(22);
                 }
@@ -83,9 +92,9 @@ namespace AppOrdineMediciCaserta.ModelViews
             ListaEventi = listaEventi;
         }
         /*Costruttore del metodo, avvia la connessione*/
-        public MainPageModelView()
+        public MainPageModelView(string token)
         {
-
+            this.token = token;
             leggiDati();
         }
 

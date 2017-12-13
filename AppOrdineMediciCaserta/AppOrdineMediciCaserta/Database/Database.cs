@@ -15,8 +15,8 @@ namespace AppOrdineMediciCaserta.Database
         private static string dbname = "dbutente.db";
         private static string dbpath;
         private static ExistenceCheckResult exist;
-        private static SQLiteConnection connection { get; set; }
-        public static SQLiteConnection Connection
+        private static SQLiteAsyncConnection connection { get; set; }
+        public static SQLiteAsyncConnection Connection
         {
             get
             {
@@ -28,8 +28,8 @@ namespace AppOrdineMediciCaserta.Database
         {
             IFolder folder = FileSystem.Current.LocalStorage;
             dbpath = Path.Combine(folder.Path, dbname);
-            connection = new SQLiteConnection(dbpath);
-            connection.CreateTable<TbLogin>();
+            connection = new SQLiteAsyncConnection(dbpath);
+            connection.CreateTableAsync<TbLogin>();
         }
     }
 }

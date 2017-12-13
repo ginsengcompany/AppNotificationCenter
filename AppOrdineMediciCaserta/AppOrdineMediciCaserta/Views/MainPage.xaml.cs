@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Com.OneSignal;
 using Xamarin.Forms;
 
 namespace AppOrdineMediciCaserta
@@ -14,22 +15,23 @@ namespace AppOrdineMediciCaserta
     {
 
         private MainPageModelView z;
+        private string token;
         public MainPage()
         {
             InitializeComponent();
-            z = new MainPageModelView();
+            z = new MainPageModelView(token);
             BindingContext = z;
-        }
-
-        private void listEventi_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            var x = e.SelectedItem as DatiEvento;
-            z.displayButtons(x);
         }
 
         private void Button_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new VisualizzaEventoInDettaglio(z.dettaglio()));
+        }
+
+        private void ListEventi_OnItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var x = e.Item as DatiEvento;
+            z.displayButtons(x);;
         }
     }
 }

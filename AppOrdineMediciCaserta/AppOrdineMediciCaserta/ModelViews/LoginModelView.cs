@@ -69,7 +69,7 @@ namespace AppOrdineMediciCaserta.ModelViews
             if (response)
             {
                 await App.Current.MainPage.DisplayAlert("Login", "Login Effettuata con successo", "OK");
-                LoginData.insertUser(new TbLogin(user.matricola, user.token));
+                await LoginData.InsertUser(new TbLogin(user.matricola, user.token));
                 return true;
             }
             else

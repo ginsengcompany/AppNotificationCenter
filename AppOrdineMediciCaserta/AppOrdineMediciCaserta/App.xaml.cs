@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using AppOrdineMediciCaserta.Views;
 using Xamarin.Forms;
 using Com.OneSignal;
@@ -21,9 +22,9 @@ namespace AppOrdineMediciCaserta
             check();
         }
 
-        private void check()
+        private async void check()
         {
-            bool user = checkUser();
+            var user = await checkUser();
             if (user)
                 MainPage = new NavigationPage(new MainPage());
             else
@@ -32,9 +33,9 @@ namespace AppOrdineMediciCaserta
                   .EndInit();
         }
 
-        private bool checkUser()
+        private async Task<bool> checkUser()
         {
-            int count = LoginData.GetCountUser();
+            int count = await LoginData.GetCountUser();
             if (count > 0)
                 return true;
             else

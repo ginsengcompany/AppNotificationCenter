@@ -10,10 +10,10 @@
              >
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="listEventi" BackgroundColor="White" ItemsSource="{Binding ListaEventi}" HasUnevenRows="True" ItemSelected="listEventi_ItemSelected"  SeparatorColor="Black" SeparatorVisibility="Default" >
+            <ListView x:Name="listEventi" BackgroundColor="White" ItemsSource="{Binding ListaEventi}" HasUnevenRows="True" ItemTapped="ListEventi_OnItemTapped" SeparatorColor="Black" SeparatorVisibility="Default" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <customControls:ExtendedViewCell SelectedBackgroundColor="White">
+                        <customControls:ExtendedViewCell SelectedBackgroundColor="Red">
                         <ViewCell.View >
                             <StackLayout  BackgroundColor="#e8e8e8" Padding="10" Margin="10">
                             <StackLayout Orientation="Horizontal">

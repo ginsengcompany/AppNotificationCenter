@@ -13,6 +13,7 @@ namespace AppOrdineMediciCaserta.CostomControls
         /// </summary>
         public static readonly BindableProperty SelectedBackgroundColorProperty =
             BindableProperty.Create("SelectedBackgroundColor", typeof(Color), typeof(ExtendedViewCell), Color.Default);
+            
 
         /// <summary>
         /// Gets or sets the SelectedBackgroundColor.
