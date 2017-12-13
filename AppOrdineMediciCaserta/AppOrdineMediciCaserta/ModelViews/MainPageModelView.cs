@@ -73,7 +73,7 @@ namespace AppOrdineMediciCaserta.ModelViews
             user.matricola = medico[0].matricola;
             user.token = medico[0].token;
             List = await connessione.PostJsonList(URL.Eventi,user);
-            foreach (var i in List)
+            foreach (var i in List) 
             {
                 string img = "";
                 if (i.immagine.Contains("jpeg;"))
@@ -109,6 +109,16 @@ namespace AppOrdineMediciCaserta.ModelViews
                     i.Visible = "false";
             }
             ListaEventi = listaEventi;
+        }
+
+        public void ConfermaButton(DatiEvento x)
+        {
+            
+        }
+
+        public void EliminaButton(DatiEvento x)
+        {
+            
         }
 
         public DatiEvento dettaglio()

@@ -10,10 +10,11 @@
              >
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="listEventi" BackgroundColor="White" ItemsSource="{Binding ListaEventi}" HasUnevenRows="True" ItemTapped="ListEventi_OnItemTapped" SeparatorColor="Black" SeparatorVisibility="Default" >
+            <ListView x:Name="listEventi" BackgroundColor="White" ItemsSource="{Binding ListaEventi}"  HasUnevenRows="True" ItemTapped="ListEventi_OnItemTapped" SeparatorColor="Black" SeparatorVisibility="Default" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
+                        <customControls:ExtendedViewCell SelectedBackgroundColor="White">
+                        <ViewCell.View>
                             <StackLayout  BackgroundColor="#e8e8e8" Padding="10" Margin="10">
                             <StackLayout Orientation="Horizontal">
                                 <ci:CircleImage   
@@ -37,13 +38,14 @@
                                </StackLayout>
                             </StackLayout>
                                 <StackLayout Orientation="Horizontal">
-                                    <Button Text="Conferma" IsVisible="{Binding Visible}" BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center"/>
-                                    <Button Text="Elimina" IsVisible="{Binding Visible}"  BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center"/>
+                                        <Button Text="Conferma" IsVisible="{Binding Visible}" BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center" Clicked="ButtonConferma_OnClicked"/>
+                                    <Button Text="Elimina" IsVisible="{Binding Visible}"  BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center" Clicked="ButtonElimina_OnClicked"/>
                                     <Button Text="Informazioni" Clicked="Button_Clicked" IsVisible="{Binding Visible}"  BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center"/>
                                 </StackLayout>
                             </StackLayout>
                             
-                        </ViewCell>
+                        </ViewCell.View>
+                            </customControls:ExtendedViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

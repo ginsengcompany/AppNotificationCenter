@@ -16,6 +16,7 @@ namespace AppOrdineMediciCaserta
 
         private MainPageModelView z;
         private string token;
+        DatiEvento evento = new DatiEvento();
         public MainPage()
         {
             InitializeComponent();
@@ -30,8 +31,19 @@ namespace AppOrdineMediciCaserta
 
         private void ListEventi_OnItemTapped(object sender, ItemTappedEventArgs e)
         {
-            var x = e.Item as DatiEvento;
-            z.displayButtons(x);;
+             evento = e.Item as DatiEvento;
+            z.displayButtons(evento);
+
+        }
+
+        private void ButtonConferma_OnClicked(object sender, EventArgs e)
+        {
+            z.ConfermaButton(evento);
+        }
+
+        private void ButtonElimina_OnClicked(object sender, EventArgs e)
+        {
+            z.EliminaButton(evento);
         }
     }
 }

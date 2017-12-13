@@ -7,12 +7,10 @@ using Xamarin.Forms;
 
 namespace AppOrdineMediciCaserta.Models
 {
-    public class ListaDatiEvento
-    {
-        public List<DatiEvento> data { get; set; }
-    }
     public class DatiEvento
     {
+        public string confermato { get; set; }
+        public string eliminato { get; set; }
         public string titolo { get; set; }
         public string sottotitolo { get; set; }
         public string data { get; set; }
