@@ -9,8 +9,10 @@ namespace AppOrdineMediciCaserta.Models
 {
     public class DatiEvento
     {
-        public string confermato { get; set; }
-        public string eliminato { get; set; }
+        public string _id_medico { get; set; }
+        public string _id_evento { get; set; }
+        public bool confermato { get; set; }
+        public bool eliminato { get; set; }
         public string titolo { get; set; }
         public string sottotitolo { get; set; }
         public string data { get; set; }

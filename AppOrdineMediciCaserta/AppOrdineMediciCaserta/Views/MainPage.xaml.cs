@@ -36,14 +36,30 @@ namespace AppOrdineMediciCaserta
 
         }
 
-        private void ButtonConferma_OnClicked(object sender, EventArgs e)
+        private async void ButtonConferma_OnClicked(object sender, EventArgs e)
         {
-            z.ConfermaButton(evento);
+           bool esito = await z.ConfermaButton(evento);
+            if(esito==true)
+            {
+              await  DisplayAlert("CONFERMA", "L' evento è stato confermato", "Ok");
+            }
+            else
+              await  DisplayAlert("ERRORE", "Errore", "Ok");
+            z.ListaEventi.Clear();
+            z.leggiDati();
         }
 
-        private void ButtonElimina_OnClicked(object sender, EventArgs e)
+        private async void ButtonElimina_OnClicked(object sender, EventArgs e)
         {
-            z.EliminaButton(evento);
+            bool esito = await z.EliminaButton(evento);
+            if (esito == true)
+            {
+                await DisplayAlert("ELIMINA", "L' evento è stato eliminato", "Ok");
+            }
+            else
+                await DisplayAlert("ERRORE", "Errore", "Ok");
+            z.ListaEventi.Clear();
+            z.leggiDati();
         }
     }
 }

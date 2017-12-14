@@ -25,7 +25,6 @@ namespace AppOrdineMediciCaserta.ModelViews
 
         private DatiEvento dettagli;
         private Medico user = new Medico();
-        private TbLogin medico;
         private string token;
         ImageSource immagine;
 
@@ -111,14 +110,26 @@ namespace AppOrdineMediciCaserta.ModelViews
             ListaEventi = listaEventi;
         }
 
-        public void ConfermaButton(DatiEvento x)
+        public async Task<bool> ConfermaButton(DatiEvento x)
         {
-            
+            REST<Object, bool> connessione = new REST<Object, bool>();
+            x.confermato = true;
+            x.eliminato = false;
+            x.immagine = null;
+            x.Immagine = null;
+            bool esito = await connessione.PostJson(URL.ConfermaElimina, x);
+            return esito;
         }
 
-        public void EliminaButton(DatiEvento x)
+        public async Task<bool> EliminaButton(DatiEvento x)
         {
-            
+            REST<Object, bool> connessione = new REST<Object, bool>();
+            x.confermato = false;
+            x.eliminato = true;
+            x.immagine = null;
+            x.Immagine = null;
+            bool esito = await connessione.PostJson(URL.ConfermaElimina, x);
+            return esito;
         }
 
         public DatiEvento dettaglio()
