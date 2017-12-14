@@ -38,6 +38,7 @@ namespace AppOrdineMediciCaserta
 
         private async void ButtonConferma_OnClicked(object sender, EventArgs e)
         {
+            
            bool esito = await z.ConfermaButton(evento);
             if(esito==true)
             {

@@ -41,16 +41,24 @@
                                     <StackLayout Orientation="Horizontal">
                                     <Label Text="{Binding data}" FontSize="Medium" VerticalOptions="Center" VerticalTextAlignment="Center" IsVisible="{Binding VisibleError}"/>
                                 </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+
+                                                <Label Text="Evento Confermato" FontSize="Medium"  IsVisible="{Binding confermato}" VerticalOptions="Center" HorizontalOptions="Center" TextColor="#4b8b80" VerticalTextAlignment="Center" />
+
+                                    </StackLayout>
                                             <StackLayout Orientation="Horizontal">
-                                                <Label Text="{Binding luogo}" FontSize="Medium"  IsVisible="{Binding Visible}" VerticalOptions="Center" VerticalTextAlignment="Center" />
+                                                
+                                                <Label Text="{Binding luogo}" FontSize="Medium"  IsVisible="{Binding VisibileInfo}" VerticalOptions="Center" VerticalTextAlignment="Center" />
+                                                
                                             </StackLayout>
                                         </StackLayout>
                             </StackLayout>
                                 <StackLayout Orientation="Horizontal">
-                                        <Button Text="Conferma" IsVisible="{Binding Visible}" BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center" Clicked="ButtonConferma_OnClicked"/>
-                                    <Button Text="Elimina" IsVisible="{Binding Visible}"  BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center" Clicked="ButtonElimina_OnClicked"/>
-                                    <Button Text="Informazioni" Clicked="Button_Clicked" IsVisible="{Binding Visible}"  BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center"/>
-                                </StackLayout>
+                                        <Button x:Name="btnConferma" Text="Conferma" IsVisible="{Binding Visible}" BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center" Clicked="ButtonConferma_OnClicked"/>
+                                        <Button x:Name="btnElimina" Text="Elimina" IsVisible="{Binding Visible}"  BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center" Clicked="ButtonElimina_OnClicked"/>
+                                    <Button Text="Informazioni" Clicked="Button_Clicked" IsVisible="{Binding VisibileInfo}"  BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center"/>
+                                        
+                                    </StackLayout>
                             </StackLayout>
                             
                         </ViewCell.View>

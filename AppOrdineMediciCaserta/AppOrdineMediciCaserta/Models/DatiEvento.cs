@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json.Converters;
 using Xamarin.Forms;
 
 namespace AppOrdineMediciCaserta.Models
@@ -22,6 +23,7 @@ namespace AppOrdineMediciCaserta.Models
         public string descrizione { get; set; }
         public string immagine { get; set; }
         public string Visible { get; set; } = "false";
+        public string VisibileInfo { get; set; } = "false";
         public string VisibleError { get; set; } = "true";
         public ImageSource Immagine { get; set; }
     }

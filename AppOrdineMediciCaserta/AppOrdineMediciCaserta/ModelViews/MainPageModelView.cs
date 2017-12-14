@@ -111,7 +111,6 @@ namespace AppOrdineMediciCaserta.ModelViews
         {
             REST<Object, DatiEvento> connessione = new REST<Object, DatiEvento>();
             List<DatiEvento> List = new List<DatiEvento>();
-            
             var medico = await LoginData.getUser();
             user.matricola = medico[0].matricola;
             user.token = medico[0].token;
@@ -178,9 +177,19 @@ namespace AppOrdineMediciCaserta.ModelViews
                 foreach (var i in listaEventi)
                 {
                     if (i == x)
-                        i.Visible = "true";
+                    {
+                        if (i.confermato != true)
+                            i.Visible = "true";
+
+                        i.VisibileInfo = "true";
+
+                    }
                     else
+                    {
+                        i.VisibileInfo = "false";
                         i.Visible = "false";
+                    }
+                        
                 }
                 ListaEventi = listaEventi;
             }

@@ -19,9 +19,11 @@ namespace AppOrdineMediciCaserta.Services
             HttpClient client = new HttpClient();
             var uri = new Uri(string.Format(url, string.Empty));
             var response = await client.GetStringAsync(uri);
+            client.Timeout = TimeSpan.FromSeconds(10);
             warning = response;
             try
             {
+
                 var isValid = JToken.Parse(response);
                 JArray jObject = JArray.Parse(response);
                 Items = JsonConvert.DeserializeObject<List<T>>(response);
