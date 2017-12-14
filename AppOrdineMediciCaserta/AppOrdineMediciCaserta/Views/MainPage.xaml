@@ -9,9 +9,20 @@
              Title="EVENTI"
              >
     <ContentPage.Content>
-        <StackLayout>
-            <ListView x:Name="listEventi" BackgroundColor="White" ItemsSource="{Binding ListaEventi}"  HasUnevenRows="True" ItemTapped="ListEventi_OnItemTapped" SeparatorColor="Black" SeparatorVisibility="Default" >
-                <ListView.ItemTemplate>
+        <StackLayout> 
+            <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"/>
+            <ListView x:Name="listEventi" 
+                      IsPullToRefreshEnabled="True"
+                      RefreshCommand="{Binding RefreshCommand}"
+                      IsRefreshing="{Binding IsRefreshing}" 
+                      BackgroundColor="White"
+                      ItemsSource="{Binding ListaEventi}"  
+                      HasUnevenRows="True"
+                      ItemTapped="ListEventi_OnItemTapped" 
+                      SeparatorColor="Black" 
+                      SeparatorVisibility="Default" >
+               
+                    <ListView.ItemTemplate>
                     <DataTemplate>
                         <customControls:ExtendedViewCell SelectedBackgroundColor="White">
                         <ViewCell.View>
@@ -28,14 +39,12 @@
                                         <Label Text="{Binding titolo}" FontAttributes="Bold" FontSize="Medium" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black"/>
                                     </StackLayout>
                                     <StackLayout Orientation="Horizontal">
-                                    <Label Text="{Binding data}" FontSize="Medium" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+                                    <Label Text="{Binding data}" FontSize="Medium" VerticalOptions="Center" VerticalTextAlignment="Center" IsVisible="{Binding VisibleError}"/>
                                 </StackLayout>
-                                  <StackLayout Orientation="Horizontal">
-                                    <Label Text="{Binding luogo}" FontSize="Medium"  IsVisible="{Binding Visible}" VerticalOptions="Center" VerticalTextAlignment="Center"/>
-                                </StackLayout>
-                                    
-                                
-                               </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="{Binding luogo}" FontSize="Medium"  IsVisible="{Binding Visible}" VerticalOptions="Center" VerticalTextAlignment="Center" />
+                                            </StackLayout>
+                                        </StackLayout>
                             </StackLayout>
                                 <StackLayout Orientation="Horizontal">
                                         <Button Text="Conferma" IsVisible="{Binding Visible}" BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center" Clicked="ButtonConferma_OnClicked"/>
@@ -48,7 +57,11 @@
                             </customControls:ExtendedViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>
+            </ListView> 
+            <StackLayout VerticalOptions="End">
+            <Label Text ="Scorri verso il basso per aggiornare" IsVisible="{Binding VisibleError}" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
         </StackLayout>
+        </StackLayout>
+
     </ContentPage.Content>
 </ContentPage>

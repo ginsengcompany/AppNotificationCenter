@@ -27,9 +27,25 @@ namespace AppOrdineMediciCaserta.ModelViews
         private Medico user = new Medico();
         private string token;
         ImageSource immagine;
+        private bool isBusy = false;
 
 
         private String visibile = "false";
+
+        private bool _isRefreshing = false;
+
+        public bool IsBusy
+        {
+            get
+            {
+                return isBusy;
+            }
+            set
+            {
+                isBusy = (value);
+                OnPropertychanged();
+            }
+        }
 
         /* Setta la lista da visualizare nel Binding*/
         public List<DatiEvento> ListaEventi
@@ -58,56 +74,117 @@ namespace AppOrdineMediciCaserta.ModelViews
                 OnPropertychanged();
             }
         }
+
+        public bool IsRefreshing
+        {
+            get { return _isRefreshing; }
+            set
+            {
+                _isRefreshing = value;
+                OnPropertychanged(nameof(IsRefreshing));
+            }
+        }
+        public ICommand RefreshCommand
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    IsRefreshing = true;
+
+                    ListaEventi.Clear();
+
+                    await leggiDati();
+
+                    IsRefreshing = false;
+                });
+            }
+        }
+
         private void OnPropertychanged([CallerMemberName] string name = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
         /*Effettua la connessione per ricevere i dati dal server*/
-        public async void leggiDati()
+        public async Task leggiDati()
         {
             REST<Object, DatiEvento> connessione = new REST<Object, DatiEvento>();
             List<DatiEvento> List = new List<DatiEvento>();
+            
             var medico = await LoginData.getUser();
             user.matricola = medico[0].matricola;
             user.token = medico[0].token;
-            List = await connessione.PostJsonList(URL.Eventi,user);
-            foreach (var i in List) 
+            try
             {
-                string img = "";
-                if (i.immagine.Contains("jpeg;"))
+                List = await connessione.PostJsonList(URL.Eventi, user);
+                if (List.Count != 0)
                 {
-                    img = i.immagine.Substring(23);
+                    foreach (var i in List)
+                    {
+                        string img = "";
+                        if (i.immagine.Contains("jpeg;"))
+                        {
+                            img = i.immagine.Substring(23);
+                        }
+                        else
+                        {
+                            img = i.immagine.Substring(22);
+                        }
+                        immagine = Xamarin.Forms.ImageSource.FromStream(
+                            () => new MemoryStream(Convert.FromBase64String(img)));
+                        i.Immagine = immagine;
+                        listaEventi.Add(i);
+                    }
+                    ListaEventi = listaEventi;
+                    IsBusy = false;
                 }
                 else
                 {
-                    img = i.immagine.Substring(22);
+                    DatiEvento x = new DatiEvento();
+                    x.titolo = "Connessione non riuscita \n Scorri in basso per aggiornare";
+                    x.VisibleError = "false";
+                    listaEventi.Add(x);
                 }
-                immagine = Xamarin.Forms.ImageSource.FromStream(
-                    () => new MemoryStream(Convert.FromBase64String(img)));
-                i.Immagine = immagine;
-            listaEventi.Add(i);
+                ListaEventi = listaEventi;
+                IsBusy = false;
+
             }
-            ListaEventi = listaEventi;
+            catch (Exception a)
+            {
+                DatiEvento x = new DatiEvento();
+                x.titolo = "Connessione non riuscita \n Scorri in basso per aggiornare";
+                x.VisibleError = "false";
+                listaEventi.Add(x);
+                ListaEventi = listaEventi;
+                IsBusy = false;
+            }
+
         }
         /*Costruttore del metodo, avvia la connessione*/
         public MainPageModelView(string token)
         {
             this.token = token;
+            IsBusy = true;
             leggiDati();
+            
         }
 
         public void displayButtons(DatiEvento x)
         {
             dettagli = x;
-            foreach (var i in listaEventi)
+            if (dettagli.VisibleError != "false")
             {
-                if (i == x)
-                    i.Visible = "true";
-                else
-                    i.Visible = "false";
+                foreach (var i in listaEventi)
+                {
+                    if (i == x)
+                        i.Visible = "true";
+                    else
+                        i.Visible = "false";
+                }
+                ListaEventi = listaEventi;
             }
-            ListaEventi = listaEventi;
+            
         }
 
         public async Task<bool> ConfermaButton(DatiEvento x)
