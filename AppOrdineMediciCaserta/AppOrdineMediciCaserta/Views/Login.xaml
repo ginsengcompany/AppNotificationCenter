@@ -17,7 +17,7 @@
                 </Image>
             </StackLayout>
             <StackLayout Padding="0,10,0,0">
-                <ProgressBar x:Name="Load"  IsEnabled="False" IsVisible="False" WidthRequest="300" HeightRequest="25" VerticalOptions="Center" HorizontalOptions="Center">
+                <ProgressBar x:Name="Load"  IsEnabled="False" IsVisible="False" WidthRequest="300" HeightRequest="25" VerticalOptions="Center" HorizontalOptions="Center" >
                 </ProgressBar>
             </StackLayout>
         </StackLayout>

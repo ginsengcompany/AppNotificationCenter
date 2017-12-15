@@ -133,7 +133,8 @@ namespace AppOrdineMediciCaserta.ModelViews
             Relatori = dettagliEvento.relatori;
 
 
-            Data = dettagliEvento.data.Substring(0, 10);
+            Data = "Data evento: " + dettagliEvento.data.Day.ToString() + "-" + dettagliEvento.data.Month + "-" +
+                   dettagliEvento.data.Year;
             Luogo = dettagliEvento.luogo;
             Informazioni = dettagliEvento.informazioni;
             Descrizione = dettagliEvento.descrizione;

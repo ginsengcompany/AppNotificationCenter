@@ -4,60 +4,93 @@
              x:Class="AppOrdineMediciCaserta.Views.VisualizzaEventoInDettaglio"
              Title="{Binding Data}">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="FillAndExpand">
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="White">
             <Grid>
-
                 <Image Source="{Binding Immagine}" HorizontalOptions="Fill" HeightRequest="375" Aspect="AspectFill"  Grid.Row="0"></Image>
                 <StackLayout BackgroundColor="Black" Opacity="0.9" Grid.Row="0" VerticalOptions="EndAndExpand">
                     <Label Text="{Binding Titolo}" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Large"  TextColor="#4b8b80" ></Label>
                 <Label Text="{Binding Sottotitolo}" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Medium" TextColor="White"></Label>
                 </StackLayout>
-            </Grid>    
+            </Grid>
             <ScrollView>
-            <StackLayout>
-        
-                <StackLayout>
-                    <StackLayout>
-                        
-                    <StackLayout Orientation="Horizontal" Padding="10,0,10,0">
-                        <Image Source="logoLuogo" VerticalOptions="Center"></Image>
-                        <Label Text="Luogo evento" FontSize="Medium" FontAttributes="Bold" TextColor="#4b8b80" VerticalOptions="Center" VerticalTextAlignment="Center"></Label>
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal" Padding="10,0,10,0">
-                        <Label Text="{Binding Luogo}"></Label>
-                    </StackLayout>
-                </StackLayout>
-                <StackLayout>
-                    <StackLayout Orientation="Horizontal" Padding="10,0,10,0">
-                        <Image Source="logoInfo" VerticalOptions="Center"></Image>
-                        <Label Text="Informazione evento" FontSize="Medium" FontAttributes="Bold" TextColor="#4b8b80" VerticalOptions="Center" VerticalTextAlignment="Center"></Label>
-                    </StackLayout>
-                        <StackLayout Orientation="Horizontal" Padding="10,0,10,0">
-                    <Label Text="{Binding Informazioni}"></Label>
-                        </StackLayout>
-                </StackLayout>
-                <StackLayout>
-                    <StackLayout Orientation="Horizontal" Padding="10,0,10,0">
-                        <Image Source="logoRelatore" VerticalOptions="Center"></Image>
-                        <Label Text="Relatori evento" FontSize="Medium" FontAttributes="Bold" TextColor="#4b8b80" VerticalOptions="Center" VerticalTextAlignment="Center"></Label>
-                    </StackLayout>
-                        <StackLayout Orientation="Horizontal" Padding="10,0,10,0">
-                    <Label Text="{Binding Relatori}"></Label>
-                            </StackLayout>
-                </StackLayout>
-                <StackLayout >
-                    <StackLayout Orientation="Horizontal" Padding="10,0,10,0">
-                        <Image Source="logoDescrizione" VerticalOptions="Center"></Image>
-                        <Label Text="Descrizione evento" FontSize="Medium" FontAttributes="Bold" TextColor="#4b8b80" VerticalOptions="Center" VerticalTextAlignment="Center"></Label>
-                    </StackLayout>
-                        <StackLayout Orientation="Horizontal" Padding="10,0,10,0">
-                    <Label Text="{Binding Descrizione}" FontSize="15" HorizontalTextAlignment="Center"></Label>
-                            </StackLayout>
-                </StackLayout>
-            </StackLayout>
-                       
+                <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="GhostWhite" Padding="5">
+                    <StackLayout/>
+                    <StackLayout BackgroundColor="GhostWhite">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="2*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="1.5*" />
+                            </Grid.ColumnDefinitions>
 
-        </StackLayout>
+                            <StackLayout Orientation="Horizontal" Padding="10,0,10,0" Grid.Column="0" Grid.Row="0">
+                                <Image Source="logoLuogo" VerticalOptions="Center"></Image>
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical" Padding="10,0,10,0" Grid.Column="1" Grid.Row="0" VerticalOptions="StartAndExpand">
+                                <Label Text="Luogo evento" FontSize="Medium" FontAttributes="Bold" TextColor="#4b8b80" HorizontalOptions="Center" />
+                                <Label Text="{Binding Luogo}" TextColor="Black" HorizontalTextAlignment="Center" VerticalOptions="StartAndExpand"></Label>
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout BackgroundColor="White">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="2*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="1.5*" />
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Orientation="Horizontal" Padding="10,0,10,0" Grid.Column="0" Grid.Row="0">
+                                <Image Source="logoInfo" VerticalOptions="Center"></Image>
+
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical" Padding="10,0,10,0" Grid.Column="1" Grid.Row="0" VerticalOptions="CenterAndExpand">
+                                <Label Text="Informazione evento" FontSize="Medium" FontAttributes="Bold" TextColor="#4b8b80" HorizontalOptions="Center"></Label>
+                                <Label Text="{Binding Informazioni}" TextColor="Black" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand"></Label>
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout BackgroundColor="GhostWhite">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="2*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="1.5*" />
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Orientation="Horizontal" Padding="10,0,10,0" Grid.Column="0" Grid.Row="0" >
+                                <Image Source="logoRelatore" VerticalOptions="Center"></Image>
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical" Padding="10,0,10,0" Grid.Column="1" Grid.Row="0" VerticalOptions="CenterAndExpand">
+                                <Label Text="Relatori evento" FontSize="Medium" FontAttributes="Bold" TextColor="#4b8b80" HorizontalOptions="Center"></Label>
+                                <Label Text="{Binding Relatori}" TextColor="Black" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand"></Label>
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout BackgroundColor="White">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="1.5*" />
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Orientation="Horizontal" Padding="10,0,10,0" Grid.Column="0" Grid.Row="0" >
+                                <Image Source="logoDescrizione" VerticalOptions="Center"></Image>
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical" Padding="10,0,10,0" Grid.Column="1" Grid.Row="0" VerticalOptions="StartAndExpand" >
+                                <Label Text="Descrizione evento" FontSize="Medium" FontAttributes="Bold" TextColor="#4b8b80" HorizontalOptions="Center"></Label>
+                                <Label TextColor="Black" FontSize="15" HorizontalTextAlignment="Start" Text="{Binding Descrizione} " VerticalOptions="EndAndExpand"></Label>
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout/>
+                </StackLayout>
             </ScrollView>
         </StackLayout>
     </ContentPage.Content>

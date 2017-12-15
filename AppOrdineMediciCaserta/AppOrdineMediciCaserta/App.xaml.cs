@@ -3,9 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using AppOrdineMediciCaserta.Views;
 using Xamarin.Forms;
 using Com.OneSignal;
+using System.Diagnostics;
 
 namespace AppOrdineMediciCaserta
 {
@@ -23,9 +25,19 @@ namespace AppOrdineMediciCaserta
 
         private void check()
         {
-            bool user = checkUser();
+            var user = checkUser();
             if (user)
-                MainPage = new NavigationPage(new MainPage());
+            {
+                switch (Device.RuntimePlatform)
+                {
+                    case Device.iOS:
+                        MainPage = new NavigationPage(new ListaEventiIoS());
+                        break;
+                    default:
+                        MainPage = new NavigationPage(new MainPage());
+                        break;
+                }
+            }
             else
                 MainPage = new Login();
             OneSignal.Current.StartInit(APP_ID_ONE_SIGNAL)
