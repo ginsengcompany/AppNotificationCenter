@@ -198,10 +198,13 @@
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
     <AndroidResource Include="Resources\layout\Toolbar.axml" />
     <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\button1.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\button1.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\button1.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AppOrdineMediciCaserta\AppOrdineMediciCaserta.csproj">
-      <Project>{90619eb5-f628-4e18-a7b7-19858f1fe2df}</Project>
+      <Project>{001D3572-5BC4-4393-ABD2-F8E616D8041E}</Project>
       <Name>AppOrdineMediciCaserta</Name>
     </ProjectReference>
   </ItemGroup>

@@ -10,24 +10,24 @@ namespace AppOrdineMediciCaserta.Database.Data
 {
     public static class LoginData
     {
-        public static Task<int> GetCountUser()
+        public static int GetCountUser()
         {
-            return Database.Connection.ExecuteScalarAsync<int>("SELECT COUNT(*) FROM login");
+            return Database.Connection.ExecuteScalar<int>("SELECT COUNT(*) FROM login");
         }
 
-        public static Task<TbLogin> getUser(string token)
+        public static TbLogin getUser(string token)
         {
-            return Database.Connection.Table<TbLogin>().Where(i => i.token == token).FirstOrDefaultAsync();
+            return Database.Connection.Table<TbLogin>().Where(i => i.token == token).FirstOrDefault();
         }
 
-        public static Task<List<TbLogin>> getUser()
+        public static List<TbLogin> getUser()
         {
-            return Database.Connection.QueryAsync<TbLogin>("SELECT * FROM login");
+            return Database.Connection.Query<TbLogin>("SELECT * FROM login");
         }
 
-        public static Task<int> InsertUser(TbLogin user)
+        public static int InsertUser(TbLogin user)
         {
-           return Database.Connection.InsertAsync(user);
+           return Database.Connection.Insert(user);
         }
     }
 }

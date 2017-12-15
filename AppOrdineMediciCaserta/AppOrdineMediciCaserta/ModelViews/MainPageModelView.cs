@@ -88,13 +88,13 @@ namespace AppOrdineMediciCaserta.ModelViews
         {
             get
             {
-                return new Command(async () =>
+                return new Command( () =>
                 {
                     IsRefreshing = true;
 
                     ListaEventi.Clear();
 
-                    await leggiDati();
+                    leggiDati();
 
                     IsRefreshing = false;
                 });
@@ -107,11 +107,11 @@ namespace AppOrdineMediciCaserta.ModelViews
         }
 
         /*Effettua la connessione per ricevere i dati dal server*/
-        public async Task leggiDati()
+        public async void leggiDati()
         {
             REST<Object, DatiEvento> connessione = new REST<Object, DatiEvento>();
             List<DatiEvento> List = new List<DatiEvento>();
-            var medico = await LoginData.getUser();
+            var medico = LoginData.getUser();
             user.matricola = medico[0].matricola;
             user.token = medico[0].token;
             try

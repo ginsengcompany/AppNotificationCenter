@@ -4,6 +4,7 @@ using System.Linq;
 using ImageCircle.Forms.Plugin.iOS;
 using Foundation;
 using UIKit;
+using Com.OneSignal;
 
 namespace AppOrdineMediciCaserta.iOS
 {

@@ -15,21 +15,21 @@ namespace AppOrdineMediciCaserta.Database
         private static string dbname = "dbutente.db";
         private static string dbpath;
         private static ExistenceCheckResult exist;
-        private static SQLiteAsyncConnection connection { get; set; }
-        public static SQLiteAsyncConnection Connection
+        private static SQLiteConnection connection { get; set; }
+        public static SQLiteConnection Connection
         {
             get
             {
                 return connection;
             }
         }
-
+        //, openFlags: SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.FullMutex | SQLiteOpenFlags.Create, storeDateTimeAsTicks: true
         public static void Initialize()
         {
             IFolder folder = FileSystem.Current.LocalStorage;
             dbpath = Path.Combine(folder.Path, dbname);
-            connection = new SQLiteAsyncConnection(dbpath);
-            connection.CreateTableAsync<TbLogin>();
+            connection = new SQLiteConnection(dbpath);
+            connection.CreateTable<TbLogin>();
         }
     }
 }
