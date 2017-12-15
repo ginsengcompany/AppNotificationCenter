@@ -27,7 +27,17 @@ namespace AppOrdineMediciCaserta
         {
             var user = checkUser();
             if (user)
-                MainPage = new NavigationPage(new MainPage());
+            {
+                switch (Device.RuntimePlatform)
+                {
+                    case Device.iOS:
+                        MainPage = new NavigationPage(new ListaEventiIoS());
+                        break;
+                    default:
+                        MainPage = new NavigationPage(new MainPage());
+                        break;
+                }
+            }
             else
                 MainPage = new Login();
             OneSignal.Current.StartInit(APP_ID_ONE_SIGNAL)

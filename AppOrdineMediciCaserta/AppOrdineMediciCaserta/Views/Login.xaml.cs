@@ -31,12 +31,15 @@ namespace AppOrdineMediciCaserta.Views
             bool access = await z.login();
             if (access == true)
             {
-                if (Platform.Equals(Device.iOS))
+                switch (Device.RuntimePlatform)
                 {
-                    App.Current.MainPage = new NavigationPage(new ListaEventiIoS());
+                    case Device.iOS:
+                        App.Current.MainPage = new NavigationPage(new ListaEventiIoS());
+                        break;
+                    default:
+                        App.Current.MainPage = new NavigationPage(new MainPage());
+                        break;
                 }
-                else
-                    App.Current.MainPage = new NavigationPage(new MainPage());
 
             }
                 
