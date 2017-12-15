@@ -144,7 +144,7 @@ namespace AppOrdineMediciCaserta.ModelViews
                 else
                 {
                     DatiEvento x = new DatiEvento();
-                    x.titolo = "Connessione non riuscita \n Scorri in basso per aggiornare";
+                    x.titolo = "Nessun evento disponibile \n Scorri in basso per aggiornare";
                     x.VisibleError = "false";
                     listaEventi.Add(x);
                 }
@@ -155,7 +155,7 @@ namespace AppOrdineMediciCaserta.ModelViews
             catch (Exception a)
             {
                 DatiEvento x = new DatiEvento();
-                x.titolo = "Connessione non riuscita \n Scorri in basso per aggiornare";
+                x.titolo = "Nessun evento disponibile \n Scorri in basso per aggiornare";
                 x.VisibleError = "false";
                 listaEventi.Add(x);
                 ListaEventi = listaEventi;
@@ -213,7 +213,7 @@ namespace AppOrdineMediciCaserta.ModelViews
         public async Task<bool> EliminaButton(DatiEvento x)
         {
             REST<Object, bool> connessione = new REST<Object, bool>();
-          //  x.confermato = false;
+            x.confermato = false;
             x.eliminato = true;
             x.immagine = null;
             x.Immagine = null;
