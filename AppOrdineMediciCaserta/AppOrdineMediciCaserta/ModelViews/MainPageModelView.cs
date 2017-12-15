@@ -133,6 +133,9 @@ namespace AppOrdineMediciCaserta.ModelViews
                         immagine = Xamarin.Forms.ImageSource.FromStream(
                             () => new MemoryStream(Convert.FromBase64String(img)));
                         i.Immagine = immagine;
+                        if (i.confermato == true)
+                            i.TestoButtonEliminato = "ELIMINA";
+
                         listaEventi.Add(i);
                     }
                     ListaEventi = listaEventi;
@@ -210,7 +213,7 @@ namespace AppOrdineMediciCaserta.ModelViews
         public async Task<bool> EliminaButton(DatiEvento x)
         {
             REST<Object, bool> connessione = new REST<Object, bool>();
-            x.confermato = false;
+          //  x.confermato = false;
             x.eliminato = true;
             x.immagine = null;
             x.Immagine = null;
