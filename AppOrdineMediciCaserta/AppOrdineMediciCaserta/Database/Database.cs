@@ -23,7 +23,7 @@ namespace AppOrdineMediciCaserta.Database
                 return connection;
             }
         }
-
+        //, openFlags: SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.FullMutex | SQLiteOpenFlags.Create, storeDateTimeAsTicks: true
         public static void Initialize()
         {
             IFolder folder = FileSystem.Current.LocalStorage;

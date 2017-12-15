@@ -19,9 +19,11 @@ namespace AppOrdineMediciCaserta.Services
             HttpClient client = new HttpClient();
             var uri = new Uri(string.Format(url, string.Empty));
             var response = await client.GetStringAsync(uri);
+            client.Timeout = TimeSpan.FromSeconds(10);
             warning = response;
             try
             {
+
                 var isValid = JToken.Parse(response);
                 JArray jObject = JArray.Parse(response);
                 Items = JsonConvert.DeserializeObject<List<T>>(response);
@@ -40,11 +42,12 @@ namespace AppOrdineMediciCaserta.Services
             string ContentType = "application/json"; // or application/xml
             string json = JsonConvert.SerializeObject(dati);
             var uri = new Uri(string.Format(url, String.Empty));
-            var result = await client.PostAsync(url, new StringContent(json.ToString(), Encoding.UTF8, ContentType));
-            var response = await result.Content.ReadAsStringAsync();
-            warning = response;
             try
             {
+                var result =
+                    await client.PostAsync(url, new StringContent(json.ToString(), Encoding.UTF8, ContentType));
+                var response = await result.Content.ReadAsStringAsync();
+                warning = response;
                 var isValid = JToken.Parse(response);
                 Items = JsonConvert.DeserializeObject<List<T>>(response);
                 return Items;

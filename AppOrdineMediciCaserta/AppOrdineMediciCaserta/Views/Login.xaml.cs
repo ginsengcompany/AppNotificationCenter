@@ -30,7 +30,19 @@ namespace AppOrdineMediciCaserta.Views
             await Load.ProgressTo(1, 1500, Easing.SinIn);
             bool access = await z.login();
             if (access == true)
-                App.Current.MainPage = new NavigationPage(new MainPage());
+            {
+                switch (Device.RuntimePlatform)
+                {
+                    case Device.iOS:
+                        App.Current.MainPage = new NavigationPage(new ListaEventiIoS());
+                        break;
+                    default:
+                        App.Current.MainPage = new NavigationPage(new MainPage());
+                        break;
+                }
+
+            }
+                
         }
 
     }
