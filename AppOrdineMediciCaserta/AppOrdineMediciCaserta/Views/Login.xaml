@@ -9,8 +9,8 @@
                 <Entry  Placeholder="Inserisci la matricola" Text="{Binding matricola}" HorizontalTextAlignment="Center" 
                         TextColor="Black" FontAttributes="Italic" FontSize="Medium" />
             </StackLayout>
-            <StackLayout BackgroundColor="#f0ffff" Padding="0,10,0,0"  Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="Center">
-                <Image Source="button1.png">
+            <StackLayout BackgroundColor="#f0ffff" Padding="0,10,0,0"  Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="Center" >
+                <Image Source="button1.png" HeightRequest="90" WidthRequest="120">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Tapped="Button_Clicked" NumberOfTapsRequired="1"/>
                     </Image.GestureRecognizers>

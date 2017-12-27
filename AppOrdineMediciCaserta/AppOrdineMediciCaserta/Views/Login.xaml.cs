@@ -14,6 +14,7 @@ namespace AppOrdineMediciCaserta.Views
     public partial class Login : ContentPage
     {
         private LoginModelView z;
+        private bool access;
 
         public Login()
         {
@@ -28,7 +29,14 @@ namespace AppOrdineMediciCaserta.Views
             Load.IsVisible = true;
             Load.IsEnabled = true;
             await Load.ProgressTo(1, 1500, Easing.SinIn);
-            bool access = await z.login();
+            try
+            {
+                 access = await z.login();
+            }
+            catch (Exception)
+            {
+               await DisplayAlert("Attenzione", "connessione non riuscita", "riprova");
+            }
             if (access == true)
             {
                 switch (Device.RuntimePlatform)
@@ -42,7 +50,11 @@ namespace AppOrdineMediciCaserta.Views
                 }
 
             }
-                
+            else
+            {
+                await DisplayAlert("Attenzione", "connessione non riuscita", "riprova");
+            }
+
         }
 
     }
