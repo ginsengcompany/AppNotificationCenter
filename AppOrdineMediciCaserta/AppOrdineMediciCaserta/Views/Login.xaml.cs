@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Com.OneSignal;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -42,10 +42,10 @@ namespace AppOrdineMediciCaserta.Views
                 switch (Device.RuntimePlatform)
                 {
                     case Device.iOS:
-                        App.Current.MainPage = new NavigationPage(new ListaEventiIoS());
+                        App.Current.MainPage = new NavigationPage(new tabbedIos());
                         break;
                     default:
-                        App.Current.MainPage = new NavigationPage(new MainPage());
+                        App.Current.MainPage = new NavigationPage(new Tabbed());
                         break;
                 }
 

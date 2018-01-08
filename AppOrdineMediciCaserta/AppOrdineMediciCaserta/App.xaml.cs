@@ -31,10 +31,10 @@ namespace AppOrdineMediciCaserta
                 switch (Device.RuntimePlatform)
                 {
                     case Device.iOS:
-                        MainPage = new NavigationPage(new ListaEventiIoS());
+                        MainPage = new NavigationPage(new tabbedIos());
                         break;
                     default:
-                        MainPage = new NavigationPage(new MainPage());
+                        MainPage = new NavigationPage(new Tabbed());
                         break;
                 }
             }
@@ -56,6 +56,12 @@ namespace AppOrdineMediciCaserta
         protected override void OnStart()
         {
             // Handle when your app starts
+            OneSignal.Current.IdsAvailable(((string userID, string pushToken) =>
+            {
+                App.Current.Properties["token"] = userID;
+                
+            }));
+            
         }
 
         protected override void OnSleep()

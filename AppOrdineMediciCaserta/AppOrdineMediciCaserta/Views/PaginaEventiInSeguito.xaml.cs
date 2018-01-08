@@ -11,28 +11,28 @@ using Xamarin.Forms.Xaml;
 namespace AppOrdineMediciCaserta.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ListaEventiIoS : ContentPage
+    public partial class PaginaEventiInSeguito : ContentPage
     {
-        public ListaEventiIoS()
-        {
-            InitializeComponent();
-            z = new MainPageModelView(token);
-            BindingContext = z;
-        }
-        private MainPageModelView z;
+        private PagineEventiInSeguitoModelView z;
         private string token;
         DatiEvento evento = new DatiEvento();
-    
-        private void Button_Clicked(object sender, EventArgs e)
+
+        public PaginaEventiInSeguito()
         {
-            Navigation.PushAsync(new VisualizzaEventoInDettaglio(z.dettaglio()));
+            InitializeComponent();
+            z = new PagineEventiInSeguitoModelView(token);
+            BindingContext = z;
         }
 
         private void ListEventi_OnItemTapped(object sender, ItemTappedEventArgs e)
         {
             evento = e.Item as DatiEvento;
             z.displayButtons(evento);
+        }
 
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new VisualizzaEventoInDettaglio(z.dettaglio()));
         }
 
         private async void ButtonConferma_OnClicked(object sender, EventArgs e)
@@ -45,7 +45,7 @@ namespace AppOrdineMediciCaserta.Views
             }
             else
                 await DisplayAlert("ERRORE", "Errore", "Ok");
-            z.ListaEventi.Clear();
+            z.ListaEventiSeguito.Clear();
             z.leggiDati();
         }
 
@@ -54,11 +54,11 @@ namespace AppOrdineMediciCaserta.Views
             bool esito = await z.EliminaButton(evento);
             if (esito == true)
             {
-                await DisplayAlert("ELIMINA", "L'Evento è nella sezione conferma in seguito", "Ok");
+                await DisplayAlert("ELIMINA", "L' evento è stato eliminato", "Ok");
             }
             else
                 await DisplayAlert("ERRORE", "Errore", "Ok");
-            z.ListaEventi.Clear();
+            z.ListaEventiSeguito.Clear();
             z.leggiDati();
         }
     }

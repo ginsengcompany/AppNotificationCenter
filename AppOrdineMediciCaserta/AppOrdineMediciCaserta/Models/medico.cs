@@ -10,5 +10,6 @@ namespace AppOrdineMediciCaserta.Models
     {
         public string matricola { get; set; }
         public string token { get; set; }
+        public string eliminato { get; set; }
     }
 }

@@ -58,12 +58,11 @@ namespace AppOrdineMediciCaserta.ModelViews
             token = "";
         }
 
+        
+
         public async Task<bool> login()
         {
-            OneSignal.Current.IdsAvailable(((string userID, string pushToken) =>
-            {
-                user.token = userID;
-            }));
+            token = App.Current.Properties["token"].ToString();
             REST<Medico, bool> rest = new REST<Medico, bool>();
             bool response = await rest.PostJson(URL.Login, user);
             if (response)

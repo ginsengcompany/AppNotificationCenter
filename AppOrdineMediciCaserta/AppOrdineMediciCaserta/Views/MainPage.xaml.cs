@@ -50,12 +50,12 @@ namespace AppOrdineMediciCaserta
             z.leggiDati();
         }
 
-        private async void ButtonElimina_OnClicked(object sender, EventArgs e)
+        private async void BtnInSeguito_OnClicked(object sender, EventArgs e)
         {
             bool esito = await z.EliminaButton(evento);
             if (esito == true)
             {
-                await DisplayAlert("ELIMINA", "L' evento è stato eliminato", "Ok");
+                await DisplayAlert("ELIMINA", "l'evento è nella sezione conferma in seguito", "Ok");
             }
             else
                 await DisplayAlert("ERRORE", "Errore", "Ok");

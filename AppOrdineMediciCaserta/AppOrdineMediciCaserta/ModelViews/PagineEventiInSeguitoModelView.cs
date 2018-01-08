@@ -1,39 +1,39 @@
-﻿using AppOrdineMediciCaserta.Models;
-using AppOrdineMediciCaserta.Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using AppOrdineMediciCaserta.Annotations;
 using AppOrdineMediciCaserta.Database.Data;
-using AppOrdineMediciCaserta.Database.Models;
+using AppOrdineMediciCaserta.Models;
+using AppOrdineMediciCaserta.Services;
 using Xamarin.Forms;
-using Com.OneSignal;
 
 namespace AppOrdineMediciCaserta.ModelViews
 {
-    class MainPageModelView : INotifyPropertyChanged
+   public  class PagineEventiInSeguitoModelView: INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-
-        private List<DatiEvento> listaEventi = new List<DatiEvento>();
-
+        private List<DatiEvento> listaEventiSeguito = new List<DatiEvento>();
+        private String visibile = "false";
         private DatiEvento dettagli;
         private Medico user = new Medico();
         private string token;
         ImageSource immagine;
         private bool isBusy = false;
-
-
-        private String visibile = "false";
-
         private bool _isRefreshing = false;
 
+        public PagineEventiInSeguitoModelView(string token)
+        {
+            this.token = token;
+            IsBusy = true;
+            leggiDati();
+        }
+        
         public bool IsBusy
         {
             get
@@ -43,25 +43,21 @@ namespace AppOrdineMediciCaserta.ModelViews
             set
             {
                 isBusy = (value);
-                OnPropertychanged();
+                OnPropertyChanged();
             }
         }
-
-        /* Setta la lista da visualizare nel Binding*/
-        public List<DatiEvento> ListaEventi
+        public List<DatiEvento> ListaEventiSeguito
         {
             get
             {
-                return listaEventi;
+                return listaEventiSeguito;
             }
             set
             {
-                listaEventi = new List<DatiEvento>(value);
-                OnPropertychanged();
+                listaEventiSeguito = new List<DatiEvento>(value);
+                OnPropertyChanged();
             }
         }
-    
-
         public string Visibile
         {
             get
@@ -71,7 +67,7 @@ namespace AppOrdineMediciCaserta.ModelViews
             set
             {
                 visibile = "false";
-                OnPropertychanged();
+                OnPropertyChanged();
             }
         }
 
@@ -81,18 +77,18 @@ namespace AppOrdineMediciCaserta.ModelViews
             set
             {
                 _isRefreshing = value;
-                OnPropertychanged(nameof(IsRefreshing));
+                OnPropertyChanged(nameof(IsRefreshing));
             }
         }
         public ICommand RefreshCommand
         {
             get
             {
-                return new Command( () =>
+                return new Command(() =>
                 {
                     IsRefreshing = true;
 
-                    ListaEventi.Clear();
+                    listaEventiSeguito.Clear();
 
                     leggiDati();
 
@@ -101,12 +97,6 @@ namespace AppOrdineMediciCaserta.ModelViews
             }
         }
 
-        private void OnPropertychanged([CallerMemberName] string name = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-        }
-
-        /*Effettua la connessione per ricevere i dati dal server*/
         public async void leggiDati()
         {
             REST<Object, DatiEvento> connessione = new REST<Object, DatiEvento>();
@@ -114,7 +104,8 @@ namespace AppOrdineMediciCaserta.ModelViews
             var medico = LoginData.getUser();
             user.matricola = medico[0].matricola;
             user.token = medico[0].token;
-            user.eliminato = "false";
+            user.eliminato = "true";
+            
             try
             {
                 List = await connessione.PostJsonList(URL.Eventi, user);
@@ -137,9 +128,9 @@ namespace AppOrdineMediciCaserta.ModelViews
                         if (i.confermato == true)
                             i.TestoButtonEliminato = "ELIMINA";
 
-                        listaEventi.Add(i);
+                        listaEventiSeguito.Add(i);
                     }
-                    ListaEventi = listaEventi;
+                    ListaEventiSeguito = listaEventiSeguito;
                     IsBusy = false;
                 }
                 else
@@ -147,9 +138,9 @@ namespace AppOrdineMediciCaserta.ModelViews
                     DatiEvento x = new DatiEvento();
                     x.titolo = "Nessun evento disponibile \n Scorri in basso per aggiornare";
                     x.VisibleError = "false";
-                    listaEventi.Add(x);
+                    listaEventiSeguito.Add(x);
                 }
-                ListaEventi = listaEventi;
+                ListaEventiSeguito = listaEventiSeguito;
                 IsBusy = false;
 
             }
@@ -158,27 +149,19 @@ namespace AppOrdineMediciCaserta.ModelViews
                 DatiEvento x = new DatiEvento();
                 x.titolo = "Nessun evento disponibile \n Scorri in basso per aggiornare";
                 x.VisibleError = "false";
-                listaEventi.Add(x);
-                ListaEventi = listaEventi;
+                listaEventiSeguito.Add(x);
+                ListaEventiSeguito = listaEventiSeguito;
                 IsBusy = false;
             }
+        }
 
-        }
-        /*Costruttore del metodo, avvia la connessione*/
-        public MainPageModelView(string token)
-        {
-            this.token = token;
-            IsBusy = true;
-            leggiDati();
-            
-        }
 
         public void displayButtons(DatiEvento x)
         {
             dettagli = x;
             if (dettagli.VisibleError != "false")
             {
-                foreach (var i in listaEventi)
+                foreach (var i in listaEventiSeguito)
                 {
                     if (i == x)
                     {
@@ -193,11 +176,11 @@ namespace AppOrdineMediciCaserta.ModelViews
                         i.VisibileInfo = "false";
                         i.Visible = "false";
                     }
-                        
+
                 }
-                ListaEventi = listaEventi;
+                ListaEventiSeguito = listaEventiSeguito;
             }
-            
+
         }
 
         public async Task<bool> ConfermaButton(DatiEvento x)
@@ -226,7 +209,17 @@ namespace AppOrdineMediciCaserta.ModelViews
         {
             return dettagli;
         }
-      
 
+
+
+
+        [NotifyPropertyChangedInvocator]
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+     
     }
 }
+

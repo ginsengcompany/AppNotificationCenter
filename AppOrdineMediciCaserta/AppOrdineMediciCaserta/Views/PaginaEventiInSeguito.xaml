@@ -3,18 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:costomControls="clr-namespace:AppOrdineMediciCaserta.CostomControls;assembly=AppOrdineMediciCaserta"
              xmlns:abstractions="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
-             x:Class="AppOrdineMediciCaserta.Views.PaginaEventiAccettati">
+             x:Class="AppOrdineMediciCaserta.Views.PaginaEventiInSeguito"
+             Title="EVENTI NON CONFERMATI">
     <ContentPage.Content>
         <StackLayout>
-            <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"/>
-            <ListView x:Name="listEventiNonAccetati" 
+            <ListView x:Name="listaEventiNonAccettati" 
                       IsPullToRefreshEnabled="True"
                       RefreshCommand="{Binding RefreshCommand}"
                       IsRefreshing="{Binding IsRefreshing}" 
                       BackgroundColor="White"
-                      ItemsSource="{Binding ListaEventiNonAccettati}"  
+                      ItemsSource="{Binding ListaEventiSeguito}"  
                       HasUnevenRows="True"
-                      ItemTapped="ListEventiNonAccetati_OnItemTapped" 
+                      ItemTapped="ListEventi_OnItemTapped" 
                       SeparatorColor="Black" 
                       SeparatorVisibility="Default" >
 
@@ -50,8 +50,9 @@
                                         </StackLayout>
                                     </StackLayout>
                                     <StackLayout Orientation="Horizontal">
-                                       
-
+                                         <Button x:Name="btnConferma" Text="CONFERMA" IsVisible="{Binding Visible}" BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center" Clicked="ButtonConferma_OnClicked"/>
+                                        <Button x:Name="btnElimina" Text="{Binding TestoButtonEliminato}" IsVisible="{Binding VisibileInfo}"  BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center" Clicked="ButtonElimina_OnClicked"/>
+                                        <Button Text="DETTAGLI" Clicked="Button_Clicked" IsVisible="{Binding VisibileInfo}"  BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center"/>
                                     </StackLayout>
                                 </StackLayout>
 

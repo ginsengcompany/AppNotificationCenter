@@ -16,5 +16,10 @@ namespace AppOrdineMediciCaserta.Views
         {
             InitializeComponent();
         }
+
+        private void ListEventiNonAccetati_OnItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

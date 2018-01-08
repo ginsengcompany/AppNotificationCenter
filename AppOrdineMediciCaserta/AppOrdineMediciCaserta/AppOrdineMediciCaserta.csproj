@@ -48,7 +48,9 @@
     <Compile Include="ModelViews\LoginModelView.cs" />
     <Compile Include="ModelViews\MainPageModelView.cs" />
     <Compile Include="ModelViews\PaginaEventiAccettatiModelView.cs" />
+    <Compile Include="ModelViews\PagineEventiInSeguitoModelView.cs" />
     <Compile Include="ModelViews\VisualizzaEventiInDettaglioModelView.cs" />
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Services\REST.cs" />
     <Compile Include="Services\URL.cs" />
     <Compile Include="Views\ListaEventiIoS.xaml.cs">
@@ -63,6 +65,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\PaginaEventiAccettati.xaml.cs">
       <DependentUpon>PaginaEventiAccettati.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PaginaEventiInSeguito.xaml.cs">
+      <DependentUpon>PaginaEventiInSeguito.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Tabbed.xaml.cs">
+      <DependentUpon>Tabbed.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\tabbedIos.xaml.cs">
+      <DependentUpon>tabbedIos.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\VisualizzaEventoInDettaglio.xaml.cs">
       <DependentUpon>VisualizzaEventoInDettaglio.xaml</DependentUpon>
@@ -142,6 +153,24 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\ListaEventiIoS.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\PaginaEventiInSeguito.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Tabbed.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\tabbedIos.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
