@@ -4,5 +4,5 @@
              x:Class="AppOrdineMediciCaserta.Views.tabbedIos"
             xmlns:views="clr-namespace:AppOrdineMediciCaserta.Views;assembly=AppOrdineMediciCaserta">
     <views:ListaEventiIoS></views:ListaEventiIoS>
-    <views:PaginaEventiInSeguito></views:PaginaEventiInSeguito>
+    <views:EventiInSeguitoIoS></views:EventiInSeguitoIoS>
 </TabbedPage>

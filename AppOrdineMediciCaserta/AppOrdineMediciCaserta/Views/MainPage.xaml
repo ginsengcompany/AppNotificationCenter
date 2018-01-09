@@ -55,7 +55,7 @@
                             </StackLayout>
                                 <StackLayout Orientation="Horizontal">
                                         <Button x:Name="btnConferma" Text="Conferma" FontSize="Small" IsVisible="{Binding Visible}" BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center" Clicked="ButtonConferma_OnClicked"/>
-                                        <Button x:Name="btnInSeguito" Text="Posponi" FontSize="Small" IsVisible="{Binding VisibileInfo}"  BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center" Clicked="BtnInSeguito_OnClicked"/>
+                                        <Button x:Name="btnInSeguito" Text="Posponi" FontSize="Small" IsVisible="{Binding Visible}"  BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center" Clicked="BtnInSeguito_OnClicked"/>
                                         <Button Text="DETTAGLI" Clicked="Button_Clicked" FontSize="Small" IsVisible="{Binding VisibileInfo}"  BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center"/>
                                         
                                     </StackLayout>

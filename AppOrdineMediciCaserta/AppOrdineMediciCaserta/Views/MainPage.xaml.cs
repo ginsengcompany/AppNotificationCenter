@@ -55,7 +55,7 @@ namespace AppOrdineMediciCaserta
             bool esito = await z.EliminaButton(evento);
             if (esito == true)
             {
-                await DisplayAlert("ELIMINA", "l'evento è nella sezione conferma in seguito", "Ok");
+                await DisplayAlert("Attenzione", "l'evento è nella sezione eventi non confermati", "Ok");
             }
             else
                 await DisplayAlert("ERRORE", "Errore", "Ok");

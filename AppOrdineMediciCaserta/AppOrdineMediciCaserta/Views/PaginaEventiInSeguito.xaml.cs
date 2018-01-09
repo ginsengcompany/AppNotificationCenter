@@ -20,6 +20,7 @@ namespace AppOrdineMediciCaserta.Views
         public PaginaEventiInSeguito()
         {
             InitializeComponent();
+           
             z = new PagineEventiInSeguitoModelView(token);
             BindingContext = z;
         }
@@ -54,7 +55,7 @@ namespace AppOrdineMediciCaserta.Views
             bool esito = await z.EliminaButton(evento);
             if (esito == true)
             {
-                await DisplayAlert("ELIMINA", "L' evento è stato eliminato", "Ok");
+                await DisplayAlert("Evento", "L' evento è stato eliminato", "Ok");
             }
             else
                 await DisplayAlert("ERRORE", "Errore", "Ok");

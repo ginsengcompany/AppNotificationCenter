@@ -23,6 +23,7 @@ namespace AppOrdineMediciCaserta.Views
             BindingContext = new ModelViews.VisualizzaEventiInDettaglioModelView(evento);
 
         }
-        
+
+       
     }
 }

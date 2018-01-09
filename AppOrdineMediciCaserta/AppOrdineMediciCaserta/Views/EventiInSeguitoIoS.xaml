@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:costomControls="clr-namespace:AppOrdineMediciCaserta.CostomControls;assembly=AppOrdineMediciCaserta"
              xmlns:abstractions="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
-             x:Class="AppOrdineMediciCaserta.Views.PaginaEventiInSeguito"
+             x:Class="AppOrdineMediciCaserta.Views.EventiInSeguitoIoS"
              Title="EVENTI NON CONFERMATI">
     <ContentPage.Content>
         <StackLayout>
@@ -22,14 +22,14 @@
                     <DataTemplate>
                         <costomControls:ExtendedViewCell SelectedBackgroundColor="White">
                             <ViewCell.View>
-                                <StackLayout  BackgroundColor="#e8e8e8" Padding="10" Margin="10">
+                                <StackLayout   Padding="10" Margin="10">
                                     <StackLayout Orientation="Horizontal">
                                         <abstractions:CircleImage   
                                             x:Name="CircleImageEvento"
                                             HeightRequest="50"   
                                             WidthRequest="50"   
                                             Source="{Binding Immagine}"
-                                            Aspect="AspectFill">
+                                            Aspect="AspectFit">
                                         </abstractions:CircleImage>
                                         <StackLayout Orientation="Vertical">
                                             <StackLayout Orientation="Horizontal">
@@ -50,9 +50,9 @@
                                             </StackLayout>
                                         </StackLayout>
                                     </StackLayout>
-                                    <StackLayout Orientation="Horizontal">
-                                         <Button x:Name="btnConferma" Text="CONFERMA" IsVisible="{Binding Visible}" BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center" Clicked="ButtonConferma_OnClicked"/>
-                                        <Button Text="DETTAGLI" Clicked="Button_Clicked" IsVisible="{Binding VisibileInfo}"  BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center"/>
+                                    <StackLayout Spacing="20" Orientation="Horizontal">
+                                        <Button x:Name="btnConferma" Text="CONFERMA" IsVisible="{Binding Visible}" BackgroundColor="White" TextColor="#4b8b80" HorizontalOptions="Center" Clicked="ButtonConferma_OnClicked"/>
+                                        <Button Text="DETTAGLI" Clicked="Button_Clicked" IsVisible="{Binding VisibileInfo}"  BackgroundColor="White" TextColor="#4b8b80" HorizontalOptions="Center"/>
                                     </StackLayout>
                                 </StackLayout>
 

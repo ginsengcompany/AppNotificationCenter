@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace AppOrdineMediciCaserta.ModelViews
@@ -41,6 +42,21 @@ namespace AppOrdineMediciCaserta.ModelViews
                 return titolo;
             }
 
+        }
+        public ICommand LinkSito
+        {
+            get
+            {
+                return new Command(() =>
+                {
+                    Reindirizzamento();
+                });
+            }
+        }
+
+        public void Reindirizzamento()
+        {
+            Device.OpenUri(new Uri(Informazioni));
         }
         public string Sottotitolo
         {

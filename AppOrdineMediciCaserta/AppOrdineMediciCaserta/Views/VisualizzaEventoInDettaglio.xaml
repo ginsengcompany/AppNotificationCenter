@@ -50,6 +50,9 @@
                             <StackLayout Orientation="Vertical" Padding="10,0,10,0" Grid.Column="1" Grid.Row="0" VerticalOptions="CenterAndExpand">
                                 <Label Text="Informazione evento" FontSize="Medium" FontAttributes="Bold" TextColor="#4b8b80" HorizontalOptions="Center"></Label>
                                 <Label Text="{Binding Informazioni}" TextColor="Black" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand"></Label>
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding LinkSito}"></TapGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
                             </StackLayout>
                         </Grid>
                     </StackLayout>
