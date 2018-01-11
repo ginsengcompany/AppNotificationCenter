@@ -31,10 +31,10 @@ namespace AppOrdineMediciCaserta
                 switch (Device.RuntimePlatform)
                 {
                     case Device.iOS:
-                        MainPage = new NavigationPage(new tabbedIos());
+                        MainPage = new NavigationPage(new ListaEventiIoS());
                         break;
                     default:
-                        MainPage = new NavigationPage(new Tabbed());
+                        MainPage = new NavigationPage(new MainPage());
                         break;
                 }
             }

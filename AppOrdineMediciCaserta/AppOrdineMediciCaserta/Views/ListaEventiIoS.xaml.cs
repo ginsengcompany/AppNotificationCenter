@@ -54,7 +54,7 @@ namespace AppOrdineMediciCaserta.Views
             bool esito = await z.EliminaButton(evento);
             if (esito == true)
             {
-                await DisplayAlert("Attenzione", "L'Evento è nella sezione eventi non confermati", "Ok");
+                await DisplayAlert("Attenzione", "L'Evento è stato declinato", "Ok");
             }
             else
                 await DisplayAlert("ERRORE", "Errore", "Ok");
