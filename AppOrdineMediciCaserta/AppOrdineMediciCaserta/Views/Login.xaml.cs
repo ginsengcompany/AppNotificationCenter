@@ -42,10 +42,10 @@ namespace AppOrdineMediciCaserta.Views
                 switch (Device.RuntimePlatform)
                 {
                     case Device.iOS:
-                        App.Current.MainPage = new NavigationPage(new tabbedIos());
+                        App.Current.MainPage = new NavigationPage(new ListaEventiIoS());
                         break;
                     default:
-                        App.Current.MainPage = new NavigationPage(new Tabbed());
+                        App.Current.MainPage = new NavigationPage(new MainPage());
                         break;
                 }
 
