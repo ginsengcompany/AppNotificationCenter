@@ -180,7 +180,7 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AppOrdineMediciCaserta\AppNotificationCenter.csproj">
+    <ProjectReference Include="..\AppNotificationCenter\AppNotificationCenter.csproj">
       <Project>{001D3572-5BC4-4393-ABD2-F8E616D8041E}</Project>
       <Name>AppNotificationCenter</Name>
     </ProjectReference>
