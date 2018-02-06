@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppNotificationCenter.Views.Login">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20,20,20,20" BackgroundColor="#f0ffff">
+                <Image Source="logoOrdineMedici.png" HorizontalOptions="Center"/>
+
+                <StackLayout BackgroundColor="#f0ffff" WidthRequest="250" HorizontalOptions="Center">
+                    <Picker x:Name="Organizzazione" 
+                            ItemDisplayBinding ="{Binding descrizione}"
+                            ItemsSource="{Binding _organizzazionePicker}"
+                            SelectedItem="{Binding _OrganizzazioneSelezionata}"
+                            Title="Seleziona Organizzazione"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center"
+                            WidthRequest="250">
+                    </Picker>
+                </StackLayout>
+                
+                <StackLayout BackgroundColor="#f0ffff" Padding="0,20,0,0" Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="Center">
+                    <Entry  Placeholder="Inserisci la matricola" 
+                            Text="{Binding matricola}" 
+                            HorizontalTextAlignment="Center" 
+                            TextColor="Black" 
+                            FontAttributes="Italic" 
+                            FontSize="Medium"
+                            x:Name="entryMatricola"/>
+                </StackLayout>
+
+                <StackLayout BackgroundColor="#f0ffff" Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="Center" >
+                    <Image Source="button1.png" HeightRequest="90" WidthRequest="120">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Button_Clicked" NumberOfTapsRequired="1"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </StackLayout>
+                
+                <StackLayout Padding="0,10,0,0">
+                    <ProgressBar x:Name="Load"  
+                                 IsEnabled="False" 
+                                 IsVisible="False" 
+                                 WidthRequest="300" 
+                                 HeightRequest="25" 
+                                 VerticalOptions="Center" 
+                                 HorizontalOptions="Center" ></ProgressBar>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

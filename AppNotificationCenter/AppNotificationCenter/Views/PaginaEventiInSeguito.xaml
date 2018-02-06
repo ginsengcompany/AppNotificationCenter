@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:costomControls="clr-namespace:AppNotificationCenter.CostomControls;assembly=AppNotificationCenter"
+             xmlns:abstractions="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             x:Class="AppNotificationCenter.Views.PaginaEventiInSeguito"
+             Title="EVENTI NON CONFERMATI">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="listaEventiNonAccettati" 
+                      IsPullToRefreshEnabled="True"
+                      RefreshCommand="{Binding RefreshCommand}"
+                      IsRefreshing="{Binding IsRefreshing}" 
+                      BackgroundColor="White"
+                      ItemsSource="{Binding ListaEventiSeguito}"  
+                      HasUnevenRows="True"
+                      ItemTapped="ListEventi_OnItemTapped" 
+                      SeparatorColor="Black" 
+                      SeparatorVisibility="Default" >
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <costomControls:ExtendedViewCell SelectedBackgroundColor="White">
+                            <ViewCell.View>
+                                <StackLayout  BackgroundColor="#e8e8e8" Padding="10" Margin="10">
+                                    <StackLayout Orientation="Horizontal">
+                                        <abstractions:CircleImage   
+                                            x:Name="CircleImageEvento"
+                                            HeightRequest="50"   
+                                            WidthRequest="50"   
+                                            Source="{Binding Immagine}"
+                                            Aspect="AspectFill">
+                                        </abstractions:CircleImage>
+                                        <StackLayout Orientation="Vertical">
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="{Binding titolo}" FontAttributes="Bold" FontSize="Medium" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="{Binding data}" FontSize="Medium" VerticalOptions="Center" VerticalTextAlignment="Center" IsVisible="{Binding VisibleError}"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+
+                                                <Label Text="Evento Confermato" FontSize="Medium"  IsVisible="{Binding confermato}" VerticalOptions="Center" HorizontalOptions="Center" TextColor="#4b8b80" VerticalTextAlignment="Center" />
+
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+
+                                                <Label Text="{Binding luogo}" FontSize="Medium"  IsVisible="{Binding VisibileInfo}" VerticalOptions="Center" VerticalTextAlignment="Center" />
+
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                         <Button x:Name="btnConferma" Text="CONFERMA" IsVisible="{Binding Visible}" BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center" Clicked="ButtonConferma_OnClicked"/>
+                                        <Button Text="DETTAGLI" Clicked="Button_Clicked" IsVisible="{Binding VisibileInfo}"  BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center"/>
+                                    </StackLayout>
+                                </StackLayout>
+
+                            </ViewCell.View>
+                        </costomControls:ExtendedViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout VerticalOptions="End">
+                <Label Text ="Scorri verso il basso per aggiornare" IsVisible="{Binding VisibleError}" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
