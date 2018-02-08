@@ -36,11 +36,9 @@
 	<array>
 		<string>arm64</string>
 	</array>
-	<key>XSAppIconAssets</key>
-	<string>Resources/Assets.xcassets/AppIcons.appiconset</string>
-	<key>XSLaunchImageAssets</key>
-	<string>Resources/Assets.xcassets/LaunchImage.launchimage</string>
 	<key>UILaunchStoryboardName</key>
+	<string>(non impostato)</string>
+	<key>UIMainStoryboardFile</key>
 	<string>LaunchScreen</string>
 </dict>
 </plist>
