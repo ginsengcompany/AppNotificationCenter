@@ -21,7 +21,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>AppNotificationCenter</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.AK12.AppOrdineMediciCaserta</string>
+	<string>com.AK12.AppNotificationCenter</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>CFBundleName</key>
@@ -38,5 +38,7 @@
 	<array>
 		<string>arm64</string>
 	</array>
+	<key>XSAppIconAssets</key>
+	<string>Resources/Assets.xcassets/AppIcons.appiconset</string>
 </dict>
 </plist>

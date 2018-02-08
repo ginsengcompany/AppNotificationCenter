@@ -68,13 +68,14 @@
     <OutputPath>bin\iPhone\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
+    <MtouchArch>ARM64</MtouchArch>
     <ConsolePause>false</ConsolePause>
-    <CodesignKey>iPhone Distribution: Maurizio Fucile (E3G3DWMZU6)</CodesignKey>
+    <CodesignKey>iPhone Distribution: AK-12 SRL (E3G3DWMZU6)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <CodesignProvision>AppOrdineMediciCaserta</CodesignProvision>
+    <CodesignProvision>AppNotificationCenter</CodesignProvision>
     <MtouchUseLlvm>true</MtouchUseLlvm>
     <BuildIpa>true</BuildIpa>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
     <DebugType>none</DebugType>
@@ -301,9 +302,6 @@
     <ImageAsset Include="Resources\Assets.xcassets\AppIcons.appiconset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Resources\Assets.xcassets\AppIcons.appiconset\icon-1024.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Resources\Assets.xcassets\AppIcons.appiconset\Icon-167.png">
       <Visible>false</Visible>
     </ImageAsset>
@@ -331,15 +329,10 @@
     <ImageAsset Include="Resources\Assets.xcassets\AppIcons.appiconset\Icon-76@2x.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Resources\Assets.xcassets\AppIcons.appiconset\Icon-Small.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Assets.xcassets\AppIcons.appiconset\Icon-Small@2x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Assets.xcassets\AppIcons.appiconset\Icon-Small@3x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcons.appiconset\Icon-29x29%402x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcons.appiconset\Icon-29x29%403x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcons.appiconset\Icon-29x29%401x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcons.appiconset\Icon-marketing-1024x1024.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
