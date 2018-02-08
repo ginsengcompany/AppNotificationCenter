@@ -26,13 +26,15 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <MtouchArch>x86_64</MtouchArch>
-    <MtouchLink>None</MtouchLink>
+    <MtouchLink>SdkOnly</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
-    <CodesignKey>iPhone Developer: Maurizio Fucile (W5GJS3NBU5)</CodesignKey>
+    <CodesignKey>iPhone Developer</CodesignKey>
     <CodesignProvision>VS: com.AK12.AppOrdineMediciCaserta Development</CodesignProvision>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchExtraArgs>--registrar:static</MtouchExtraArgs>
     <MtouchHttpClientHandler>CFNetworkHandler</MtouchHttpClientHandler>
+    <MtouchSdkVersion>11.2</MtouchSdkVersion>
+    <OptimizePNGs>true</OptimizePNGs>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
