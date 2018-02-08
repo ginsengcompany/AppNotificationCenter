@@ -1,13 +1,7 @@
 ﻿using AppNotificationCenter.Database.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using AppNotificationCenter.Views;
 using Xamarin.Forms;
 using Com.OneSignal;
-using System.Diagnostics;
 
 namespace AppNotificationCenter
 {

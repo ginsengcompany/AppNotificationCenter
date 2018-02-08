@@ -104,10 +104,10 @@ namespace AppNotificationCenter.Services
             List<T> Item = new List<T>();
             HttpClient client = new HttpClient();
             var uri = new Uri(string.Format(url, string.Empty));
-            var response = await client.GetStringAsync(uri);
-            warning = response;
             try
             {
+                var response = await client.GetStringAsync (uri);
+                warning = response;
                 var isValid = JToken.Parse(response);
                 Item = JsonConvert.DeserializeObject<List<T>>(response);
                 return Item;
