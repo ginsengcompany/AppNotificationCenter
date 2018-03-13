@@ -4,14 +4,14 @@
              x:Class="AppNotificationCenter.Views.Login">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout Padding="20,20,20,20" BackgroundColor="#f0ffff">
+            <StackLayout Padding="20,20,20,20">
                 <Image Source="logoOrdineMedici.png" HorizontalOptions="Center"/>
 
-                <StackLayout BackgroundColor="#f0ffff" WidthRequest="250" HorizontalOptions="Center">
+                <StackLayout WidthRequest="250" HorizontalOptions="Center">
                     <Picker x:Name="Organizzazione" 
                             ItemDisplayBinding ="{Binding descrizione}"
                             ItemsSource="{Binding _organizzazionePicker}"
-                            SelectedItem="{Binding _OrganizzazioneSelezionata}"
+                            SelectedIndexChanged="organizzazioneSelected"
                             Title="Seleziona Organizzazione"
                             VerticalOptions="Center"
                             HorizontalOptions="Center"
@@ -19,17 +19,24 @@
                     </Picker>
                 </StackLayout>
                 
-                <StackLayout BackgroundColor="#f0ffff" Padding="0,20,0,0" Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="Center">
-                    <Entry  Placeholder="Inserisci la matricola" 
-                            Text="{Binding matricola}" 
+                <StackLayout Padding="0,10,0,0" Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <Entry  Placeholder="user name" 
+                            Text="{Binding _userName}" 
                             HorizontalTextAlignment="Center" 
                             TextColor="Black" 
                             FontAttributes="Italic" 
                             FontSize="Medium"
-                            x:Name="entryMatricola"/>
+                            x:Name="entryUserName"/>
+                    <Entry  Placeholder="password" 
+                            Text="{Binding _password}" 
+                            HorizontalTextAlignment="Center" 
+                            TextColor="Black" 
+                            FontAttributes="Italic" 
+                            FontSize="Medium"
+                            x:Name="entryPassword"/>
                 </StackLayout>
 
-                <StackLayout BackgroundColor="#f0ffff" Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="Center" >
+                <StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="Center" >
                     <Image Source="button1.png" HeightRequest="90" WidthRequest="120">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Tapped="Button_Clicked" NumberOfTapsRequired="1"/>

@@ -8,7 +8,8 @@ namespace AppNotificationCenter.Models
 {
     public class Utente
     {
-        public string matricola { get; set; }
+        public string nomeUtente { get; set; }
+        public string password { get; set; }
         public string organizzazione { get; set; }
         public string token { get; set; }
         public string eliminato { get; set; }

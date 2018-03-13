@@ -13,7 +13,6 @@ namespace AppNotificationCenter.ModelViews
     {
         private Utente user = new Utente();
         private List<Organizzazione> organizzazionePicker = new List<Organizzazione>();
-        private Organizzazione OrganizzazioneSelezionata = new Organizzazione();
 
         public List<Organizzazione> _organizzazionePicker
         {
@@ -28,32 +27,32 @@ namespace AppNotificationCenter.ModelViews
             }
         }
 
-        public Organizzazione _OrganizzazioneSelezionata
+        public string _nomeUtente
         {
             get
             {
-                return OrganizzazioneSelezionata;
+                return user.nomeUtente;
             }
             set
             {
-                OrganizzazioneSelezionata = value;
+                user.nomeUtente = value;
                 OnPropertyChanged();
             }
         }
 
-        public string matricola
+        public string _password
         {
             get
             {
-                return user.matricola;
+                return user.password;
             }
             set
             {
-                user.matricola = value;
+                user.password = value;
                 OnPropertyChanged();
             }
         }
-
+        
         public string token
         {
             get
@@ -89,22 +88,27 @@ namespace AppNotificationCenter.ModelViews
 
         public LoginModelView()
         {
-            matricola = "";
+            _nomeUtente = "";
+            _password = "";
             token = "";
             organizzazione = "";
             organizzazioniDisponibli();
+        }
+
+        public void organizzazioneScelta(Organizzazione OrganizzazioneSelezionata)
+        {
+            user.organizzazione = OrganizzazioneSelezionata.cod_org;
         }
 
         public async Task<bool> login()
         {
             token = App.Current.Properties["token"].ToString();
             REST<Utente, bool> rest = new REST<Utente, bool>();
-            user.organizzazione = _OrganizzazioneSelezionata.cod_org;
             bool response = await rest.PostJson(URL.Login, user);
             if (response)
             {
                 await App.Current.MainPage.DisplayAlert("Login", "Login Effettuata con successo", "OK");
-                LoginData.InsertUser(new TbLogin(user.matricola, user.token, user.organizzazione));
+                LoginData.InsertUser(new TbLogin(user.nomeUtente, user.password, user.token, user.organizzazione));
                 return true;
             }
             else

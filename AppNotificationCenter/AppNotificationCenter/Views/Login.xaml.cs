@@ -1,4 +1,5 @@
-﻿using AppNotificationCenter.ModelViews;
+﻿using AppNotificationCenter.Models;
+using AppNotificationCenter.ModelViews;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -10,6 +11,8 @@ namespace AppNotificationCenter.Views
     {
         private LoginModelView z;
         private bool access;
+        private Organizzazione org = new Organizzazione();
+
 
         public Login()
         {
@@ -18,11 +21,25 @@ namespace AppNotificationCenter.Views
             BindingContext = z;
         }
 
+        private void organizzazioneSelected(object sender, EventArgs args)
+        {
+            var a = sender as Picker;
+            if (a.SelectedIndex != -1)
+            {
+                org = a.SelectedItem as Organizzazione;
+                z.organizzazioneScelta(org);
+            }
+        }
+
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            if ((z._OrganizzazioneSelezionata.cod_org == "" && entryMatricola.Text == "") || (z._OrganizzazioneSelezionata.cod_org != "" && entryMatricola.Text == "") || (z._OrganizzazioneSelezionata.cod_org == "" && entryMatricola.Text != "")) 
+            if (string.IsNullOrEmpty(org.cod_org)) 
             {
-                await DisplayAlert("Attenzione", "Inserire tutti i campi!", "Ok");
+                await DisplayAlert("Attenzione", "Scegliere l'organizzazione di appartenneza!", "Ok.");
+            }
+            else if (entryUserName.Text == "" || entryPassword.Text == "") 
+            {
+                await DisplayAlert("Attenzione", "Completare tutti i campi!", "Ok.");
             }
             else
             {

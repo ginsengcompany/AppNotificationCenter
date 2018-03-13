@@ -23,7 +23,6 @@ namespace AppNotificationCenter.Services
             warning = response;
             try
             {
-
                 var isValid = JToken.Parse(response);
                 JArray jObject = JArray.Parse(response);
                 Items = JsonConvert.DeserializeObject<List<T>>(response);
