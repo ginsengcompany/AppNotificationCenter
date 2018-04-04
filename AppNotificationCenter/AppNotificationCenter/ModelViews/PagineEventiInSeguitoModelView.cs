@@ -102,7 +102,7 @@ namespace AppNotificationCenter.ModelViews
             REST<Object, DatiEvento> connessione = new REST<Object, DatiEvento>();
             List<DatiEvento> List = new List<DatiEvento>();
             var medico = LoginData.getUser();
-            user.nomeUtente = medico[0].nomeUtente;
+            user.username = medico[0].username;
             user.token = medico[0].token;
             user.eliminato = "true";
             

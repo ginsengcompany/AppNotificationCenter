@@ -16,13 +16,25 @@
                       RefreshCommand="{Binding RefreshCommand}"
                       IsRefreshing="{Binding IsRefreshing}" 
                       BackgroundColor="White"
-                      ItemsSource="{Binding ListaEventi}"  
+                      ItemsSource="{Binding GroupDatiEvento}"
+                      IsGroupingEnabled="true"
                       HasUnevenRows="True"
                       ItemTapped="ListEventi_OnItemTapped" 
                       SeparatorColor="Black" 
                       SeparatorVisibility="Default" >
-               
-                    <ListView.ItemTemplate>
+                <ListView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout BackgroundColor="#4b8b80" Orientation="Vertical" Margin="5">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Heading}" FontSize="Large" TextColor="White" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.GroupHeaderTemplate>
+
+                <ListView.ItemTemplate>
                     <DataTemplate>
                         <customControls:ExtendedViewCell SelectedBackgroundColor="White">
                         <ViewCell.View>

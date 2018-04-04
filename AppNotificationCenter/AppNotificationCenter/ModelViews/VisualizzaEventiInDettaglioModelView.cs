@@ -144,28 +144,38 @@ namespace AppNotificationCenter.ModelViews
         }
         public void inserimentoDati()
         {
-            Titolo = dettagliEvento.titolo;
-            Sottotitolo = dettagliEvento.sottotitolo;
-            Relatori = dettagliEvento.relatori;
+            if (dettagliEvento.tipo == "1")
+            {
+                Titolo = dettagliEvento.titolo;
+                Sottotitolo = dettagliEvento.sottotitolo;
+                Relatori = dettagliEvento.relatori;
 
 
-            Data = "Data evento: " + dettagliEvento.data.Day.ToString() + "-" + dettagliEvento.data.Month + "-" +
-                   dettagliEvento.data.Year;
-            Luogo = dettagliEvento.luogo;
-            Informazioni = dettagliEvento.informazioni;
-            Descrizione = dettagliEvento.descrizione;
-            string img = "";
-            if (dettagliEvento.immagine.Contains("jpeg;"))
-            {
-                img = dettagliEvento.immagine.Substring(23);
+                /*Data = "Data evento: " + dettagliEvento.data.Day.ToString() + "-" + dettagliEvento.data.Month + "-" +
+                       dettagliEvento.data.Year;*/
+                Luogo = dettagliEvento.luogo;
+                Informazioni = dettagliEvento.informazioni;
+                Descrizione = dettagliEvento.descrizione;
+                string img = "";
+                if (dettagliEvento.immagine.Contains("jpeg;"))
+                {
+                    img = dettagliEvento.immagine.Substring(23);
+                }
+                else if (dettagliEvento.immagine.Contains("png;") || dettagliEvento.immagine.Contains("jpg;"))
+                {
+                    img = dettagliEvento.immagine.Substring(22);
+                }
+
+                Immagine = Xamarin.Forms.ImageSource.FromStream(
+                    () => new MemoryStream(Convert.FromBase64String(img)));
             }
-            else if (dettagliEvento.immagine.Contains("png;") || dettagliEvento.immagine.Contains("jpg;"))
+            else
             {
-                img = dettagliEvento.immagine.Substring(22);
+                Titolo = dettagliEvento.titolo;
+                Sottotitolo = dettagliEvento.sottotitolo;
+                Descrizione = dettagliEvento.descrizione;
+                Informazioni = dettagliEvento.informazioni;
             }
-            Immagine = Xamarin.Forms.ImageSource.FromStream(
-           () => new MemoryStream(Convert.FromBase64String(img)));
-       
         }
     }
 }

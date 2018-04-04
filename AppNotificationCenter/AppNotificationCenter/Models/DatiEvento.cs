@@ -10,19 +10,20 @@ namespace AppNotificationCenter.Models
 {
     public class DatiEvento
     {
-        public string _id_medico { get; set; }
+        public string _id_utente { get; set; }
         public string _id_evento { get; set; }
         public string organizzazione { get; set; }
         public bool confermato { get; set; }
         public bool eliminato { get; set; }
         public string titolo { get; set; }
         public string sottotitolo { get; set; }
-        public DateTime data { get; set; }
+        public string data { get; set; }
         public string luogo { get; set; }
         public string informazioni { get; set; }
         public string relatori { get; set; }
         public string descrizione { get; set; }
         public string immagine { get; set; }
+        public string tipo { get; set; }
         public string Visible { get; set; } = "false";
         public string VisibileInfo { get; set; } = "false";
         public string VisibleError { get; set; } = "true";

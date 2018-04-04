@@ -2,20 +2,25 @@
 using AppNotificationCenter.Services;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Globalization;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using AppNotificationCenter.Database.Data;
+using AppNotificationCenter.Database.Models;
 using Xamarin.Forms;
 
 namespace AppNotificationCenter.ModelViews
 {
     class MainPageModelView : INotifyPropertyChanged
     {
+        ObservableCollection<GroupDatiEvento> groupDatiEvento = new ObservableCollection<GroupDatiEvento>();
         public event PropertyChangedEventHandler PropertyChanged;
         private List<DatiEvento> listaEventi = new List<DatiEvento>();
+        private List<DatiEvento> listaNote = new List<DatiEvento>();
         private Utente user = new Utente();
         private DatiEvento dettagli;
         public ImageSource immagine;
@@ -23,6 +28,8 @@ namespace AppNotificationCenter.ModelViews
         private string token;
         private bool isBusy = false;
         private bool _isRefreshing = false;
+        private DateTime formaDateTime;
+        private string cultureName = "it-IT";
 
         public bool IsBusy
         {
@@ -47,6 +54,30 @@ namespace AppNotificationCenter.ModelViews
             set
             {
                 listaEventi = new List<DatiEvento>(value);
+                OnPropertychanged();
+            }
+        }
+
+        public List<DatiEvento> ListaNote
+        {
+            get
+            {
+                return listaNote;
+            }
+            set
+            {
+                listaNote = new List<DatiEvento>(value);
+                OnPropertychanged();
+            }
+        }
+
+
+        public ObservableCollection<GroupDatiEvento> GroupDatiEvento
+        {
+            get { return groupDatiEvento; }
+            set
+            {
+                groupDatiEvento = new ObservableCollection<GroupDatiEvento>(value);
                 OnPropertychanged();
             }
         }
@@ -82,6 +113,7 @@ namespace AppNotificationCenter.ModelViews
                     IsRefreshing = true;
 
                     ListaEventi.Clear();
+                    ListaNote.Clear();
 
                     leggiDati();
 
@@ -98,10 +130,11 @@ namespace AppNotificationCenter.ModelViews
         /*Effettua la connessione per ricevere i dati dal server*/
         public async void leggiDati()
         {
+            ObservableCollection<GroupDatiEvento> groupList = new ObservableCollection<GroupDatiEvento>();
             REST<Object, DatiEvento> connessione = new REST<Object, DatiEvento>();
             List<DatiEvento> List = new List<DatiEvento>();
             var medico = LoginData.getUser();
-            user.nomeUtente = medico[0].nomeUtente;
+            user.username = medico[0].username;
             user.token = medico[0].token;
             user.organizzazione = medico[0].organizzazione;
             user.eliminato = "false";
@@ -112,24 +145,69 @@ namespace AppNotificationCenter.ModelViews
                 {
                     foreach (var i in List)
                     {
-                        string img = "";
-                        if (i.immagine.Contains("jpeg;"))
+                        
+                        if (i.tipo == "1")
                         {
-                            img = i.immagine.Substring(23);
-                        }
-                        else
-                        {
-                            img = i.immagine.Substring(22);
-                        }
-                        immagine = Xamarin.Forms.ImageSource.FromStream(
-                            () => new MemoryStream(Convert.FromBase64String(img)));
-                        i.Immagine = immagine;
-                        if (i.confermato == true)
-                            i.TestoButtonEliminato = "ELIMINA";
+                            CultureInfo culture = new CultureInfo(cultureName);
+                            //i.data = i.data.Substring(0, 10);
+                            formaDateTime = Convert.ToDateTime(i.data,culture);
+                            i.data = formaDateTime.ToString().Substring(0, 10);
+                            string img = "";
+                            if (!String.IsNullOrEmpty(img))
+                            {
+                                if (i.immagine.Contains("jpeg;"))
+                                {
+                                    img = i.immagine.Substring(23);
+                                }
+                                else
+                                {
+                                    img = i.immagine.Substring(22);
+                                }
 
-                        listaEventi.Add(i);
+                                immagine = Xamarin.Forms.ImageSource.FromStream(
+                                    () => new MemoryStream(Convert.FromBase64String(img)));
+                                i.Immagine = immagine;
+                            }
+
+                            if (i.confermato == true)
+                                i.TestoButtonEliminato = "ELIMINA";
+                            listaEventi.Add(i);
+                        }
                     }
-                    ListaEventi = listaEventi;
+                    GroupDatiEvento cGroupListEventi = new GroupDatiEvento(listaEventi);
+                    cGroupListEventi.Heading = "Eventi";
+                    groupList.Add(cGroupListEventi);
+                    foreach (var i in List)
+                    {
+                        if (i.tipo == "2")
+                        {
+                            string img = "";
+                            if (!String.IsNullOrEmpty(img))
+                            {
+                                if (i.immagine.Contains("jpeg;"))
+                                {
+                                    img = i.immagine.Substring(23);
+                                }
+                                else
+                                {
+                                    img = i.immagine.Substring(22);
+                                }
+
+                                immagine = Xamarin.Forms.ImageSource.FromStream(
+                                    () => new MemoryStream(Convert.FromBase64String(img)));
+                                i.Immagine = immagine;
+                            }
+
+                            if (i.confermato == true)
+                                i.TestoButtonEliminato = "ELIMINA";
+                            listaNote.Add(i);
+                        }
+                    }
+                    GroupDatiEvento cGroupListNote = new GroupDatiEvento(listaNote);
+                    cGroupListNote.Heading = "Note";
+                    groupList.Add(cGroupListNote);
+                    //ListaEventi = listaEventi;
+                    GroupDatiEvento = groupList;
                     IsBusy = false;
                 }
                 else
@@ -138,8 +216,10 @@ namespace AppNotificationCenter.ModelViews
                     x.titolo = "Nessun evento disponibile \n Scorri in basso per aggiornare";
                     x.VisibleError = "false";
                     listaEventi.Add(x);
+                    listaNote.Add(x);
                 }
-                ListaEventi = listaEventi;
+                //ListaEventi = listaEventi;
+                GroupDatiEvento = groupList;
                 IsBusy = false;
 
             }
@@ -149,7 +229,9 @@ namespace AppNotificationCenter.ModelViews
                 x.titolo = "Nessun evento disponibile \n Scorri in basso per aggiornare";
                 x.VisibleError = "false";
                 listaEventi.Add(x);
-                ListaEventi = listaEventi;
+                listaNote.Add(x);
+                //ListaEventi = listaEventi;
+                GroupDatiEvento = groupList;
                 IsBusy = false;
             }
 
@@ -178,6 +260,10 @@ namespace AppNotificationCenter.ModelViews
                             i.Visible = "true";
                             i.VisibileInfo = "true";
                         }
+                        else
+                        {
+                            i.VisibileInfo = "true";
+                        }
                     }
                     else
                     {
@@ -185,7 +271,33 @@ namespace AppNotificationCenter.ModelViews
                         i.Visible = "false";
                     }
                 }
-                ListaEventi = listaEventi;
+                //ListaEventi = listaEventi;
+                GroupDatiEvento = groupDatiEvento;
+            }
+            if (dettagli.VisibleError != "false")
+            {
+                foreach (var i in listaNote)
+                {
+                    if (i == x)
+                    {
+                        if (i.confermato != true)
+                        {
+                            i.Visible = "true";
+                            i.VisibileInfo = "true";
+                        }
+                        else
+                        {
+                            i.VisibileInfo = "true";
+                        }
+                    }
+                    else
+                    {
+                        i.VisibileInfo = "false";
+                        i.Visible = "false";
+                    }
+                }
+                //ListaEventi = listaEventi;
+                GroupDatiEvento = groupDatiEvento;
             }
         }
 

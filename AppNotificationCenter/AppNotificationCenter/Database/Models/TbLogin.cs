@@ -12,8 +12,8 @@ namespace AppNotificationCenter.Database.Models
     {
         [PrimaryKey, AutoIncrement]
         public int id { get; set; }
-        [NotNull, Column("nomeUtente")]
-        public string nomeUtente { get; set; }
+        [NotNull, Column("username")]
+        public string username { get; set; }
         [NotNull, Column("password")]
         public string password { get; set; }
         [NotNull,Column("token")]
@@ -23,9 +23,9 @@ namespace AppNotificationCenter.Database.Models
 
         public TbLogin() { }
 
-        public TbLogin(string nomeUtente, string password, string token, string organizzazione)
+        public TbLogin(string username, string password, string token, string organizzazione)
         {
-            this.nomeUtente = nomeUtente;
+            this.username = username;
             this.password = password;
             this.token = token;
             this.organizzazione = organizzazione;

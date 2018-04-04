@@ -47,6 +47,8 @@ namespace AppNotificationCenter
             else
               await  DisplayAlert("ERRORE", "Errore", "Ok");
             z.ListaEventi.Clear();
+            z.ListaNote.Clear();
+            z.GroupDatiEvento.Clear();
             z.leggiDati();
         }
 
@@ -60,6 +62,8 @@ namespace AppNotificationCenter
             else
                 await DisplayAlert("ERRORE", "Errore", "Ok");
             z.ListaEventi.Clear();
+            z.ListaNote.Clear();
+            z.GroupDatiEvento.Clear();
             z.leggiDati();
         }
     }

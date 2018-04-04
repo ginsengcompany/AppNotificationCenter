@@ -21,7 +21,7 @@
                 
                 <StackLayout Padding="0,10,0,0" Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
                     <Entry  Placeholder="user name" 
-                            Text="{Binding _userName}" 
+                            Text="{Binding _username}" 
                             HorizontalTextAlignment="Center" 
                             TextColor="Black" 
                             FontAttributes="Italic" 

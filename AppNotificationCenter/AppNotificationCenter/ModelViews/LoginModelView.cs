@@ -31,11 +31,11 @@ namespace AppNotificationCenter.ModelViews
         {
             get
             {
-                return user.nomeUtente;
+                return user.username;
             }
             set
             {
-                user.nomeUtente = value;
+                user.username = value;
                 OnPropertyChanged();
             }
         }
@@ -108,7 +108,7 @@ namespace AppNotificationCenter.ModelViews
             if (response)
             {
                 await App.Current.MainPage.DisplayAlert("Login", "Login Effettuata con successo", "OK");
-                LoginData.InsertUser(new TbLogin(user.nomeUtente, user.password, user.token, user.organizzazione));
+                LoginData.InsertUser(new TbLogin(user.username, user.password, user.token, user.organizzazione));
                 return true;
             }
             else
