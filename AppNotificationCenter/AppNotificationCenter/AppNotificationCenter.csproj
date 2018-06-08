@@ -39,6 +39,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CostomControls\CustomEntry.cs" />
     <Compile Include="CostomControls\ExtendedViewCell.cs" />
     <Compile Include="Database\Models\GroupDatiEvento.cs" />
     <Compile Include="Models\DatiEvento.cs" />

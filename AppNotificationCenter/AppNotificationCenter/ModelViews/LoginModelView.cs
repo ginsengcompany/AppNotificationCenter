@@ -2,10 +2,14 @@
 using AppNotificationCenter.Database.Models;
 using AppNotificationCenter.Models;
 using AppNotificationCenter.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
+using System.IO;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace AppNotificationCenter.ModelViews
 {
@@ -13,7 +17,17 @@ namespace AppNotificationCenter.ModelViews
     {
         private Utente user = new Utente();
         private List<Organizzazione> organizzazionePicker = new List<Organizzazione>();
+        private ImageSource _logoOrganizzazione;
 
+        public ImageSource LogoOrganizzazione
+        {
+            get { return _logoOrganizzazione; }
+            set
+            {
+                _logoOrganizzazione = value;
+                OnPropertyChanged();
+            }
+        }
         public List<Organizzazione> _organizzazionePicker
         {
             get
@@ -92,12 +106,14 @@ namespace AppNotificationCenter.ModelViews
             _password = "";
             token = "";
             organizzazione = "";
+            LogoOrganizzazione = "logoOrdineMedici.png";
             organizzazioniDisponibli();
         }
 
         public void organizzazioneScelta(Organizzazione OrganizzazioneSelezionata)
         {
             user.organizzazione = OrganizzazioneSelezionata.cod_org;
+            LogoOrganizzazione= Xamarin.Forms.ImageSource.FromStream( () => new MemoryStream(Convert.FromBase64String(OrganizzazioneSelezionata.logo)));
         }
 
         public async Task<bool> login()

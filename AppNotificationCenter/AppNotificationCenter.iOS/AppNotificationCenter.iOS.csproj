@@ -113,6 +113,7 @@
     <AppExtensionDebugBundleId />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="CostomRenderers\CustomEntryRenderer.cs" />
     <Compile Include="CostomRenderers\ExtendedViewCellRenderer.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />

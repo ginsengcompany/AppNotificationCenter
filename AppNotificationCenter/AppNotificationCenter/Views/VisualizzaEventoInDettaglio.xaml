@@ -2,11 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppNotificationCenter.Views.VisualizzaEventoInDettaglio"
-             Title="{Binding Data}">
+             Title="{Binding Titolo}">
     <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="White">
             <Grid>
-                <Image Source="{Binding Immagine}" HorizontalOptions="Fill" HeightRequest="375" Aspect="AspectFill"  Grid.Row="0"></Image>
+                <Image Source="{Binding Immagine}" HorizontalOptions="Fill" HeightRequest="375"  Aspect="AspectFit"  Grid.Row="0"></Image>
                 <StackLayout BackgroundColor="Black" Opacity="0.9" Grid.Row="0" VerticalOptions="EndAndExpand">
                     <Label Text="{Binding Titolo}" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Large"  TextColor="#4b8b80" ></Label>
                 <Label Text="{Binding Sottotitolo}" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Medium" TextColor="White"></Label>

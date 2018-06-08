@@ -1,11 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ci="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             xmlns:CostomControls="clr-namespace:AppNotificationCenter.CostomControls"
              x:Class="AppNotificationCenter.Views.Login">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="20,20,20,20">
-                <Image Source="logoOrdineMedici.png" HorizontalOptions="Center"/>
+                <Image   
+                                    HeightRequest="150"   
+                                    WidthRequest="150"   
+                                    HorizontalOptions="Center"
+                                    Source="{Binding LogoOrganizzazione}">
+                </Image>
 
                 <StackLayout WidthRequest="250" HorizontalOptions="Center">
                     <Picker x:Name="Organizzazione" 
@@ -18,31 +25,60 @@
                             WidthRequest="250">
                     </Picker>
                 </StackLayout>
-                
-                <StackLayout Padding="0,10,0,0" Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-                    <Entry  Placeholder="user name" 
-                            Text="{Binding _username}" 
-                            HorizontalTextAlignment="Center" 
-                            TextColor="Black" 
-                            FontAttributes="Italic" 
-                            FontSize="Medium"
-                            x:Name="entryUserName"/>
-                    <Entry  Placeholder="password" 
-                            Text="{Binding _password}" 
-                            HorizontalTextAlignment="Center" 
-                            TextColor="Black" 
-                            FontAttributes="Italic" 
-                            FontSize="Medium"
-                            x:Name="entryPassword"/>
-                </StackLayout>
 
-                <StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="Center" >
-                    <Image Source="button1.png" HeightRequest="90" WidthRequest="120">
-                        <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="Button_Clicked" NumberOfTapsRequired="1"/>
-                        </Image.GestureRecognizers>
-                    </Image>
-                </StackLayout>
+
+                <Frame  BackgroundColor="#4b8b80" 
+                        CornerRadius="15"
+                        HasShadow="True"
+                        Margin="20,30,20,40">
+                    <StackLayout  Orientation="Vertical" VerticalOptions="CenterAndExpand" >
+
+                        <CostomControls:CustomEntry CornerRadius="18" 
+                                          HeightRequest="50"
+                                          BorderWidth="3"
+                                          IsCurvedCornersEnabled="True"  
+                                          VerticalOptions="Center"
+                                          HorizontalTextAlignment="Center"   
+                                          Placeholder="Username"  
+                                          Text="{Binding _nomeUtente}"
+                                          x:Name="entryUserName"
+                                          PlaceholderColor="Gray"
+                                          TextColor="Black"  
+                                          FontAttributes="Bold">
+                        </CostomControls:CustomEntry>
+
+                        <CostomControls:CustomEntry CornerRadius="18" 
+                                          HeightRequest="50"
+                                          BorderWidth="3"
+                                          IsPassword="True"
+                                          IsCurvedCornersEnabled="True"  
+                                          VerticalOptions="Center"
+                                          HorizontalTextAlignment="Center"   
+                                          Placeholder="Password"  
+                                          Text="{Binding _password}" 
+                                         x:Name="entryPassword"
+                                          PlaceholderColor="Gray"
+                                          TextColor="Black"  
+                                          FontAttributes="Bold">
+                        </CostomControls:CustomEntry>
+
+
+                        <!-- <Entry  Placeholder="user name" 
+                            Text="{Binding _nomeUtente}" 
+                            HorizontalTextAlignment="Center" 
+                            TextColor="Black" 
+                            FontAttributes="Italic" 
+                            FontSize="Medium"
+                            x:Name="entryUserName"/> -->
+
+                        <StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="Center" >
+
+                            <Button BackgroundColor="White" WidthRequest="100" CornerRadius="10" Clicked="Button_Clicked" Text="Login"></Button>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+             
                 
                 <StackLayout Padding="0,10,0,0">
                     <ProgressBar x:Name="Load"  

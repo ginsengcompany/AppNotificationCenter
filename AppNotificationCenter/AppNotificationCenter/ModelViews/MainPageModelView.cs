@@ -22,7 +22,9 @@ namespace AppNotificationCenter.ModelViews
         private List<DatiEvento> listaEventi = new List<DatiEvento>();
         private List<DatiEvento> listaNote = new List<DatiEvento>();
         private Utente user = new Utente();
+        private bool isVoidEvent = false;
         private DatiEvento dettagli;
+        private string nessunEvento;
         public ImageSource immagine;
         private String visibile = "false";
         private string token;
@@ -30,6 +32,20 @@ namespace AppNotificationCenter.ModelViews
         private bool _isRefreshing = false;
         private DateTime formaDateTime;
         private string cultureName = "it-IT";
+
+
+        public bool IsVoidEvent
+        {
+            get
+            {
+                return isVoidEvent ;
+            }
+            set
+            {
+                isVoidEvent = (value);
+                OnPropertychanged();
+            }
+        }
 
         public bool IsBusy
         {
@@ -95,6 +111,19 @@ namespace AppNotificationCenter.ModelViews
             }
         }
 
+        public string NessunEvento
+        {
+            get
+            {
+                return nessunEvento;
+            }
+            set
+            {
+                nessunEvento = value;
+                OnPropertychanged();
+            }
+        }
+
         public bool IsRefreshing
         {
             get { return _isRefreshing; }
@@ -151,9 +180,9 @@ namespace AppNotificationCenter.ModelViews
                             CultureInfo culture = new CultureInfo(cultureName);
                             //i.data = i.data.Substring(0, 10);
                             formaDateTime = Convert.ToDateTime(i.data,culture);
-                            i.data = formaDateTime.ToString().Substring(0, 10);
+                            i.data = formaDateTime.ToString().Substring(0, 9);
                             string img = "";
-                            if (!String.IsNullOrEmpty(img))
+                            if (!String.IsNullOrEmpty(i.immagine))
                             {
                                 if (i.immagine.Contains("jpeg;"))
                                 {
@@ -214,6 +243,8 @@ namespace AppNotificationCenter.ModelViews
                 {
                     DatiEvento x = new DatiEvento();
                     x.titolo = "Nessun evento disponibile \n Scorri in basso per aggiornare";
+                    IsVoidEvent = true;
+                    NessunEvento= "Nessun evento disponibile \n Scorri in basso per aggiornare";
                     x.VisibleError = "false";
                     listaEventi.Add(x);
                     listaNote.Add(x);
@@ -228,6 +259,8 @@ namespace AppNotificationCenter.ModelViews
                 DatiEvento x = new DatiEvento();
                 x.titolo = "Nessun evento disponibile \n Scorri in basso per aggiornare";
                 x.VisibleError = "false";
+                IsVoidEvent = true;
+                NessunEvento = "Nessun evento disponibile \n Scorri in basso per aggiornare";
                 listaEventi.Add(x);
                 listaNote.Add(x);
                 //ListaEventi = listaEventi;
