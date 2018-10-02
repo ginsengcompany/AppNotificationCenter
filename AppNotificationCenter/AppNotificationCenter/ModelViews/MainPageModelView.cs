@@ -44,6 +44,7 @@ namespace AppNotificationCenter.ModelViews
             {
                 isVoidEvent = (value);
                 OnPropertychanged();
+     
             }
         }
 
@@ -140,7 +141,6 @@ namespace AppNotificationCenter.ModelViews
                 return new Command( () =>
                 {
                     IsRefreshing = true;
-
                     ListaEventi.Clear();
                     ListaNote.Clear();
 
@@ -159,6 +159,7 @@ namespace AppNotificationCenter.ModelViews
         /*Effettua la connessione per ricevere i dati dal server*/
         public async void leggiDati()
         {
+            IsVoidEvent = false;
             ObservableCollection<GroupDatiEvento> groupList = new ObservableCollection<GroupDatiEvento>();
             REST<Object, DatiEvento> connessione = new REST<Object, DatiEvento>();
             List<DatiEvento> List = new List<DatiEvento>();
