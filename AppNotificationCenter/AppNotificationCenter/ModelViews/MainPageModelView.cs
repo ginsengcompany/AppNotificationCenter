@@ -181,7 +181,7 @@ namespace AppNotificationCenter.ModelViews
                             CultureInfo culture = new CultureInfo(cultureName);
                             //i.data = i.data.Substring(0, 10);
                             formaDateTime = Convert.ToDateTime(i.data,culture);
-                            i.data = formaDateTime.ToString().Substring(0, 9);
+                            i.data = formaDateTime.ToString().Substring(0, 10);
                             string img = "";
                             if (!String.IsNullOrEmpty(i.immagine))
                             {
