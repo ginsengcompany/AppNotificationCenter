@@ -26,6 +26,7 @@ namespace AppNotificationCenter.ModelViews
         private DatiEvento dettagli;
         private string nessunEvento;
         public ImageSource immagine;
+        private bool visibileInSeguito=true;
         private String visibile = "false";
         private string token;
         private bool isBusy = false;
@@ -45,6 +46,20 @@ namespace AppNotificationCenter.ModelViews
                 isVoidEvent = (value);
                 OnPropertychanged();
      
+            }
+        }
+
+        public bool VisibileInSeguito
+        {
+            get
+            {
+                return visibileInSeguito;
+            }
+            set
+            {
+                visibileInSeguito = (value);
+                OnPropertychanged();
+
             }
         }
 
