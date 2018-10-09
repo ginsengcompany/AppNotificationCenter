@@ -30,6 +30,7 @@ namespace AppNotificationCenter.Database
             dbpath = Path.Combine(folder.Path, dbname);
             connection = new SQLiteConnection(dbpath);
             connection.CreateTable<TbLogin>();
+            connection.CreateTable<TbUtente>();
         }
     }
 }

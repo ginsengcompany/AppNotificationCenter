@@ -119,12 +119,13 @@ namespace AppNotificationCenter.ModelViews
         public async Task<bool> login()
         {
             token = App.Current.Properties["token"].ToString();
-            REST<Utente, bool> rest = new REST<Utente, bool>();
-            bool response = await rest.PostJson(URL.Login, user);
-            if (response)
+            REST<Utente, Final> rest = new REST<Utente, Final>();
+            var response = await rest.PostJson(URL.Login, user);
+            if (response.status)
             {
                 await App.Current.MainPage.DisplayAlert("Login", "Login Effettuata con successo", "OK");
                 LoginData.InsertUser(new TbLogin(user.username, user.password, user.token, user.organizzazione));
+                UtenzaData.InsertUser(new TbUtente(response.final[0]));
                 return true;
             }
             else
@@ -141,6 +142,7 @@ namespace AppNotificationCenter.ModelViews
             if (response.Count > 0)
             {
                 _organizzazionePicker = response;
+                _nomeUtente = _organizzazionePicker[0].cod_org;
                 return true;
             }
             else

@@ -84,7 +84,7 @@
                             </StackLayout>
                             <StackLayout Orientation="Vertical" Padding="10,0,10,0" Grid.Column="1" Grid.Row="0" VerticalOptions="StartAndExpand" >
                                 <Label Text="Descrizione evento" FontSize="Medium" FontAttributes="Bold" TextColor="#4b8b80" HorizontalOptions="Center"></Label>
-                                <Label TextColor="Black" FontSize="15" HorizontalTextAlignment="Start" Text="{Binding Descrizione} " VerticalOptions="EndAndExpand"></Label>
+                                <Label TextColor="Black" FontSize="15" HorizontalTextAlignment="Center" Text="{Binding Descrizione} " VerticalOptions="EndAndExpand"></Label>
                             </StackLayout>
                         </Grid>
                     </StackLayout>

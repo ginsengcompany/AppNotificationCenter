@@ -45,7 +45,7 @@ namespace AppNotificationCenter
               await  DisplayAlert("CONFERMA", "L'evento è stato confermato", "Ok");
             }
             else
-              await  DisplayAlert("ERRORE", "Errore", "Ok");
+                await DisplayAlert("Attenzione", "L'evento è stato declinato", "Ok");
             z.ListaEventi.Clear();
             z.ListaNote.Clear();
             z.GroupDatiEvento.Clear();
@@ -60,11 +60,16 @@ namespace AppNotificationCenter
                 await DisplayAlert("Attenzione", "L'evento è stato declinato", "Ok");
             }
             else
-                await DisplayAlert("ERRORE", "Errore", "Ok");
+                await DisplayAlert("Attenzione", "Connessione non riuscita, riprovare", "Ok");
             z.ListaEventi.Clear();
             z.ListaNote.Clear();
             z.GroupDatiEvento.Clear();
             z.leggiDati();
+        }
+
+        private void VaiSitoWeb(object sender, EventArgs e)
+        {
+            z.VaiPaginaWeb();
         }
     }
 }

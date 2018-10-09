@@ -68,7 +68,6 @@ namespace AppNotificationCenter.Views
                 }
                 else
                 {
-                    await DisplayAlert("Attenzione", "Connessione non riuscita", "Riprova!");
                     await Load.ProgressTo(0, 2, Easing.Linear);
                 }
             }

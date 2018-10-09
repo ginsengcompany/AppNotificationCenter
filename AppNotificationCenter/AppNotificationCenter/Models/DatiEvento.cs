@@ -13,6 +13,7 @@ namespace AppNotificationCenter.Models
         public string _id_utente { get; set; }
         public string _id_evento { get; set; }
         public string organizzazione { get; set; }
+        public string url_evento { get; set; }
         public bool confermato { get; set; }
         public bool eliminato { get; set; }
         public string titolo { get; set; }
@@ -27,6 +28,10 @@ namespace AppNotificationCenter.Models
         public string Visible { get; set; } = "false";
         public string VisibileInfo { get; set; } = "false";
         public string VisibleError { get; set; } = "true";
+        public string VisibileInSeguito { get; set; } = "false";
+        public string VisibleWeb { get; set; } = "false";
+
+
         public ImageSource Immagine { get; set; }
         public string TestoButtonEliminato { get; set; } = "ELIMINA";
     }

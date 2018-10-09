@@ -41,11 +41,14 @@
     </Compile>
     <Compile Include="CostomControls\CustomEntry.cs" />
     <Compile Include="CostomControls\ExtendedViewCell.cs" />
+    <Compile Include="Database\Data\UtenzaData.cs" />
     <Compile Include="Database\Models\GroupDatiEvento.cs" />
+    <Compile Include="Database\Models\TbUtente.cs" />
     <Compile Include="Models\DatiEvento.cs" />
     <Compile Include="Database\Database.cs" />
     <Compile Include="Database\Data\LoginData.cs" />
     <Compile Include="Database\Models\TbLogin.cs" />
+    <Compile Include="Models\Final.cs" />
     <Compile Include="Models\Organizzazione.cs" />
     <Compile Include="Models\Utente.cs" />
     <Compile Include="ModelViews\LoginModelView.cs" />
@@ -75,6 +78,9 @@
     </Compile>
     <Compile Include="Views\PaginaEventiInSeguito.xaml.cs">
       <DependentUpon>PaginaEventiInSeguito.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PaginaProfiloUtente.xaml.cs">
+      <DependentUpon>PaginaProfiloUtente.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Tabbed.xaml.cs">
       <DependentUpon>Tabbed.xaml</DependentUpon>
@@ -189,6 +195,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\EventiInSeguitoIoS.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\PaginaProfiloUtente.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

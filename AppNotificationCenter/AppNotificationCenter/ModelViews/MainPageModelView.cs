@@ -21,7 +21,9 @@ namespace AppNotificationCenter.ModelViews
         public event PropertyChangedEventHandler PropertyChanged;
         private List<DatiEvento> listaEventi = new List<DatiEvento>();
         private List<DatiEvento> listaNote = new List<DatiEvento>();
+        private List<Utenza>DatiPersonaliUtente = new List<Utenza>();
         private Utente user = new Utente();
+        private string urlScelto;
         private bool isVoidEvent = false;
         private DatiEvento dettagli;
         private string nessunEvento;
@@ -158,7 +160,7 @@ namespace AppNotificationCenter.ModelViews
                     IsRefreshing = true;
                     ListaEventi.Clear();
                     ListaNote.Clear();
-
+                    GroupDatiEvento.Clear();
                     leggiDati();
 
                     IsRefreshing = false;
@@ -298,6 +300,7 @@ namespace AppNotificationCenter.ModelViews
         public void displayButtons(DatiEvento x)
         {
             dettagli = x;
+            urlScelto = x.url_evento;
             if (dettagli.VisibleError != "false")
             {
                 foreach (var i in listaEventi)
@@ -306,18 +309,36 @@ namespace AppNotificationCenter.ModelViews
                     {
                         if (i.confermato != true)
                         {
-                            i.Visible = "true";
-                            i.VisibileInfo = "true";
+                            if (urlScelto != null)
+                            {
+                                i.Visible = "true";
+                                i.VisibileInfo = "true";
+                                i.VisibileInSeguito = "true";
+                                i.VisibleWeb = "true";
+                            }
+                            else
+                            {
+                                i.Visible = "true";
+                                i.VisibileInfo = "true";
+                                i.VisibileInSeguito = "true";
+                                i.VisibleWeb = "false";
+                            }
+                          
+
                         }
                         else
                         {
                             i.VisibileInfo = "true";
+                            i.VisibileInSeguito = "true";
+
                         }
                     }
                     else
                     {
                         i.VisibileInfo = "false";
                         i.Visible = "false";
+                        i.VisibileInSeguito = "false";
+                        i.VisibleWeb = "false";
                     }
                 }
                 //ListaEventi = listaEventi;
@@ -331,23 +352,43 @@ namespace AppNotificationCenter.ModelViews
                     {
                         if (i.confermato != true)
                         {
-                            i.Visible = "true";
-                            i.VisibileInfo = "true";
+                            if (urlScelto != null)
+                            {
+                                i.Visible = "false";
+                                i.VisibileInfo = "true";
+                                i.VisibileInSeguito = "false";
+                                i.VisibleWeb = "true";
+                            }
+                            else
+                            {
+                                i.Visible = "false";
+                                i.VisibileInfo = "true";
+                                i.VisibileInSeguito = "false";
+                                i.VisibleWeb = "false";
+                            }
                         }
                         else
                         {
                             i.VisibileInfo = "true";
+                            i.VisibileInSeguito = "false";
                         }
                     }
                     else
                     {
                         i.VisibileInfo = "false";
                         i.Visible = "false";
+                        i.VisibileInSeguito = "false";
+                        i.VisibleWeb = "false";
                     }
                 }
                 //ListaEventi = listaEventi;
                 GroupDatiEvento = groupDatiEvento;
             }
+        }
+
+        public async void VaiPaginaWeb()
+        {
+            Device.OpenUri(new Uri(urlScelto));
         }
 
         public async Task<bool> ConfermaButton(DatiEvento x)
