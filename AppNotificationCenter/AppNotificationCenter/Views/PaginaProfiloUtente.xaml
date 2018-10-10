@@ -2,15 +2,29 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppNotificationCenter.Views.PaginaProfiloUtente">
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem 
+            Text="Modifica"
+            Order="Primary"
+            Command="{Binding ModificaInfo}"
+            Priority="0"
+            IsEnabled="{Binding IsEnabledModifica}"/>
+
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <Entry Placeholder="Nome" Text="{Binding UtenteProfilo.nome}"></Entry>
-            <Entry Placeholder="Cognome" Text="{Binding UtenteProfilo.cognome}"></Entry>
-            <Entry Placeholder="Specializzazione" Text="{Binding UtenteProfilo.specializzazione}"></Entry>
-            <Entry Placeholder="provincia" Text="{Binding UtenteProfilo.provincia}"></Entry>
-            <Entry Placeholder="Numero telefono" Text="{Binding UtenteProfilo.numero_telefono}"></Entry>
-            <Entry Placeholder="E-Mail" Text="{Binding UtenteProfilo.mail}"></Entry>
-            <Entry Placeholder="Pec" Text="{Binding UtenteProfilo.pec}"></Entry>
+            <Entry Placeholder="Nome" Text="{Binding UtenteProfilo.nome}" IsEnabled="False"></Entry>
+            <Entry Placeholder="Cognome" Text="{Binding UtenteProfilo.cognome}" IsEnabled="False"></Entry>
+            <Entry Placeholder="Specializzazione" Text="{Binding UtenteProfilo.specializzazione}" IsEnabled="False"></Entry>
+            <Entry Placeholder="provincia" Text="{Binding UtenteProfilo.provincia}" IsEnabled="False"></Entry>
+            <Entry Placeholder="Numero telefono" Text="{Binding UtenteProfilo.numero_telefono, Mode=TwoWay}" IsEnabled="{Binding IsEnabled}"></Entry>
+            <Entry Placeholder="E-Mail" Text="{Binding UtenteProfilo.mail, Mode=TwoWay}" IsEnabled="{Binding IsEnabled}"></Entry>
+            <Entry Placeholder="Pec" Text="{Binding UtenteProfilo.pec, Mode=TwoWay}" IsEnabled="{Binding IsEnabled}"></Entry>
+            <StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="EndAndExpand">
+                <Button Text="Conferma" IsVisible="{Binding IsEnabled}" Command="{Binding btnConferma}"/>
+                <Button Text="Annulla" IsVisible ="{Binding IsEnabled}" Command="{Binding btnAnnulla}"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
