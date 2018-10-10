@@ -115,7 +115,13 @@ namespace AppNotificationCenter.ModelViews
             user.organizzazione = OrganizzazioneSelezionata.cod_org;
             LogoOrganizzazione= Xamarin.Forms.ImageSource.FromStream( () => new MemoryStream(Convert.FromBase64String(OrganizzazioneSelezionata.logo)));
         }
-
+        public async Task organizzazioneScelta()
+        {
+            char[] delimiterChars = {'-', '\t' };
+            var temp = user.username.Split(delimiterChars);
+            user.organizzazione = temp[0].ToString();
+            
+        }
         public async Task<bool> login()
         {
             token = App.Current.Properties["token"].ToString();
