@@ -6,8 +6,17 @@
              x:Class="AppNotificationCenter.MainPage"
              xmlns:customControls="clr-namespace:AppNotificationCenter.CostomControls;assembly=AppNotificationCenter"
             BackgroundColor="White"
-             Title="EVENTI"
-             >
+             Title="EVENTI">
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem Name="informazioniPersonali" 
+                     Text="Profilo utente"
+                     Order="Primary"
+                     Command="{Binding visualizzaInfo}"
+                     Priority="0"/>
+
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
         <StackLayout> 
             <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"/>

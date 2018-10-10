@@ -4,9 +4,13 @@
              x:Class="AppNotificationCenter.Views.PaginaProfiloUtente">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Entry Placeholder="Nome" Text="{Binding UtenteProfilo.nome}"></Entry>
+            <Entry Placeholder="Cognome" Text="{Binding UtenteProfilo.cognome}"></Entry>
+            <Entry Placeholder="Specializzazione" Text="{Binding UtenteProfilo.specializzazione}"></Entry>
+            <Entry Placeholder="provincia" Text="{Binding UtenteProfilo.provincia}"></Entry>
+            <Entry Placeholder="Numero telefono" Text="{Binding UtenteProfilo.numero_telefono}"></Entry>
+            <Entry Placeholder="E-Mail" Text="{Binding UtenteProfilo.mail}"></Entry>
+            <Entry Placeholder="Pec" Text="{Binding UtenteProfilo.pec}"></Entry>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

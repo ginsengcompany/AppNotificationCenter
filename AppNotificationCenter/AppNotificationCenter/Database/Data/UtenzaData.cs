@@ -14,9 +14,10 @@ namespace AppNotificationCenter.Database.Data
             return Database.Connection.ExecuteScalar<int>("SELECT COUNT(*) FROM Utente");
         }
 
-        public static List<TbLogin> getUser()
+        public static TbUtente getUser()
         {
-            return Database.Connection.Query<TbLogin>("SELECT * FROM Utente");
+            var temp = Database.Connection.Query<TbUtente>("SELECT * FROM Utente");
+            return temp[0];
         }
 
         public static int InsertUser(TbUtente user)

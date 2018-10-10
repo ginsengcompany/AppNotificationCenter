@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using AppNotificationCenter.Database.Data;
 using AppNotificationCenter.Database.Models;
+using AppNotificationCenter.Views;
 using Xamarin.Forms;
 
 namespace AppNotificationCenter.ModelViews
@@ -167,6 +168,18 @@ namespace AppNotificationCenter.ModelViews
                 });
             }
         }
+
+        public ICommand visualizzaInfo
+        {
+            get
+            {
+                return new Command(() =>
+                    {
+                        App.Current.MainPage.Navigation.PushAsync(new PaginaProfiloUtente());
+                    });
+            }
+        }
+
 
         private void OnPropertychanged([CallerMemberName] string name = "")
         {
