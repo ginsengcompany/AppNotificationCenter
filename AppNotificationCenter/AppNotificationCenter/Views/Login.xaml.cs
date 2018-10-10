@@ -33,11 +33,8 @@ namespace AppNotificationCenter.Views
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(org.cod_org)) 
-            {
-                await DisplayAlert("Attenzione", "Scegliere l'organizzazione di appartenneza!", "Ok.");
-            }
-            else if (entryUserName.Text == "" || entryPassword.Text == "") 
+
+             if (entryUserName.Text == "" || entryPassword.Text == "") 
             {
                 await DisplayAlert("Attenzione", "Completare tutti i campi!", "Ok.");
             }
@@ -45,6 +42,7 @@ namespace AppNotificationCenter.Views
             {
                 Load.IsVisible = true;
                 Load.IsEnabled = true;
+                await z.organizzazioneScelta();
                 await Load.ProgressTo(1, 1500, Easing.SinIn);
                 try
                 {
