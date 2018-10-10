@@ -129,10 +129,20 @@ namespace AppNotificationCenter.ModelViews
             var response = await rest.PostJson(URL.Login, user);
             if (response.status)
             {
-                await App.Current.MainPage.DisplayAlert("Login", "Login Effettuata con successo", "OK");
-                LoginData.InsertUser(new TbLogin(user.username, user.password, user.token, user.organizzazione));
-                UtenzaData.InsertUser(new TbUtente(response.final[0]));
-                return true;
+                if (response.final[0].attivo == false)
+                {
+
+                    await App.Current.MainPage.DisplayAlert("Login", "Utenza Scaduta", "OK");
+                    return false;
+                }
+                else
+                {
+                    //await App.Current.MainPage.DisplayAlert("Login", "Login Effettuata con successo", "OK");
+                    LoginData.InsertUser(new TbLogin(user.username, user.password, user.token, user.organizzazione));
+                    UtenzaData.InsertUser(new TbUtente(response.final[0]));
+                    return true;
+                }
+                
             }
             else
             {
