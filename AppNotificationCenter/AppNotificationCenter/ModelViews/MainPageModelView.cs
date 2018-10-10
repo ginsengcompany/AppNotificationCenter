@@ -355,7 +355,7 @@ namespace AppNotificationCenter.ModelViews
                     }
                 }
                 //ListaEventi = listaEventi;
-                GroupDatiEvento = groupDatiEvento;
+                //GroupDatiEvento = groupDatiEvento;
             }
             if (dettagli.VisibleError != "false")
             {

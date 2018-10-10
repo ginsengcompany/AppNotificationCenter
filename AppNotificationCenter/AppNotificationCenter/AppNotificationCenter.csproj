@@ -51,6 +51,7 @@
     <Compile Include="Models\Final.cs" />
     <Compile Include="Models\Organizzazione.cs" />
     <Compile Include="Models\Utente.cs" />
+    <Compile Include="ModelViews\EventiModelView.cs" />
     <Compile Include="ModelViews\LoginModelView.cs" />
     <Compile Include="ModelViews\MainPageModelView.cs" />
     <Compile Include="ModelViews\OrganizzazioneModelView.cs" />
@@ -63,6 +64,9 @@
     <Compile Include="Services\URL.cs" />
     <Compile Include="Views\EventiInSeguitoIoS.xaml.cs">
       <DependentUpon>EventiInSeguitoIoS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EventiPage.xaml.cs">
+      <DependentUpon>EventiPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ListaEventiIoS.xaml.cs">
       <DependentUpon>ListaEventiIoS.xaml</DependentUpon>
@@ -202,6 +206,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\PaginaProfiloUtente.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\EventiPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
