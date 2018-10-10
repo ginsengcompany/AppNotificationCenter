@@ -50,12 +50,7 @@
                         <ViewCell.View>
                             <StackLayout  BackgroundColor="#e8e8e8" Padding="10" Margin="10">
                             <StackLayout Orientation="Horizontal">
-                                <ci:CircleImage   
-                                    HeightRequest="50"   
-                                    WidthRequest="50"   
-                                    Source="{Binding Immagine}"   
-                                    Aspect="AspectFill">
-                                </ci:CircleImage>
+                               
                                 <StackLayout Orientation="Vertical">
                                     <StackLayout Orientation="Horizontal">
                                         <Label Text="{Binding titolo}" FontAttributes="Bold" FontSize="Medium" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black"/>

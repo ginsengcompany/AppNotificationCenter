@@ -110,11 +110,7 @@ namespace AppNotificationCenter.ModelViews
             organizzazioniDisponibli();
         }
 
-        public void organizzazioneScelta(Organizzazione OrganizzazioneSelezionata)
-        {
-            user.organizzazione = OrganizzazioneSelezionata.cod_org;
-            LogoOrganizzazione= Xamarin.Forms.ImageSource.FromStream( () => new MemoryStream(Convert.FromBase64String(OrganizzazioneSelezionata.logo)));
-        }
+  
         public async Task organizzazioneScelta()
         {
             char[] delimiterChars = {'-', '\t' };

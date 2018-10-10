@@ -21,16 +21,6 @@ namespace AppNotificationCenter.Views
             BindingContext = z;
         }
 
-        private void organizzazioneSelected(object sender, EventArgs args)
-        {
-            var a = sender as Picker;
-            if (a.SelectedIndex != -1)
-            {
-                org = a.SelectedItem as Organizzazione;
-                z.organizzazioneScelta(org);
-            }
-        }
-
         private async void Button_Clicked(object sender, EventArgs e)
         {
 
@@ -54,15 +44,9 @@ namespace AppNotificationCenter.Views
                 }
                 if (access == true)
                 {
-                    switch (Device.RuntimePlatform)
-                    {
-                        case Device.iOS:
-                            App.Current.MainPage = new NavigationPage(new ListaEventiIoS());
-                            break;
-                        default:
+                   
                             App.Current.MainPage = new NavigationPage(new MainPage());
-                            break;
-                    }
+                    
                 }
                 else
                 {

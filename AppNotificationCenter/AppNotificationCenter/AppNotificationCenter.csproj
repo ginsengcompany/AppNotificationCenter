@@ -51,7 +51,6 @@
     <Compile Include="Models\Final.cs" />
     <Compile Include="Models\Organizzazione.cs" />
     <Compile Include="Models\Utente.cs" />
-    <Compile Include="ModelViews\EventiModelView.cs" />
     <Compile Include="ModelViews\LoginModelView.cs" />
     <Compile Include="ModelViews\MainPageModelView.cs" />
     <Compile Include="ModelViews\OrganizzazioneModelView.cs" />

@@ -14,19 +14,6 @@
                                     Source="{Binding LogoOrganizzazione}">
                 </Image>
 
-                <StackLayout WidthRequest="250" HorizontalOptions="Center">
-                    <Picker x:Name="Organizzazione" 
-                            ItemDisplayBinding ="{Binding descrizione}"
-                            ItemsSource="{Binding _organizzazionePicker}"
-                            SelectedIndexChanged="organizzazioneSelected"
-                            Title="Seleziona Organizzazione"
-                            VerticalOptions="Center"
-                            HorizontalOptions="Center"
-                            WidthRequest="250">
-                    </Picker>
-                </StackLayout>
-
-
                 <Frame  BackgroundColor="#4b8b80" 
                         CornerRadius="15"
                         HasShadow="True"
