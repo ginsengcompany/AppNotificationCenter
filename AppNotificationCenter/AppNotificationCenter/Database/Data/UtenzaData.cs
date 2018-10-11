@@ -24,5 +24,9 @@ namespace AppNotificationCenter.Database.Data
         {
             return Database.Connection.Insert(user);
         }
+        public static int UpdateUser(TbUtente user)
+        {
+            return Database.Connection.Update(user);
+        }
     }
 }

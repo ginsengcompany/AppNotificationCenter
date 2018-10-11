@@ -17,6 +17,8 @@ namespace AppNotificationCenter.Database.Models
         public string cognome { get; set; }
         [NotNull, Column("nome")]
         public string nome { get; set; }
+        [NotNull,Column("organizzazione")]
+        public string organizzazione { get; set; }
         [NotNull,Column("specializzazione")]
         public string specializzazione { get; set; }
         [NotNull,Column("provincia")]
@@ -43,6 +45,7 @@ namespace AppNotificationCenter.Database.Models
             this.password = utenteLoggato.password;
             this.pec = utenteLoggato.pec;
             this.provincia = utenteLoggato.provincia;
+            this.organizzazione = utenteLoggato.organizzazione;
         }
     }
 

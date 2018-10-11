@@ -134,6 +134,7 @@ namespace AppNotificationCenter.ModelViews
                 else
                 {
                     //await App.Current.MainPage.DisplayAlert("Login", "Login Effettuata con successo", "OK");
+                    response.final[0].organizzazione = user.organizzazione;
                     LoginData.InsertUser(new TbLogin(user.username, user.password, user.token, user.organizzazione));
                     UtenzaData.InsertUser(new TbUtente(response.final[0]));
                     return true;

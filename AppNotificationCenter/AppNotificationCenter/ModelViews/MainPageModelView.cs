@@ -272,13 +272,13 @@ namespace AppNotificationCenter.ModelViews
                 }
                 else
                 {
-                    DatiEvento x = new DatiEvento();
-                    x.titolo = "Nessun evento disponibile \n Scorri in basso per aggiornare";
+                    DatiEvento evento = new DatiEvento();
+                    evento.titolo = "Nessun evento disponibile \n Scorri in basso per aggiornare";
                     IsVoidEvent = true;
                     NessunEvento= "Nessun evento disponibile \n Scorri in basso per aggiornare";
-                    x.VisibleError = "false";
-                    listaEventi.Add(x);
-                    listaNote.Add(x);
+                    evento.VisibleError = "false";
+                    listaEventi.Add(evento);
+                    listaNote.Add(evento);
                 }
                 //ListaEventi = listaEventi;
                 GroupDatiEvento = groupList;
@@ -287,13 +287,13 @@ namespace AppNotificationCenter.ModelViews
             }
             catch (Exception a)
             {
-                DatiEvento x = new DatiEvento();
-                x.titolo = "Nessun evento disponibile \n Scorri in basso per aggiornare";
-                x.VisibleError = "false";
+                DatiEvento evento = new DatiEvento();
+                evento.titolo = "Nessun evento \n Scorri in basso per aggiornare";
+                evento.VisibleError = "false";
                 IsVoidEvent = true;
-                NessunEvento = "Nessun evento disponibile \n Scorri in basso per aggiornare";
-                listaEventi.Add(x);
-                listaNote.Add(x);
+                NessunEvento = "Nessun evento \n Scorri in basso per aggiornare";
+                listaEventi.Add(evento);
+                listaNote.Add(evento);
                 //ListaEventi = listaEventi;
                 GroupDatiEvento = groupList;
                 IsBusy = false;
@@ -310,15 +310,15 @@ namespace AppNotificationCenter.ModelViews
             
         }
 
-        public void displayButtons(DatiEvento x)
+        public void displayButtons(DatiEvento eventoSelezionato)
         {
-            dettagli = x;
-            urlScelto = x.url_evento;
+            dettagli = eventoSelezionato;
+            urlScelto = eventoSelezionato.url_evento;
             if (dettagli.VisibleError != "false")
             {
                 foreach (var i in listaEventi)
                 {
-                    if (i == x)
+                    if (i == eventoSelezionato)
                     {
                         if (i.confermato != true)
                         {
@@ -361,7 +361,7 @@ namespace AppNotificationCenter.ModelViews
             {
                 foreach (var i in listaNote)
                 {
-                    if (i == x)
+                    if (i == eventoSelezionato)
                     {
                         if (i.confermato != true)
                         {
@@ -401,30 +401,33 @@ namespace AppNotificationCenter.ModelViews
 
         public async void VaiPaginaWeb()
         {
-            Device.OpenUri(new Uri(urlScelto));
+            if (urlScelto.Contains("http"))
+                Device.OpenUri(new Uri(urlScelto));
+            else
+               await App.Current.MainPage.DisplayAlert("Attenzione", "url non valido", "ok");
         }
 
-        public async Task<bool> ConfermaButton(DatiEvento x)
+        public async Task<bool> ConfermaButton(DatiEvento eventoConfermato)
         {
             REST<Object, bool> connessione = new REST<Object, bool>();
-            x.confermato = true;
-            x.eliminato = false;
-            x.organizzazione = user.organizzazione;
-            x.immagine = null;
-            x.Immagine = null;
-            bool esito = await connessione.PostJson(URL.ConfermaElimina, x);
+            eventoConfermato.confermato = true;
+            eventoConfermato.eliminato = false;
+            eventoConfermato.organizzazione = user.organizzazione;
+            eventoConfermato.immagine = null;
+            eventoConfermato.Immagine = null;
+            bool esito = await connessione.PostJson(URL.ConfermaElimina, eventoConfermato);
             return esito;
         }
 
-        public async Task<bool> EliminaButton(DatiEvento x)
+        public async Task<bool> EliminaButton(DatiEvento eventoDeclinato)
         {
             REST<Object, bool> connessione = new REST<Object, bool>();
-            x.confermato = false;
-            x.eliminato = true;
-            x.organizzazione = user.organizzazione;
-            x.immagine = null;
-            x.Immagine = null;
-            bool esito = await connessione.PostJson(URL.ConfermaElimina, x);
+            eventoDeclinato.confermato = false;
+            eventoDeclinato.eliminato = true;
+            eventoDeclinato.organizzazione = user.organizzazione;
+            eventoDeclinato.immagine = null;
+            eventoDeclinato.Immagine = null;
+            bool esito = await connessione.PostJson(URL.ConfermaElimina, eventoDeclinato);
             return esito;
         }
 
