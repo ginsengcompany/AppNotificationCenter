@@ -10,5 +10,6 @@
 
         public static string ConfermaElimina = "http://" + urlLocale + "/setEliminatoConfermato";
         public static string listaOrganizzazione = "http://" + urlLocale + "/getListaOrganizzazione";
+        public static string modificaContatto = "http://" + urlLocale + "/modificaContatto";
     }
 }

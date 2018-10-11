@@ -19,6 +19,7 @@ namespace AppNotificationCenter.Models
         public string numero_telefono { get; set; }
         public string pec { get; set; }
         public string password { get; set; }
+        public string organizzazione { get; set; }
         public string interessi { get; set; }
         public bool attivo { get; set; }
     }

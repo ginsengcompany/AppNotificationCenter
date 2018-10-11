@@ -9,6 +9,7 @@ using System.Windows.Input;
 using AppNotificationCenter.Database.Data;
 using AppNotificationCenter.Database.Models;
 using AppNotificationCenter.Models;
+using AppNotificationCenter.Services;
 using Xamarin.Forms;
 
 namespace AppNotificationCenter.ModelViews
@@ -80,10 +81,21 @@ namespace AppNotificationCenter.ModelViews
         {
             get
             {
-                return new Command(() =>
+                return new Command(async () =>
                 {
                     IsEnabled = false;
                     isEnabledModifica = true;
+                    REST<TbUtente,Response> connessioneModifica = new REST<TbUtente, Response>();
+                    var response = await connessioneModifica.PostJson(URL.modificaContatto, UtenteProfilo);
+                    if (response.status)
+                    {
+                        UtenzaData.UpdateUser(UtenteProfilo);
+                    }
+                    else
+                    {
+                       await App.Current.MainPage.DisplayAlert("Attenzione", "aggiornamento dati non riuscito", "ok");
+                        UtenteProfilo = UtenzaData.getUser();
+                    }
                 });
             }
         }
@@ -92,6 +104,11 @@ namespace AppNotificationCenter.ModelViews
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
+    }
+
+    public class Response
+    {
+        public bool status { get; set; }
     }
 
 }
