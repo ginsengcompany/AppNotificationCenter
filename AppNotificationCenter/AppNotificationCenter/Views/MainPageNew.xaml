@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customControls="clr-namespace:AppNotificationCenter.CostomControls;assembly=AppNotificationCenter"
+             x:Class="AppNotificationCenter.Views.MainPageNew">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="informazioniPersonali" 
+                     Text="Profilo utente"
+                     Order="Primary"
+                     Command="{Binding visualizzaInfo}"
+                     Priority="0"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"/>
+            <Label HorizontalOptions="Center" Text="{Binding NessunEvento}" FontSize="Medium" FontAttributes="Bold" IsVisible="{Binding IsVoidEvent, Mode=TwoWay}"/>
+            <ListView x:Name="listEventi" 
+                      IsPullToRefreshEnabled="True"
+                      RefreshCommand="{Binding RefreshCommand}"
+                      IsRefreshing="{Binding IsRefreshing}" 
+                      BackgroundColor="White"
+                      ItemsSource="{Binding GroupDatiEvento}"
+                      IsGroupingEnabled="true"
+                      HasUnevenRows="True"
+                      ItemTapped="ListEventi_OnItemTapped" 
+                      SeparatorColor="Black" 
+                      SeparatorVisibility="Default" >
+                <ListView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout BackgroundColor="#4b8b80" Orientation="Vertical" Margin="5">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Heading}" FontSize="Large" TextColor="White" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.GroupHeaderTemplate>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <customControls:ExtendedViewCell SelectedBackgroundColor="White">
+                            <ViewCell.View>
+                                <StackLayout  BackgroundColor="#e8e8e8" Padding="10" Margin="10">
+                                    <StackLayout Orientation="Horizontal">
+
+                                        <StackLayout Orientation="Vertical">
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="{Binding titolo}" FontAttributes="Bold" FontSize="Medium" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="{Binding data}" FontSize="Medium" VerticalOptions="Center" VerticalTextAlignment="Center" IsVisible="{Binding VisibleError}"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+
+                                                <Label Text="Evento Confermato" FontSize="Medium"  IsVisible="{Binding confermato}" VerticalOptions="Center" HorizontalOptions="Center" TextColor="#4b8b80" VerticalTextAlignment="Center" />
+
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+
+                                                <Label Text="{Binding luogo}" FontSize="Medium"  IsVisible="{Binding VisibileInfo}" VerticalOptions="Center" VerticalTextAlignment="Center" />
+
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Button Text="Conferma" FontSize="Small" IsVisible="{Binding Visible}" BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center" Command="{Binding ButtonConferma}"/>
+                                        <Button Text="Declina" FontSize="Small" IsVisible="{Binding VisibileInSeguito}"  BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center" Command="{Binding btnInSeguito}"/>
+                                        <Button Text="DETTAGLI" FontSize="Small" IsVisible="{Binding VisibileInfo}"  BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center" Command="{Binding btnInfo}"/>
+                                        <Button Text="Sito web" FontSize="Small" IsVisible="{Binding VisibleWeb}"  BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center" Command="{Binding btnsitoWeb}"/>
+
+                                    </StackLayout>
+                                </StackLayout>
+
+                            </ViewCell.View>
+                        </customControls:ExtendedViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout VerticalOptions="End">
+                <Label Text ="Scorri verso il basso per aggiornare" IsVisible="{Binding VisibleError}" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
+            </StackLayout>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
