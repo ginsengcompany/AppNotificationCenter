@@ -65,9 +65,6 @@
     <Compile Include="Views\EventiInSeguitoIoS.xaml.cs">
       <DependentUpon>EventiInSeguitoIoS.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\EventiPage.xaml.cs">
-      <DependentUpon>EventiPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\ListaEventiIoS.xaml.cs">
       <DependentUpon>ListaEventiIoS.xaml</DependentUpon>
     </Compile>
@@ -89,12 +86,6 @@
     </Compile>
     <Compile Include="Views\PaginaProfiloUtente.xaml.cs">
       <DependentUpon>PaginaProfiloUtente.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Tabbed.xaml.cs">
-      <DependentUpon>Tabbed.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\tabbedIos.xaml.cs">
-      <DependentUpon>tabbedIos.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\VisualizzaEventoInDettaglio.xaml.cs">
       <DependentUpon>VisualizzaEventoInDettaglio.xaml</DependentUpon>
@@ -196,18 +187,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\Tabbed.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Views\tabbedIos.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Views\EventiInSeguitoIoS.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
@@ -215,12 +194,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\PaginaProfiloUtente.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Views\EventiPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
