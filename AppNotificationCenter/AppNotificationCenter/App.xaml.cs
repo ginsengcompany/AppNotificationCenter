@@ -13,6 +13,7 @@ namespace AppNotificationCenter
         public App()
         {
             InitializeComponent();
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Mjk3NzdAMzEzNjJlMzMyZTMwQXRHYmpuSDdrK1U5bkhzN0E3UFpBaXc1d0JJUTR0SWRYOWdDZzF1OWMrUT0=");
             Database.Database.Initialize();
             check();
         }
@@ -22,15 +23,7 @@ namespace AppNotificationCenter
             var user = checkUser();
             if (user)
             {
-                switch (Device.RuntimePlatform)
-                {
-                    case Device.iOS:
-                        MainPage = new NavigationPage(new ListaEventiIoS());
-                        break;
-                    default:
                         MainPage = new NavigationPage(new MainPage());
-                        break;
-                }
             }
             else
                 MainPage = new Login();

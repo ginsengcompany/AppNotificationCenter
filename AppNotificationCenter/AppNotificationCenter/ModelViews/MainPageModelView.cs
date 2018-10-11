@@ -161,7 +161,7 @@ namespace AppNotificationCenter.ModelViews
                     IsRefreshing = true;
                     ListaEventi.Clear();
                     ListaNote.Clear();
-                    GroupDatiEvento.Clear();
+                   // GroupDatiEvento.Clear();
                     leggiDati();
 
                     IsRefreshing = false;
@@ -355,7 +355,7 @@ namespace AppNotificationCenter.ModelViews
                     }
                 }
                 //ListaEventi = listaEventi;
-                //GroupDatiEvento = groupDatiEvento;
+                GroupDatiEvento = groupDatiEvento;
             }
             if (dettagli.VisibleError != "false")
             {
