@@ -13,6 +13,7 @@ using AppNotificationCenter.Database.Data;
 using AppNotificationCenter.Database.Models;
 using AppNotificationCenter.Views;
 using Xamarin.Forms;
+using System.Linq;
 
 namespace AppNotificationCenter.ModelViews
 {
@@ -211,7 +212,8 @@ namespace AppNotificationCenter.ModelViews
                             CultureInfo culture = new CultureInfo(cultureName);
                             //i.data = i.data.Substring(0, 10);
                             formaDateTime = Convert.ToDateTime(i.data,culture);
-                            i.data = formaDateTime.ToString().Substring(0, 10);
+                            i.data = formaDateTime.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
+                            i.data_ordinamento = formaDateTime;
                             string img = "";
                             if (!String.IsNullOrEmpty(i.immagine))
                             {
@@ -233,7 +235,10 @@ namespace AppNotificationCenter.ModelViews
                                 i.TestoButtonEliminato = "ELIMINA";
                             listaEventi.Add(i);
                         }
+
+
                     }
+                    ListaEventi = ListaEventi.OrderByDescending(o => o.data_ordinamento).ToList();
                     GroupDatiEvento cGroupListEventi = new GroupDatiEvento(listaEventi);
                     cGroupListEventi.Heading = "Eventi";
                     groupList.Add(cGroupListEventi);
@@ -263,11 +268,13 @@ namespace AppNotificationCenter.ModelViews
                             listaNote.Add(i);
                         }
                     }
+                    listaNote= listaNote.OrderByDescending(o => o.data_ordinamento).ToList();
                     GroupDatiEvento cGroupListNote = new GroupDatiEvento(listaNote);
                     cGroupListNote.Heading = "Note";
                     groupList.Add(cGroupListNote);
                     //ListaEventi = listaEventi;
                     GroupDatiEvento = groupList;
+
                     IsBusy = false;
                 }
                 else
