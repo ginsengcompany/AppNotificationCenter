@@ -28,5 +28,9 @@ namespace AppNotificationCenter.Database.Data
         {
             return Database.Connection.Update(user);
         }
+        public static int DropUser(TbUtente user)
+        {
+            return Database.Connection.Delete(user);
+        }
     }
 }

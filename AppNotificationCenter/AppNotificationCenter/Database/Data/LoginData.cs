@@ -10,6 +10,14 @@ namespace AppNotificationCenter.Database.Data
 {
     public static class LoginData
     {
+        public static int updateUser(TbLogin user)
+        {
+            return Database.Connection.Update(user);
+        }
+        public static int dropUser(TbLogin user)
+        {
+            return Database.Connection.Delete(user);
+        }
         public static int GetCountUser()
         {
             return Database.Connection.ExecuteScalar<int>("SELECT COUNT(*) FROM login");
