@@ -21,46 +21,11 @@ namespace AppNotificationCenter
             check();
         }
 
-        private async void check()
+        private void check()
         {
             if (checkUser())
             {
-                var utente = LoginData.getUser();
-                Utente user = new Utente();
-                user.username = utente[0].username;
-                user.password = utente[0].password;
-                user.token = utente[0].token;
-                user.organizzazione = utente[0].organizzazione;
-                user.eliminato = "false";
-                REST<Utente, Final> rest = new REST<Utente, Final>();
-                var response = await rest.PostJson(URL.Login, user);
-                if (response.status)
-                {
-                    if (response.final[0].attivo == false)
-                    {
-
-                        await App.Current.MainPage.DisplayAlert("Login", "Utenza Scaduta", "OK");
-                        LoginData.dropUser(new TbLogin(user.username, user.password, user.token, user.organizzazione));
-                        UtenzaData.DropUser(new TbUtente(response.final[0]));
-                        MainPage = new NavigationPage(new Login());
-                    }
-                    else
-                    {
-                        //await App.Current.MainPage.DisplayAlert("Login", "Login Effettuata con successo", "OK");
-                        response.final[0].organizzazione = user.organizzazione;
-                        LoginData.updateUser(new TbLogin(user.username, user.password, user.token, user.organizzazione));
-                        UtenzaData.UpdateUser(new TbUtente(response.final[0]));
-                        MainPage = new NavigationPage(new MainPage());
-                    }
-
-                }
-                else
-                {
-
-                    LoginData.dropUser(new TbLogin(user.username, user.password, user.token, user.organizzazione));
-                    UtenzaData.DropUser(new TbUtente(response.final[0]));
-                    MainPage = new NavigationPage(new Login());
-                }
+                MainPage = new NavigationPage(new MainPage());
             }
             else
                 MainPage = new Login();
