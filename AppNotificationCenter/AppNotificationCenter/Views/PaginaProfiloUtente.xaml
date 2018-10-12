@@ -64,8 +64,8 @@
 
             <StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="EndAndExpand">
 
-                    <Button Text="Conferma" IsVisible="{Binding IsEnabled}" Command="{Binding btnConferma}" BackgroundColor="#4b8b80"/>
-                    <Button Text="Annulla" IsVisible ="{Binding IsEnabled}" Command="{Binding btnAnnulla}" BackgroundColor="#4b8b80"/>
+                    <Button Text="Conferma" IsVisible="{Binding IsEnabled}" Command="{Binding btnConferma}" BackgroundColor="#4b8b80" TextColor="White"/>
+                    <Button Text="Annulla" IsVisible ="{Binding IsEnabled}" Command="{Binding btnAnnulla}" BackgroundColor="#4b8b80" TextColor="White"/>
             </StackLayout>
         </StackLayout>
         </ScrollView>

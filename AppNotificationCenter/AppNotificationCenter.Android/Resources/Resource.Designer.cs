@@ -3031,16 +3031,16 @@ namespace AppNotificationCenter.Droid
 			public const int inputlayout_togglevisibleicon = 2130837796;
 			
 			// aapt resource value: 0x7f020125
-			public const int logoDescrizione = 2130837797;
+			public const int logo = 2130837797;
 			
 			// aapt resource value: 0x7f020126
-			public const int logoInfo = 2130837798;
+			public const int logoDescrizione = 2130837798;
 			
 			// aapt resource value: 0x7f020127
-			public const int logoLuogo = 2130837799;
+			public const int logoInfo = 2130837799;
 			
 			// aapt resource value: 0x7f020128
-			public const int logoOrdineMedici = 2130837800;
+			public const int logoLuogo = 2130837800;
 			
 			// aapt resource value: 0x7f020129
 			public const int logoRelatore = 2130837801;
