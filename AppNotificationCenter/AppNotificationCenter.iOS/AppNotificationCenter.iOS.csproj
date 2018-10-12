@@ -203,8 +203,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-=======
     <BundleResource Include="Resources\Icon-small%403x.png" />
   </ItemGroup>
   <ItemGroup>
@@ -256,7 +254,6 @@
     <BundleResource Include="Resources\logoOrdineMedici.png" />
   </ItemGroup>
   <ItemGroup>
->>>>>>> ee5436857df324b294f86efb66fc2e596e41174b
     <BundleResource Include="Resources\logoLuogo.png" />
   </ItemGroup>
   <ItemGroup>
