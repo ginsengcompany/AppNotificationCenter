@@ -19,6 +19,29 @@ namespace AppNotificationCenter.ModelViews
         private TbUtente utenteProfilo;
         private bool isEnabled=false;
         private bool isEnabledModifica = true;
+        private string helper="";
+        private Color coloreModifica = Color.Default;
+
+
+        public string Helper
+        {
+            get { return helper; }
+            set
+            {
+                OnPropertychanged();
+                helper = value;
+            }
+        }
+        public Color ColoreModifica
+        {
+            get { return coloreModifica; }
+            set
+            {
+                OnPropertychanged();
+                coloreModifica = value;
+            }
+        }
+
         public bool IsEnabledModifica
         {
             get { return isEnabledModifica; }
@@ -61,6 +84,7 @@ namespace AppNotificationCenter.ModelViews
                 return new Command(() =>
                 {
                     IsEnabled = true;
+                    Helper = "Questo campo è modificabile";
                     isEnabledModifica = false;
                 });
             }

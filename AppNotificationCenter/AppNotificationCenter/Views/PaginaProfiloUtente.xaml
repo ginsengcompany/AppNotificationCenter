@@ -18,9 +18,9 @@
             <StackLayout>
                 <inputLayout:SfTextInputLayout
                 Hint="Nome" 
-                ContainerType="Outlined">
-                <Entry Placeholder="Nome" Text="{Binding UtenteProfilo.nome}" IsEnabled="False"/>
-            </inputLayout:SfTextInputLayout>
+                ContainerType="Outlined" >
+                    <Entry Placeholder="Nome" Text="{Binding UtenteProfilo.nome}" IsEnabled="False"/>
+                </inputLayout:SfTextInputLayout>
                 <inputLayout:SfTextInputLayout
                     Hint="Cognome" 
                     ContainerType="Outlined">
@@ -40,25 +40,32 @@
 
                 <inputLayout:SfTextInputLayout
                     Hint="Numero telefono" 
+                    FocusedColor="{Binding ColoreModifica}"
+                    HelperText="{Binding Helper}"
                     ContainerType="Outlined">
                     <Entry Keyboard="Numeric" Placeholder="Numero telefono" Text="{Binding UtenteProfilo.numero_telefono, Mode=TwoWay}" IsEnabled="{Binding IsEnabled}"></Entry>
                 </inputLayout:SfTextInputLayout>
 
                 <inputLayout:SfTextInputLayout
                     Hint="E-mail" 
+                    FocusedColor="{Binding ColoreModifica}"
+                    HelperText="{Binding Helper}"
                     ContainerType="Outlined">
                     <Entry Placeholder="E-Mail" Text="{Binding UtenteProfilo.mail, Mode=TwoWay}" IsEnabled="{Binding IsEnabled}"></Entry>
                 </inputLayout:SfTextInputLayout>
 
                 <inputLayout:SfTextInputLayout
                     Hint="Pec" 
+                    FocusedColor="{Binding ColoreModifica}"
+                    HelperText="{Binding Helper}"
                     ContainerType="Outlined">
                     <Entry Placeholder="Pec" Text="{Binding UtenteProfilo.pec, Mode=TwoWay}" IsEnabled="{Binding IsEnabled}"></Entry>
                 </inputLayout:SfTextInputLayout>
 
             <StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="EndAndExpand">
-                <Button Text="Conferma" IsVisible="{Binding IsEnabled}" Command="{Binding btnConferma}"/>
-                <Button Text="Annulla" IsVisible ="{Binding IsEnabled}" Command="{Binding btnAnnulla}"/>
+
+                    <Button Text="Conferma" IsVisible="{Binding IsEnabled}" Command="{Binding btnConferma}" BackgroundColor="#4b8b80" TextColor="White"/>
+                    <Button Text="Annulla" IsVisible ="{Binding IsEnabled}" Command="{Binding btnAnnulla}" BackgroundColor="#4b8b80" TextColor="White"/>
             </StackLayout>
         </StackLayout>
         </ScrollView>

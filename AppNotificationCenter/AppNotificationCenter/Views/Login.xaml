@@ -8,10 +8,10 @@
         <ScrollView>
             <StackLayout Padding="20,20,20,20">
                 <Image   
-                                    HeightRequest="150"   
-                                    WidthRequest="150"   
+                                    HeightRequest="250"   
+                                    WidthRequest="250"   
                                     HorizontalOptions="Center"
-                                    Source="{Binding LogoOrganizzazione}">
+                                    Source="logo.png">
                 </Image>
 
                 <Frame  BackgroundColor="#4b8b80" 
