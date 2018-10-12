@@ -204,7 +204,6 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Icon-small%403x.png" />
-    <BundleResource Include="Resources\button1.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Icon.png" />

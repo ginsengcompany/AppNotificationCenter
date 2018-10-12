@@ -19,6 +19,18 @@ namespace AppNotificationCenter.ModelViews
         private TbUtente utenteProfilo;
         private bool isEnabled=false;
         private bool isEnabledModifica = true;
+        private Color coloreModifica = Color.Default;
+
+        public Color ColoreModifica
+        {
+            get { return coloreModifica; }
+            set
+            {
+                OnPropertychanged();
+                coloreModifica = value;
+            }
+        }
+
         public bool IsEnabledModifica
         {
             get { return isEnabledModifica; }
@@ -61,6 +73,7 @@ namespace AppNotificationCenter.ModelViews
                 return new Command(() =>
                 {
                     IsEnabled = true;
+                    ColoreModifica = Color.FromHex("#4A7B98");
                     isEnabledModifica = false;
                 });
             }
@@ -72,6 +85,7 @@ namespace AppNotificationCenter.ModelViews
                 return new Command(() =>
                 {
                     IsEnabled = false;
+                    ColoreModifica = Color.Default;
                     isEnabledModifica = true;
                     UtenteProfilo = UtenzaData.getUser();
                 });
@@ -85,6 +99,7 @@ namespace AppNotificationCenter.ModelViews
                 {
                     IsEnabled = false;
                     isEnabledModifica = true;
+                    ColoreModifica = Color.Default;
                     REST<TbUtente,Response> connessioneModifica = new REST<TbUtente, Response>();
                     var response = await connessioneModifica.PostJson(URL.modificaContatto, UtenteProfilo);
                     if (response.status)

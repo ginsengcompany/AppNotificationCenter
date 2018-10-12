@@ -18,9 +18,9 @@
             <StackLayout>
                 <inputLayout:SfTextInputLayout
                 Hint="Nome" 
-                ContainerType="Outlined">
-                <Entry Placeholder="Nome" Text="{Binding UtenteProfilo.nome}" IsEnabled="False"/>
-            </inputLayout:SfTextInputLayout>
+                ContainerType="Outlined" >
+                    <Entry Placeholder="Nome" Text="{Binding UtenteProfilo.nome}" IsEnabled="False"/>
+                </inputLayout:SfTextInputLayout>
                 <inputLayout:SfTextInputLayout
                     Hint="Cognome" 
                     ContainerType="Outlined">
@@ -40,18 +40,21 @@
 
                 <inputLayout:SfTextInputLayout
                     Hint="Numero telefono" 
+                    BackgroundColor="{Binding ColoreModifica}"
                     ContainerType="Outlined">
                     <Entry Keyboard="Numeric" Placeholder="Numero telefono" Text="{Binding UtenteProfilo.numero_telefono, Mode=TwoWay}" IsEnabled="{Binding IsEnabled}"></Entry>
                 </inputLayout:SfTextInputLayout>
 
                 <inputLayout:SfTextInputLayout
                     Hint="E-mail" 
-                    ContainerType="Outlined">
+                    ContainerBackgroundColor="{Binding ColoreModifica}"
+                    ContainerType="Filled">
                     <Entry Placeholder="E-Mail" Text="{Binding UtenteProfilo.mail, Mode=TwoWay}" IsEnabled="{Binding IsEnabled}"></Entry>
                 </inputLayout:SfTextInputLayout>
 
                 <inputLayout:SfTextInputLayout
                     Hint="Pec" 
+                    BackgroundColor="{Binding ColoreModifica}"
                     ContainerType="Outlined">
                     <Entry Placeholder="Pec" Text="{Binding UtenteProfilo.pec, Mode=TwoWay}" IsEnabled="{Binding IsEnabled}"></Entry>
                 </inputLayout:SfTextInputLayout>

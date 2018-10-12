@@ -237,9 +237,6 @@
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
     <AndroidResource Include="Resources\layout\Toolbar.axml" />
     <AndroidResource Include="Resources\values\styles.xml" />
-    <AndroidResource Include="Resources\drawable-hdpi\button1.png" />
-    <AndroidResource Include="Resources\drawable-xhdpi\button1.png" />
-    <AndroidResource Include="Resources\drawable-xxhdpi\button1.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AppNotificationCenter\AppNotificationCenter.csproj">
@@ -309,9 +306,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\logoRelatore.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\button1.png" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
