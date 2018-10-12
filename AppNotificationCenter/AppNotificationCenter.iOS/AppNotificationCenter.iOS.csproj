@@ -203,55 +203,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Icon-small%403x.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\Icon.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Icon%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Icon-40.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Icon-40%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Icon-50.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Icon-50%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Icon-60.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Icon-60%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Icon-60%403x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Icon-72.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Icon-72%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Icon-76.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Icon-167.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Icon-small.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Icon-small%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\logoOrdineMedici.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\logoLuogo.png" />
@@ -355,9 +310,6 @@
     </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\icon-1024.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\Icon-marketing-1024x1024.png" />
   </ItemGroup>
   <ItemGroup>
@@ -410,6 +362,60 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Icon-76x76%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon-40%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon-50%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon-60%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon-60%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon-72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon-72%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon-76.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon-167.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon-1024.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon-Small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon-Small%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon-Small%403x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
