@@ -76,10 +76,10 @@ namespace AppNotificationCenter
             await check();
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+      /*  private void Button_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new VisualizzaEventoInDettaglio(z.dettaglio()));
-        }
+        }*/
 
         private void ListEventi_OnItemTapped(object sender, ItemTappedEventArgs e)
         {
@@ -88,7 +88,7 @@ namespace AppNotificationCenter
 
         }
 
-        private async void ButtonConferma_OnClicked(object sender, EventArgs e)
+     /*   private async void ButtonConferma_OnClicked(object sender, EventArgs e)
         {
             
            bool esito = await z.ConfermaButton(evento);
@@ -97,14 +97,14 @@ namespace AppNotificationCenter
               await  DisplayAlert("CONFERMA", "L'evento è stato confermato", "Ok");
             }
             else
-                await DisplayAlert("Attenzione", "L'evento è stato declinato", "Ok");
+                await DisplayAlert("Attenzione", "Connessione non riuscita riprovare", "Ok");
             z.ListaEventi.Clear();
             z.ListaNote.Clear();
             z.GroupDatiEvento.Clear();
             z.leggiDati();
-        }
+        }*/
 
-        private async void BtnInSeguito_OnClicked(object sender, EventArgs e)
+      /*  private async void BtnInSeguito_OnClicked(object sender, EventArgs e)
         {
             bool esito = await z.EliminaButton(evento);
             if (esito == true)
@@ -118,10 +118,10 @@ namespace AppNotificationCenter
             z.GroupDatiEvento.Clear();
             z.leggiDati();
         }
-
+        
         private void VaiSitoWeb(object sender, EventArgs e)
         {
             z.VaiPaginaWeb();
-        }
+        }*/
     }
 }

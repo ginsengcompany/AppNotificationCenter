@@ -162,9 +162,10 @@ namespace AppNotificationCenter.ModelViews
                     IsRefreshing = true;
                     ListaEventi.Clear();
                     ListaNote.Clear();
+                    IsBusy = true;
                    // GroupDatiEvento.Clear();
                     leggiDati();
-
+                    IsBusy = false;
                     IsRefreshing = false;
                 });
             }
@@ -317,7 +318,7 @@ namespace AppNotificationCenter.ModelViews
             
         }
 
-        public void displayButtons(DatiEvento eventoSelezionato)
+        public async void displayButtons(DatiEvento eventoSelezionato)
         {
             dettagli = eventoSelezionato;
             urlScelto = eventoSelezionato.url_evento;
@@ -331,38 +332,74 @@ namespace AppNotificationCenter.ModelViews
                         {
                             if (urlScelto != null)
                             {
-                                i.Visible = "true";
-                                i.VisibileInfo = "true";
-                                i.VisibileInSeguito = "true";
-                                i.VisibleWeb = "true";
+                                var actionSheet = await App.Current.MainPage.DisplayActionSheet("Attenzione", "Cancel", null, "Conferma", "Declina", "Dettagli", "Sito web");
+                                switch (actionSheet)
+                                {
+                                    case "Conferma":
+                                        await ConfermaButton(eventoSelezionato);
+                                        break;
+                                    case "Declina":
+                                        await EliminaButton(eventoSelezionato);
+                                        break;
+                                    case "Dettagli":
+                                        await App.Current.MainPage.Navigation.PushAsync(new VisualizzaEventoInDettaglio(dettaglio()));
+                                        break;
+                                    case "Sito web":
+                                        VaiPaginaWeb();
+                                        break;
+                                    case "Cancel":
+                                        break;
+                                }
+                                return;
+
                             }
                             else
                             {
-                                i.Visible = "true";
-                                i.VisibileInfo = "true";
-                                i.VisibileInSeguito = "true";
-                                i.VisibleWeb = "false";
+                                var actionSheet = await App.Current.MainPage.DisplayActionSheet("Attenzione", "Cancel", null, "Conferma", "Declina", "Dettagli");
+                                switch (actionSheet)
+                                {
+                                    case "Conferma":
+                                        await ConfermaButton(eventoSelezionato);
+                                        break;
+                                    case "Declina":
+                                        await EliminaButton(eventoSelezionato);
+                                        break;
+                                    case "Dettagli":
+                                        await App.Current.MainPage.Navigation.PushAsync(new VisualizzaEventoInDettaglio(dettaglio()));
+                                        break;
+                                    case "Cancel":
+                                        break;
+                                }
+                                return;
                             }
                           
 
                         }
                         else
                         {
-                            i.VisibileInfo = "true";
-                            i.VisibileInSeguito = "true";
+                            var actionSheet = await App.Current.MainPage.DisplayActionSheet("Attenzione", "Cancel", null,  "Declina", "Dettagli", "Sito web");
+                            switch (actionSheet)
+                            {
+                               
+                                case "Declina":
+                                    await EliminaButton(eventoSelezionato);
+                                    break;
+                                case "Dettagli":
+                                    await App.Current.MainPage.Navigation.PushAsync(new VisualizzaEventoInDettaglio(dettaglio()));
+                                    break;
+                                case "Sito web":
+                                    VaiPaginaWeb();
+                                    break;
+                                case "Cancel":
+                                    break;
+                            }
+                            return;
 
                         }
                     }
-                    else
-                    {
-                        i.VisibileInfo = "false";
-                        i.Visible = "false";
-                        i.VisibileInSeguito = "false";
-                        i.VisibleWeb = "false";
-                    }
                 }
                 //ListaEventi = listaEventi;
-                GroupDatiEvento = groupDatiEvento;
+                //GroupDatiEvento = groupDatiEvento;
             }
             if (dettagli.VisibleError != "false")
             {
@@ -374,35 +411,56 @@ namespace AppNotificationCenter.ModelViews
                         {
                             if (urlScelto != null)
                             {
-                                i.Visible = "false";
-                                i.VisibileInfo = "true";
-                                i.VisibileInSeguito = "false";
-                                i.VisibleWeb = "true";
+                               
+                                var actionSheet = await App.Current.MainPage.DisplayActionSheet("Attenzione", "Cancel", null,  "Dettagli", "Sito web");
+                                switch (actionSheet)
+                                {
+                                    
+                                    case "Dettagli":
+                                        await App.Current.MainPage.Navigation.PushAsync(new VisualizzaEventoInDettaglio(dettaglio()));
+                                        break;
+                                    case "Sito web":
+                                        VaiPaginaWeb();
+                                        break;
+                                    case "Cancel":
+                                        break;
+                                }
+                                return;
                             }
                             else
                             {
-                                i.Visible = "false";
-                                i.VisibileInfo = "true";
-                                i.VisibileInSeguito = "false";
-                                i.VisibleWeb = "false";
+
+                                var actionSheet = await App.Current.MainPage.DisplayActionSheet("Attenzione", "Cancel", null,  "Dettagli");
+                                switch (actionSheet)
+                                {
+                                    case "Dettagli":
+                                        await App.Current.MainPage.Navigation.PushAsync(new VisualizzaEventoInDettaglio(dettaglio()));
+                                        break;
+                                    case "Cancel":
+                                        break;
+                                } return;
                             }
+                           
                         }
                         else
                         {
-                            i.VisibileInfo = "true";
-                            i.VisibileInSeguito = "false";
+                            var actionSheet = await App.Current.MainPage.DisplayActionSheet("Attenzione", "Cancel", null, "Dettagli");
+                            switch (actionSheet)
+                            {
+                              
+                                case "Dettagli":
+                                    await App.Current.MainPage.Navigation.PushAsync(new VisualizzaEventoInDettaglio(dettaglio()));
+                                    break;
+                                case "Cancel":
+                                    break;
+                            }
+                            return;
                         }
                     }
-                    else
-                    {
-                        i.VisibileInfo = "false";
-                        i.Visible = "false";
-                        i.VisibileInSeguito = "false";
-                        i.VisibleWeb = "false";
-                    }
+                
                 }
                 //ListaEventi = listaEventi;
-                GroupDatiEvento = groupDatiEvento;
+                //GroupDatiEvento = groupDatiEvento;
             }
         }
 
@@ -414,7 +472,7 @@ namespace AppNotificationCenter.ModelViews
                await App.Current.MainPage.DisplayAlert("Attenzione", "url non valido", "ok");
         }
 
-        public async Task<bool> ConfermaButton(DatiEvento eventoConfermato)
+        public async Task ConfermaButton(DatiEvento eventoConfermato)
         {
             REST<Object, bool> connessione = new REST<Object, bool>();
             eventoConfermato.confermato = true;
@@ -422,11 +480,21 @@ namespace AppNotificationCenter.ModelViews
             eventoConfermato.organizzazione = user.organizzazione;
             eventoConfermato.immagine = null;
             eventoConfermato.Immagine = null;
+            var medico = LoginData.getUser();
             bool esito = await connessione.PostJson(URL.ConfermaElimina, eventoConfermato);
-            return esito;
+            if (esito == true)
+            {
+                await App.Current.MainPage.DisplayAlert("CONFERMA", "L'evento è stato confermato", "Ok");
+            }
+            else
+                await App.Current.MainPage.DisplayAlert("Attenzione", "Connessione non riuscita riprovare", "Ok");
+            ListaEventi.Clear();
+            ListaNote.Clear();
+            GroupDatiEvento.Clear();
+            leggiDati();
         }
 
-        public async Task<bool> EliminaButton(DatiEvento eventoDeclinato)
+        public async Task EliminaButton(DatiEvento eventoDeclinato)
         {
             REST<Object, bool> connessione = new REST<Object, bool>();
             eventoDeclinato.confermato = false;
@@ -435,7 +503,16 @@ namespace AppNotificationCenter.ModelViews
             eventoDeclinato.immagine = null;
             eventoDeclinato.Immagine = null;
             bool esito = await connessione.PostJson(URL.ConfermaElimina, eventoDeclinato);
-            return esito;
+            if (esito)
+            {
+                await App.Current.MainPage.DisplayAlert("Attenzione", "L'evento è stato declinato", "Ok");
+            }
+            else
+                await App.Current.MainPage.DisplayAlert("Attenzione", "Connessione non riuscita, riprovare", "Ok");
+            ListaEventi.Clear();
+            ListaNote.Clear();
+            GroupDatiEvento.Clear();
+            leggiDati();
         }
 
         public DatiEvento dettaglio()

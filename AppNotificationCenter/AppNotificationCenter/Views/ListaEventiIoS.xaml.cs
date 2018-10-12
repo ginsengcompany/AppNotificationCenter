@@ -23,7 +23,7 @@ namespace AppNotificationCenter.Views
         private string token;
         DatiEvento evento = new DatiEvento();
     
-        private void Button_Clicked(object sender, EventArgs e)
+  /*      private void Button_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new VisualizzaEventoInDettaglio(z.dettaglio()));
         }
@@ -38,8 +38,8 @@ namespace AppNotificationCenter.Views
         private async void ButtonConferma_OnClicked(object sender, EventArgs e)
         {
 
-            bool esito = await z.ConfermaButton(evento);
-            if (esito == true)
+         //   bool esito = await z.ConfermaButton(evento);
+           if (esito == true)
             {
                 await DisplayAlert("CONFERMA", "L' evento è stato confermato", "Ok");
             }
@@ -53,7 +53,7 @@ namespace AppNotificationCenter.Views
 
         private async void ButtonElimina_OnClicked(object sender, EventArgs e)
         {
-            bool esito = await z.EliminaButton(evento);
+           // bool esito = await z.EliminaButton(evento);
             if (esito == true)
             {
                 await DisplayAlert("Attenzione", "L'Evento è stato declinato", "Ok");
@@ -64,6 +64,6 @@ namespace AppNotificationCenter.Views
             z.ListaNote.Clear();
             z.GroupDatiEvento.Clear();
             z.leggiDati();
-        }
+        }*/
     }
 }

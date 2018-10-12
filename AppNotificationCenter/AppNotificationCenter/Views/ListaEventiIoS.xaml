@@ -7,7 +7,7 @@
     <ContentPage.Content>
         <StackLayout>
             <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"/>
-            <ListView x:Name="listEventi" 
+          <!--   <ListView x:Name="listEventi" 
                       IsPullToRefreshEnabled="True"
                       RefreshCommand="{Binding RefreshCommand}"
                       IsRefreshing="{Binding IsRefreshing}" 
@@ -68,7 +68,7 @@
             </ListView>
             <StackLayout VerticalOptions="End">
                 <Label Text ="Scorri verso il basso per aggiornare" IsVisible="{Binding VisibleError}" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
-            </StackLayout>
+            </StackLayout>-->
         </StackLayout>
 
     </ContentPage.Content>
