@@ -11,6 +11,7 @@ using Xamarin.Forms;
 using AppNotificationCenter.Database.Data;
 using AppNotificationCenter.Services;
 using AppNotificationCenter.Database.Models;
+using Plugin.Connectivity;
 
 namespace AppNotificationCenter
 {
@@ -37,13 +38,15 @@ namespace AppNotificationCenter
                 user.organizzazione = utente[0].organizzazione;
                 user.eliminato = "false";
                 REST<Utente, Final> rest = new REST<Utente, Final>();
+            if (CrossConnectivity.Current.IsConnected)
+            {
                 var response = await rest.PostJson(URL.Login, user);
                 if (response.status)
                 {
                     if (response.final[0].attivo == false)
                     {
 
-                        await App.Current.MainPage.DisplayAlert("Login", "Utenza Scaduta", "OK");
+                        await App.Current.MainPage.DisplayAlert("Login", "Utenza non attiva", "OK");
                         LoginData.dropUser(new TbLogin(user.username, user.password, user.token, user.organizzazione));
                         UtenzaData.DropUser(new TbUtente(response.final[0]));
                         App.Current.MainPage = new Login();
@@ -52,7 +55,8 @@ namespace AppNotificationCenter
                     {
                         //await App.Current.MainPage.DisplayAlert("Login", "Login Effettuata con successo", "OK");
                         response.final[0].organizzazione = user.organizzazione;
-                        LoginData.updateUser(new TbLogin(user.username, user.password, user.token, user.organizzazione));
+                        LoginData.updateUser(new TbLogin(user.username, user.password, user.token,
+                            user.organizzazione));
                         UtenzaData.UpdateUser(new TbUtente(response.final[0]));
                     }
 
@@ -64,8 +68,8 @@ namespace AppNotificationCenter
                     UtenzaData.DropUser(new TbUtente(response.final[0]));
                     App.Current.MainPage = new Login();
                 }
-            
-           
+            }
+
         }
 
    

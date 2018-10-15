@@ -14,6 +14,7 @@ using AppNotificationCenter.Database.Models;
 using AppNotificationCenter.Views;
 using Xamarin.Forms;
 using System.Linq;
+using Plugin.Connectivity;
 
 namespace AppNotificationCenter.ModelViews
 {
@@ -202,96 +203,124 @@ namespace AppNotificationCenter.ModelViews
             user.eliminato = "false";
             try
             {
-                List = await connessione.PostJsonList(URL.Eventi, user);
-                if (List.Count != 0)
+                if (CrossConnectivity.Current.IsConnected)
                 {
-                    foreach (var i in List)
+                    List = await connessione.PostJsonList(URL.Eventi, user);
+                    if (List == null)
                     {
-                        
-                        if (i.tipo == "1")
+                        NessunEvento = "Nessun evento disponibile \n Scorri in basso per aggiornare";
+                        IsVoidEvent = true;
+                    }
+                    else
+                    {
+
+
+                        if (List.Count != 0)
                         {
-                            CultureInfo culture = new CultureInfo(cultureName);
-                            //i.data = i.data.Substring(0, 10);
-                            formaDateTime = Convert.ToDateTime(i.data,culture);
-                            i.data = formaDateTime.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
-                            i.data_ordinamento = formaDateTime;
-                            string img = "";
-                            if (!String.IsNullOrEmpty(i.immagine))
+                            foreach (var i in List)
                             {
-                                if (i.immagine.Contains("jpeg;"))
+
+                                if (i.tipo == "1")
                                 {
-                                    img = i.immagine.Substring(23);
-                                }
-                                else
-                                {
-                                    img = i.immagine.Substring(22);
+                                    CultureInfo culture = new CultureInfo(cultureName);
+                                    //i.data = i.data.Substring(0, 10);
+                                    formaDateTime = Convert.ToDateTime(i.data, culture);
+                                    i.data = formaDateTime.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
+                                    i.data_ordinamento = formaDateTime;
+                                    string img = "";
+                                    if (!String.IsNullOrEmpty(i.immagine))
+                                    {
+                                        if (i.immagine.Contains("jpeg;"))
+                                        {
+                                            img = i.immagine.Substring(23);
+                                        }
+                                        else
+                                        {
+                                            img = i.immagine.Substring(22);
+                                        }
+
+                                        immagine = Xamarin.Forms.ImageSource.FromStream(
+                                            () => new MemoryStream(Convert.FromBase64String(img)));
+                                        i.Immagine = immagine;
+                                    }
+
+                                    if (i.confermato == true)
+                                        i.TestoButtonEliminato = "ELIMINA";
+                                    listaEventi.Add(i);
                                 }
 
-                                immagine = Xamarin.Forms.ImageSource.FromStream(
-                                    () => new MemoryStream(Convert.FromBase64String(img)));
-                                i.Immagine = immagine;
+
                             }
 
-                            if (i.confermato == true)
-                                i.TestoButtonEliminato = "ELIMINA";
-                            listaEventi.Add(i);
-                        }
-
-
-                    }
-                    ListaEventi = ListaEventi.OrderByDescending(o => o.data_ordinamento).ToList();
-                    GroupDatiEvento cGroupListEventi = new GroupDatiEvento(listaEventi);
-                    cGroupListEventi.Heading = "Eventi";
-                    groupList.Add(cGroupListEventi);
-                    foreach (var i in List)
-                    {
-                        if (i.tipo == "2")
-                        {
-                            string img = "";
-                            if (!String.IsNullOrEmpty(img))
+                            ListaEventi = ListaEventi.OrderByDescending(o => o.data_ordinamento).ToList();
+                            GroupDatiEvento cGroupListEventi = new GroupDatiEvento(listaEventi);
+                            cGroupListEventi.Heading = "Eventi";
+                            groupList.Add(cGroupListEventi);
+                            foreach (var i in List)
                             {
-                                if (i.immagine.Contains("jpeg;"))
+                                if (i.tipo == "2")
                                 {
-                                    img = i.immagine.Substring(23);
-                                }
-                                else
-                                {
-                                    img = i.immagine.Substring(22);
-                                }
+                                    string img = "";
+                                    if (!String.IsNullOrEmpty(img))
+                                    {
+                                        if (i.immagine.Contains("jpeg;"))
+                                        {
+                                            img = i.immagine.Substring(23);
+                                        }
+                                        else
+                                        {
+                                            img = i.immagine.Substring(22);
+                                        }
 
-                                immagine = Xamarin.Forms.ImageSource.FromStream(
-                                    () => new MemoryStream(Convert.FromBase64String(img)));
-                                i.Immagine = immagine;
+                                        immagine = Xamarin.Forms.ImageSource.FromStream(
+                                            () => new MemoryStream(Convert.FromBase64String(img)));
+                                        i.Immagine = immagine;
+                                    }
+
+                                    if (i.confermato == true)
+                                        i.TestoButtonEliminato = "ELIMINA";
+                                    listaNote.Add(i);
+                                }
                             }
 
-                            if (i.confermato == true)
-                                i.TestoButtonEliminato = "ELIMINA";
-                            listaNote.Add(i);
-                        }
-                    }
-                    listaNote= listaNote.OrderByDescending(o => o.data_ordinamento).ToList();
-                    GroupDatiEvento cGroupListNote = new GroupDatiEvento(listaNote);
-                    cGroupListNote.Heading = "Note";
-                    groupList.Add(cGroupListNote);
-                    //ListaEventi = listaEventi;
-                    GroupDatiEvento = groupList;
+                            listaNote = listaNote.OrderByDescending(o => o.data_ordinamento).ToList();
+                            GroupDatiEvento cGroupListNote = new GroupDatiEvento(listaNote);
+                            cGroupListNote.Heading = "Note";
+                            groupList.Add(cGroupListNote);
+                            //ListaEventi = listaEventi;
+                            GroupDatiEvento = groupList;
 
-                    IsBusy = false;
+                            IsBusy = false;
+                        }
+                        else
+                        {
+                            DatiEvento evento = new DatiEvento();
+                            evento.titolo = "Nessun evento disponibile \n Scorri in basso per aggiornare";
+                            IsVoidEvent = true;
+                            NessunEvento = "Nessun evento disponibile \n Scorri in basso per aggiornare";
+                            evento.VisibleError = "false";
+                            listaEventi.Add(evento);
+                            listaNote.Add(evento);
+                        }
+
+                        //ListaEventi = listaEventi;
+                        GroupDatiEvento = groupList;
+                        IsBusy = false;
+                    }
                 }
                 else
                 {
                     DatiEvento evento = new DatiEvento();
-                    evento.titolo = "Nessun evento disponibile \n Scorri in basso per aggiornare";
-                    IsVoidEvent = true;
-                    NessunEvento= "Nessun evento disponibile \n Scorri in basso per aggiornare";
+                    evento.titolo = "Nessun evento \n Scorri in basso per aggiornare";
                     evento.VisibleError = "false";
+                    IsVoidEvent = true;
+                    NessunEvento = "Nessun evento \n Scorri in basso per aggiornare";
                     listaEventi.Add(evento);
                     listaNote.Add(evento);
+                    //ListaEventi = listaEventi;
+                    GroupDatiEvento = groupList;
+                    IsBusy = false;
                 }
-                //ListaEventi = listaEventi;
-                GroupDatiEvento = groupList;
-                IsBusy = false;
-
             }
             catch (Exception a)
             {

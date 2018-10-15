@@ -123,27 +123,35 @@ namespace AppNotificationCenter.ModelViews
             token = App.Current.Properties["token"].ToString();
             REST<Utente, Final> rest = new REST<Utente, Final>();
             var response = await rest.PostJson(URL.Login, user);
-            if (response.status)
+            if (response != null)
             {
-                if (response.final[0].attivo == false)
+                if (response.status)
                 {
+                    if (response.final[0].attivo == false)
+                    {
 
-                    await App.Current.MainPage.DisplayAlert("Login", "Utenza Scaduta", "OK");
-                    return false;
+                        await App.Current.MainPage.DisplayAlert("Login", "Utenza Scaduta", "OK");
+                        return false;
+                    }
+                    else
+                    {
+                        //await App.Current.MainPage.DisplayAlert("Login", "Login Effettuata con successo", "OK");
+                        response.final[0].organizzazione = user.organizzazione;
+                        LoginData.InsertUser(new TbLogin(user.username, user.password, user.token, user.organizzazione));
+                        UtenzaData.InsertUser(new TbUtente(response.final[0]));
+                        return true;
+                    }
                 }
                 else
                 {
-                    //await App.Current.MainPage.DisplayAlert("Login", "Login Effettuata con successo", "OK");
-                    response.final[0].organizzazione = user.organizzazione;
-                    LoginData.InsertUser(new TbLogin(user.username, user.password, user.token, user.organizzazione));
-                    UtenzaData.InsertUser(new TbUtente(response.final[0]));
-                    return true;
+                    await App.Current.MainPage.DisplayAlert("Login", "Login Fallita", "OK");
+                    return false;
                 }
-                
+
             }
             else
             {
-                await App.Current.MainPage.DisplayAlert("Login", "Login Fallita", "OK");
+                await App.Current.MainPage.DisplayAlert("Login", "Connessione assente", "OK");
                 return false;
             }
         }
