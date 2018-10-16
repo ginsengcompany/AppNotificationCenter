@@ -130,7 +130,7 @@ namespace AppNotificationCenter.ModelViews
                     if (response.final[0].attivo == false)
                     {
 
-                        await App.Current.MainPage.DisplayAlert("Login", "Utenza Scaduta", "OK");
+                        await App.Current.MainPage.DisplayAlert("Login", "Utenza non attiva", "OK");
                         return false;
                     }
                     else

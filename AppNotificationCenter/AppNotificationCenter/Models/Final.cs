@@ -20,7 +20,7 @@ namespace AppNotificationCenter.Models
         public string pec { get; set; }
         public string password { get; set; }
         public string organizzazione { get; set; }
-        public List<Interessi> interessi { get; set; }
+        public string interessi { get; set; }
         public bool attivo { get; set; }
     }
     public class Interessi

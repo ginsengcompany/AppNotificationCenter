@@ -31,6 +31,8 @@ namespace AppNotificationCenter.Database.Models
         public string pec { get; set; }
         [NotNull,Column("password")]
         public string password { get; set; }
+        [NotNull,Column("username")]
+        public string username { get; set; }
 
 
         public TbUtente() { }
@@ -45,6 +47,7 @@ namespace AppNotificationCenter.Database.Models
             this.password = utenteLoggato.password;
             this.pec = utenteLoggato.pec;
             this.provincia = utenteLoggato.provincia;
+            this.username = utenteLoggato.username;
             this.organizzazione = utenteLoggato.organizzazione;
         }
     }

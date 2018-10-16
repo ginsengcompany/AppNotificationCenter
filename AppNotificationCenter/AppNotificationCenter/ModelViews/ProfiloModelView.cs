@@ -97,6 +97,7 @@ namespace AppNotificationCenter.ModelViews
                 {
                     IsEnabled = false;
                     isEnabledModifica = true;
+                    Helper = "";
                     UtenteProfilo = UtenzaData.getUser();
                 });
             }
@@ -114,6 +115,7 @@ namespace AppNotificationCenter.ModelViews
                     if (response.status)
                     {
                         UtenzaData.UpdateUser(UtenteProfilo);
+                        Helper = "";
                     }
                     else
                     {
