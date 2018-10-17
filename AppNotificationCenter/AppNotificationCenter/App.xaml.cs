@@ -28,7 +28,7 @@ namespace AppNotificationCenter
                 MainPage = new NavigationPage(new MainPage());
             }
             else
-                MainPage = new Login();
+                MainPage = new NavigationPage(new Login());
             OneSignal.Current.StartInit(APP_ID_ONE_SIGNAL)
                   .EndInit();
         }

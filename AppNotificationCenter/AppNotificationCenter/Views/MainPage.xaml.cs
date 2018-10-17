@@ -66,7 +66,7 @@ namespace AppNotificationCenter
 
                     LoginData.dropUser(new TbLogin(user.username, user.password, user.token, user.organizzazione));
                     UtenzaData.DropUser(new TbUtente(response.final[0]));
-                    App.Current.MainPage = new Login();
+                    App.Current.MainPage = new NavigationPage(new Login());
                 }
             }
 

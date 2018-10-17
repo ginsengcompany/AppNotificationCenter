@@ -163,7 +163,6 @@ namespace AppNotificationCenter.ModelViews
             if (response.Count > 0)
             {
                 _organizzazionePicker = response;
-                _nomeUtente = _organizzazionePicker[0].cod_org;
                 return true;
             }
             else

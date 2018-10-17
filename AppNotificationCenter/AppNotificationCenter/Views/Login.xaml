@@ -4,7 +4,8 @@
              xmlns:ci="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
              xmlns:CostomControls="clr-namespace:AppNotificationCenter.CostomControls"
              xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
-             x:Class="AppNotificationCenter.Views.Login">
+             x:Class="AppNotificationCenter.Views.Login"
+             Title="Login">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="0,20,0,0">
@@ -14,62 +15,33 @@
                                     HorizontalOptions="Center"
                                     Source="logo.png">
                 </Image>
-
-              <!--  <Frame  BackgroundColor="#4b8b80" 
-                        CornerRadius="15"
-                        HasShadow="True"
-                        Margin="20,30,20,40">-->
-                    <StackLayout  Orientation="Vertical" VerticalOptions="CenterAndExpand" >
+                <StackLayout  Orientation="Vertical" VerticalOptions="CenterAndExpand" >
 
                         <StackLayout Padding="20">
                             <inputLayout:SfTextInputLayout
                                 Hint="Username" 
-                                ContainerType="Filled" >
+                                ContainerType="Outlined"
+                                HelperText="Inserisci l'username">
                                 <Entry x:Name="entryUserName" Placeholder="Username" Text="{Binding _nomeUtente}"/>
                             </inputLayout:SfTextInputLayout>
-                            <!-- <CostomControls:CustomEntry CornerRadius="18" 
-                                          HeightRequest="50"
-                                          BorderWidth="3"
-                                          IsCurvedCornersEnabled="True"  
-                                          VerticalOptions="Center"
-                                          HorizontalTextAlignment="Center"   
-                                          Placeholder="Username"  
-                                          Text="{Binding _nomeUtente}"
-                                          x:Name="entryUserName"
-                                          PlaceholderColor="Gray"
-                                          TextColor="Black"  
-                                          FontAttributes="Bold">
-                        </CostomControls:CustomEntry>
-                      -->
+     
                     </StackLayout>
                        
                         <StackLayout Padding="20">
                         <inputLayout:SfTextInputLayout
-                                Hint="Password"
-                                EnablePasswordVisibilityToggle="true">
-                            <Entry x:Name="entryPassword" IsPassword="True" Placeholder="Password" Text="{Binding _password}"/>
+                            Hint="Password"
+                            ContainerType="Outlined"
+                            HelperText="Inserisci la password"
+                            EnablePasswordVisibilityToggle="True">
+                            <Entry x:Name="entryPassword" Text="{Binding _password}"/>
                         </inputLayout:SfTextInputLayout>
-                        <!--   <CostomControls:CustomEntry CornerRadius="18" 
-                                                        HeightRequest="50"
-                                                        BorderWidth="3"
-                                                        IsPassword="True"
-                                                        IsCurvedCornersEnabled="True"  
-                                                        VerticalOptions="Center"
-                                                        HorizontalTextAlignment="Center"   
-                                                        Placeholder="Password"  
-                                                        Text="{Binding _password}" 
-                                                        x:Name="entryPassword"
-                                                        PlaceholderColor="Gray"
-                                                        TextColor="Black"  
-                                                        FontAttributes="Bold">
-                            </CostomControls:CustomEntry>-->
+  
                         </StackLayout>
                       
                         <StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="Center" >
                         <Button BackgroundColor="#4b8b80" WidthRequest="100" CornerRadius="10" Clicked="Button_Clicked" TextColor="White" Text="Login"></Button>
                         </StackLayout>
                     </StackLayout>
-               <!-- </Frame>-->
 
              
                 
