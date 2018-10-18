@@ -11,7 +11,7 @@ namespace AppNotificationCenter
     public partial class App : Application
     {
 
-        private const string APP_ID_ONE_SIGNAL = "b560b667-aa97-4980-a740-c8fc7925e208";
+        public static string APP_ID_ONE_SIGNAL = "b560b667-aa97-4980-a740-c8fc7925e208";
 
         public App()
         {
@@ -26,11 +26,17 @@ namespace AppNotificationCenter
             if (checkUser())
             {
                 MainPage = new NavigationPage(new MainPage());
+                OneSignal.Current.IdsAvailable(((string userID, string pushToken) =>
+                {
+                    App.Current.Properties["token"] = userID;
+
+                }));
+                OneSignal.Current.StartInit(APP_ID_ONE_SIGNAL)
+                    .EndInit();
             }
             else
                 MainPage = new NavigationPage(new Login());
-            OneSignal.Current.StartInit(APP_ID_ONE_SIGNAL)
-                  .EndInit();
+
         }
 
         private bool checkUser()
@@ -45,11 +51,7 @@ namespace AppNotificationCenter
         protected override void OnStart()
         {
             // Handle when your app starts
-            OneSignal.Current.IdsAvailable(((string userID, string pushToken) =>
-            {
-                App.Current.Properties["token"] = userID;
-                
-            }));
+
             
         }
 
