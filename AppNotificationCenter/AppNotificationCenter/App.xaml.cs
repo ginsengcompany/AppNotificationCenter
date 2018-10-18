@@ -26,17 +26,11 @@ namespace AppNotificationCenter
             if (checkUser())
             {
                 MainPage = new NavigationPage(new MainPage());
-                OneSignal.Current.IdsAvailable(((string userID, string pushToken) =>
-                {
-                    App.Current.Properties["token"] = userID;
-
-                }));
-                OneSignal.Current.StartInit(APP_ID_ONE_SIGNAL)
-                    .EndInit();
             }
             else
                 MainPage = new NavigationPage(new Login());
-
+            OneSignal.Current.StartInit(APP_ID_ONE_SIGNAL)
+                .EndInit();
         }
 
         private bool checkUser()
@@ -51,8 +45,12 @@ namespace AppNotificationCenter
         protected override void OnStart()
         {
             // Handle when your app starts
+            OneSignal.Current.IdsAvailable(((string userID, string pushToken) =>
+            {
+                App.Current.Properties["token"] = userID;
 
-            
+            }));
+
         }
 
         protected override void OnSleep()

@@ -45,13 +45,7 @@ namespace AppNotificationCenter.Views
                 }
                 if (access)
                 {
-                    OneSignal.Current.StartInit(App.APP_ID_ONE_SIGNAL)
-                        .EndInit();
-                    OneSignal.Current.IdsAvailable(((string userID, string pushToken) =>
-                        {
-                            App.Current.Properties["token"] = userID;
 
-                        }));
                     App.Current.MainPage = new NavigationPage(new MainPage());
                     
                 }
