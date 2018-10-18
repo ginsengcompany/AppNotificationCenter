@@ -2,14 +2,14 @@
 {
     public static class URL
     {
-        public const string urlRemoto = "omceoce.ak12srl.it";
+        public const string urlRemoto = "https://notification-center.ak12srl.it/";
         public const string urlLocale = "192.168.125.14:3000";
-        public static string Eventi = "http://" + urlLocale + "/getEventiByID";
+        public static string Eventi = urlRemoto + "/getEventiByID";
 
-        public static string Login = "http://" + urlLocale + "/cercaUsername";
+        public static string Login = urlRemoto + "/cercaUsername";
 
-        public static string ConfermaElimina = "http://" + urlLocale + "/setEliminatoConfermato";
-        public static string listaOrganizzazione = "http://" + urlLocale + "/getListaOrganizzazione";
-        public static string modificaContatto = "http://" + urlLocale + "/modificaContatto";
+        public static string ConfermaElimina =urlRemoto + "/setEliminatoConfermato";
+        public static string listaOrganizzazione = urlRemoto + "/getListaOrganizzazione";
+        public static string modificaContatto = urlRemoto + "/modificaContatto";
     }
 }
