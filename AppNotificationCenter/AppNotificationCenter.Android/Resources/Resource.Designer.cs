@@ -30,6 +30,44 @@ namespace AppNotificationCenter.Droid
 			global::PCLStorage.Resource.String.Hello = global::AppNotificationCenter.Droid.Resource.String.Hello;
 			global::Syncfusion.XForms.Android.Core.Resource.Drawable.inputlayout_togglecollapseicon = global::AppNotificationCenter.Droid.Resource.Drawable.inputlayout_togglecollapseicon;
 			global::Syncfusion.XForms.Android.Core.Resource.Drawable.inputlayout_togglevisibleicon = global::AppNotificationCenter.Droid.Resource.Drawable.inputlayout_togglevisibleicon;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Attribute.busyIndicatorAnimationTypes = global::AppNotificationCenter.Droid.Resource.Attribute.busyIndicatorAnimationTypes;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Attribute.busyIndicatorIsBusy = global::AppNotificationCenter.Droid.Resource.Attribute.busyIndicatorIsBusy;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Attribute.busyIndicatorSecondaryColor = global::AppNotificationCenter.Droid.Resource.Attribute.busyIndicatorSecondaryColor;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Attribute.busyIndicatorTextColor = global::AppNotificationCenter.Droid.Resource.Attribute.busyIndicatorTextColor;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Attribute.busyIndicatorTextSize = global::AppNotificationCenter.Droid.Resource.Attribute.busyIndicatorTextSize;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Attribute.busyIndicatorTitle = global::AppNotificationCenter.Droid.Resource.Attribute.busyIndicatorTitle;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Attribute.busyIndicatorTitlePlacement = global::AppNotificationCenter.Droid.Resource.Attribute.busyIndicatorTitlePlacement;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Attribute.busyIndicatorViewBoxHeight = global::AppNotificationCenter.Droid.Resource.Attribute.busyIndicatorViewBoxHeight;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Attribute.busyIndicatorViewBoxWidth = global::AppNotificationCenter.Droid.Resource.Attribute.busyIndicatorViewBoxWidth;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.ball = global::AppNotificationCenter.Droid.Resource.Id.ball;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.battery = global::AppNotificationCenter.Droid.Resource.Id.battery;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.bottom = global::AppNotificationCenter.Droid.Resource.Id.bottom;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.box = global::AppNotificationCenter.Droid.Resource.Id.box;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.doubleCircle = global::AppNotificationCenter.Droid.Resource.Id.doubleCircle;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.ecg = global::AppNotificationCenter.Droid.Resource.Id.ecg;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.gearBox = global::AppNotificationCenter.Droid.Resource.Id.gearBox;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.globe = global::AppNotificationCenter.Droid.Resource.Id.globe;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.horizontalPulsingBox = global::AppNotificationCenter.Droid.Resource.Id.horizontalPulsingBox;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.movieTimer = global::AppNotificationCenter.Droid.Resource.Id.movieTimer;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.none = global::AppNotificationCenter.Droid.Resource.Id.none;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.print = global::AppNotificationCenter.Droid.Resource.Id.print;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.rectangle = global::AppNotificationCenter.Droid.Resource.Id.rectangle;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.rollingBall = global::AppNotificationCenter.Droid.Resource.Id.rollingBall;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.singleCircle = global::AppNotificationCenter.Droid.Resource.Id.singleCircle;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.slicedCircle = global::AppNotificationCenter.Droid.Resource.Id.slicedCircle;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.top = global::AppNotificationCenter.Droid.Resource.Id.top;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.zoomingTarget = global::AppNotificationCenter.Droid.Resource.Id.zoomingTarget;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.String.library_name = global::AppNotificationCenter.Droid.Resource.String.library_name;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator = global::AppNotificationCenter.Droid.Resource.Styleable.SfBusyIndicator;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator_busyIndicatorAnimationTypes = global::AppNotificationCenter.Droid.Resource.Styleable.SfBusyIndicator_busyIndicatorAnimationTypes;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator_busyIndicatorIsBusy = global::AppNotificationCenter.Droid.Resource.Styleable.SfBusyIndicator_busyIndicatorIsBusy;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator_busyIndicatorSecondaryColor = global::AppNotificationCenter.Droid.Resource.Styleable.SfBusyIndicator_busyIndicatorSecondaryColor;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator_busyIndicatorTextColor = global::AppNotificationCenter.Droid.Resource.Styleable.SfBusyIndicator_busyIndicatorTextColor;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator_busyIndicatorTextSize = global::AppNotificationCenter.Droid.Resource.Styleable.SfBusyIndicator_busyIndicatorTextSize;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator_busyIndicatorTitle = global::AppNotificationCenter.Droid.Resource.Styleable.SfBusyIndicator_busyIndicatorTitle;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator_busyIndicatorTitlePlacement = global::AppNotificationCenter.Droid.Resource.Styleable.SfBusyIndicator_busyIndicatorTitlePlacement;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator_busyIndicatorViewBoxHeight = global::AppNotificationCenter.Droid.Resource.Styleable.SfBusyIndicator_busyIndicatorViewBoxHeight;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator_busyIndicatorViewBoxWidth = global::AppNotificationCenter.Droid.Resource.Styleable.SfBusyIndicator_busyIndicatorViewBoxWidth;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::AppNotificationCenter.Droid.Resource.Attribute.actionBarSize;
 		}
 		
@@ -304,6 +342,33 @@ namespace AppNotificationCenter.Droid
 			
 			// aapt resource value: 0x7f010140
 			public const int bottomSheetStyle = 2130772288;
+			
+			// aapt resource value: 0x7f010179
+			public const int busyIndicatorAnimationTypes = 2130772345;
+			
+			// aapt resource value: 0x7f010181
+			public const int busyIndicatorIsBusy = 2130772353;
+			
+			// aapt resource value: 0x7f01017f
+			public const int busyIndicatorSecondaryColor = 2130772351;
+			
+			// aapt resource value: 0x7f01017a
+			public const int busyIndicatorTextColor = 2130772346;
+			
+			// aapt resource value: 0x7f01017e
+			public const int busyIndicatorTextSize = 2130772350;
+			
+			// aapt resource value: 0x7f01017d
+			public const int busyIndicatorTitle = 2130772349;
+			
+			// aapt resource value: 0x7f010180
+			public const int busyIndicatorTitlePlacement = 2130772352;
+			
+			// aapt resource value: 0x7f01017b
+			public const int busyIndicatorViewBoxHeight = 2130772347;
+			
+			// aapt resource value: 0x7f01017c
+			public const int busyIndicatorViewBoxWidth = 2130772348;
 			
 			// aapt resource value: 0x7f01008e
 			public const int buttonBarButtonStyle = 2130772110;
@@ -3181,41 +3246,41 @@ namespace AppNotificationCenter.Droid
 			// aapt resource value: 0x7f0c003f
 			public const int SYM = 2131492927;
 			
-			// aapt resource value: 0x7f0c00bd
-			public const int action0 = 2131493053;
+			// aapt resource value: 0x7f0c00cc
+			public const int action0 = 2131493068;
 			
-			// aapt resource value: 0x7f0c0083
-			public const int action_bar = 2131492995;
+			// aapt resource value: 0x7f0c0092
+			public const int action_bar = 2131493010;
 			
 			// aapt resource value: 0x7f0c0001
 			public const int action_bar_activity_content = 2131492865;
 			
-			// aapt resource value: 0x7f0c0082
-			public const int action_bar_container = 2131492994;
+			// aapt resource value: 0x7f0c0091
+			public const int action_bar_container = 2131493009;
 			
-			// aapt resource value: 0x7f0c007e
-			public const int action_bar_root = 2131492990;
+			// aapt resource value: 0x7f0c008d
+			public const int action_bar_root = 2131493005;
 			
 			// aapt resource value: 0x7f0c0002
 			public const int action_bar_spinner = 2131492866;
 			
-			// aapt resource value: 0x7f0c0062
-			public const int action_bar_subtitle = 2131492962;
+			// aapt resource value: 0x7f0c0071
+			public const int action_bar_subtitle = 2131492977;
 			
-			// aapt resource value: 0x7f0c0061
-			public const int action_bar_title = 2131492961;
+			// aapt resource value: 0x7f0c0070
+			public const int action_bar_title = 2131492976;
 			
-			// aapt resource value: 0x7f0c00ba
-			public const int action_container = 2131493050;
+			// aapt resource value: 0x7f0c00c9
+			public const int action_container = 2131493065;
 			
-			// aapt resource value: 0x7f0c0084
-			public const int action_context_bar = 2131492996;
+			// aapt resource value: 0x7f0c0093
+			public const int action_context_bar = 2131493011;
 			
-			// aapt resource value: 0x7f0c00c1
-			public const int action_divider = 2131493057;
+			// aapt resource value: 0x7f0c00d0
+			public const int action_divider = 2131493072;
 			
-			// aapt resource value: 0x7f0c00bb
-			public const int action_image = 2131493051;
+			// aapt resource value: 0x7f0c00ca
+			public const int action_image = 2131493066;
 			
 			// aapt resource value: 0x7f0c0003
 			public const int action_menu_divider = 2131492867;
@@ -3223,23 +3288,23 @@ namespace AppNotificationCenter.Droid
 			// aapt resource value: 0x7f0c0004
 			public const int action_menu_presenter = 2131492868;
 			
-			// aapt resource value: 0x7f0c0080
-			public const int action_mode_bar = 2131492992;
+			// aapt resource value: 0x7f0c008f
+			public const int action_mode_bar = 2131493007;
 			
-			// aapt resource value: 0x7f0c007f
-			public const int action_mode_bar_stub = 2131492991;
+			// aapt resource value: 0x7f0c008e
+			public const int action_mode_bar_stub = 2131493006;
 			
-			// aapt resource value: 0x7f0c0063
-			public const int action_mode_close_button = 2131492963;
+			// aapt resource value: 0x7f0c0072
+			public const int action_mode_close_button = 2131492978;
 			
-			// aapt resource value: 0x7f0c00bc
-			public const int action_text = 2131493052;
+			// aapt resource value: 0x7f0c00cb
+			public const int action_text = 2131493067;
 			
-			// aapt resource value: 0x7f0c00ca
-			public const int actions = 2131493066;
+			// aapt resource value: 0x7f0c00d9
+			public const int actions = 2131493081;
 			
-			// aapt resource value: 0x7f0c0064
-			public const int activity_chooser_view_content = 2131492964;
+			// aapt resource value: 0x7f0c0073
+			public const int activity_chooser_view_content = 2131492979;
 			
 			// aapt resource value: 0x7f0c002f
 			public const int add = 2131492911;
@@ -3250,8 +3315,8 @@ namespace AppNotificationCenter.Droid
 			// aapt resource value: 0x7f0c001e
 			public const int adjust_width = 2131492894;
 			
-			// aapt resource value: 0x7f0c0077
-			public const int alertTitle = 2131492983;
+			// aapt resource value: 0x7f0c0086
+			public const int alertTitle = 2131492998;
 			
 			// aapt resource value: 0x7f0c0059
 			public const int all = 2131492953;
@@ -3265,6 +3330,12 @@ namespace AppNotificationCenter.Droid
 			// aapt resource value: 0x7f0c0023
 			public const int auto = 2131492899;
 			
+			// aapt resource value: 0x7f0c0061
+			public const int ball = 2131492961;
+			
+			// aapt resource value: 0x7f0c0062
+			public const int battery = 2131492962;
+			
 			// aapt resource value: 0x7f0c0037
 			public const int beginning = 2131492919;
 			
@@ -3274,11 +3345,14 @@ namespace AppNotificationCenter.Droid
 			// aapt resource value: 0x7f0c0045
 			public const int bottom = 2131492933;
 			
-			// aapt resource value: 0x7f0c006a
-			public const int buttonPanel = 2131492970;
+			// aapt resource value: 0x7f0c0063
+			public const int box = 2131492963;
 			
-			// aapt resource value: 0x7f0c00be
-			public const int cancel_action = 2131493054;
+			// aapt resource value: 0x7f0c0079
+			public const int buttonPanel = 2131492985;
+			
+			// aapt resource value: 0x7f0c00cd
+			public const int cancel_action = 2131493069;
 			
 			// aapt resource value: 0x7f0c004c
 			public const int center = 2131492940;
@@ -3289,11 +3363,11 @@ namespace AppNotificationCenter.Droid
 			// aapt resource value: 0x7f0c004e
 			public const int center_vertical = 2131492942;
 			
-			// aapt resource value: 0x7f0c007a
-			public const int checkbox = 2131492986;
+			// aapt resource value: 0x7f0c0089
+			public const int checkbox = 2131493001;
 			
-			// aapt resource value: 0x7f0c00c6
-			public const int chronometer = 2131493062;
+			// aapt resource value: 0x7f0c00d5
+			public const int chronometer = 2131493077;
 			
 			// aapt resource value: 0x7f0c0055
 			public const int clip_horizontal = 2131492949;
@@ -3304,56 +3378,62 @@ namespace AppNotificationCenter.Droid
 			// aapt resource value: 0x7f0c0041
 			public const int collapseActionView = 2131492929;
 			
-			// aapt resource value: 0x7f0c0094
-			public const int container = 2131493012;
+			// aapt resource value: 0x7f0c00a3
+			public const int container = 2131493027;
 			
-			// aapt resource value: 0x7f0c006d
-			public const int contentPanel = 2131492973;
+			// aapt resource value: 0x7f0c007c
+			public const int contentPanel = 2131492988;
 			
-			// aapt resource value: 0x7f0c0095
-			public const int coordinator = 2131493013;
+			// aapt resource value: 0x7f0c00a4
+			public const int coordinator = 2131493028;
 			
-			// aapt resource value: 0x7f0c0074
-			public const int custom = 2131492980;
+			// aapt resource value: 0x7f0c0083
+			public const int custom = 2131492995;
 			
-			// aapt resource value: 0x7f0c0073
-			public const int customPanel = 2131492979;
+			// aapt resource value: 0x7f0c0082
+			public const int customPanel = 2131492994;
 			
 			// aapt resource value: 0x7f0c0024
 			public const int dark = 2131492900;
 			
-			// aapt resource value: 0x7f0c0081
-			public const int decor_content_parent = 2131492993;
+			// aapt resource value: 0x7f0c0090
+			public const int decor_content_parent = 2131493008;
 			
-			// aapt resource value: 0x7f0c0067
-			public const int default_activity_button = 2131492967;
+			// aapt resource value: 0x7f0c0076
+			public const int default_activity_button = 2131492982;
 			
-			// aapt resource value: 0x7f0c0097
-			public const int design_bottom_sheet = 2131493015;
+			// aapt resource value: 0x7f0c00a6
+			public const int design_bottom_sheet = 2131493030;
 			
-			// aapt resource value: 0x7f0c009e
-			public const int design_menu_item_action_area = 2131493022;
+			// aapt resource value: 0x7f0c00ad
+			public const int design_menu_item_action_area = 2131493037;
 			
-			// aapt resource value: 0x7f0c009d
-			public const int design_menu_item_action_area_stub = 2131493021;
+			// aapt resource value: 0x7f0c00ac
+			public const int design_menu_item_action_area_stub = 2131493036;
 			
-			// aapt resource value: 0x7f0c009c
-			public const int design_menu_item_text = 2131493020;
+			// aapt resource value: 0x7f0c00ab
+			public const int design_menu_item_text = 2131493035;
 			
-			// aapt resource value: 0x7f0c009b
-			public const int design_navigation_view = 2131493019;
+			// aapt resource value: 0x7f0c00aa
+			public const int design_navigation_view = 2131493034;
 			
 			// aapt resource value: 0x7f0c0029
 			public const int disableHome = 2131492905;
 			
-			// aapt resource value: 0x7f0c0085
-			public const int edit_query = 2131492997;
+			// aapt resource value: 0x7f0c0064
+			public const int doubleCircle = 2131492964;
+			
+			// aapt resource value: 0x7f0c0065
+			public const int ecg = 2131492965;
+			
+			// aapt resource value: 0x7f0c0094
+			public const int edit_query = 2131493012;
 			
 			// aapt resource value: 0x7f0c0038
 			public const int end = 2131492920;
 			
-			// aapt resource value: 0x7f0c00cc
-			public const int end_padder = 2131493068;
+			// aapt resource value: 0x7f0c00db
+			public const int end_padder = 2131493083;
 			
 			// aapt resource value: 0x7f0c0047
 			public const int enterAlways = 2131492935;
@@ -3364,11 +3444,11 @@ namespace AppNotificationCenter.Droid
 			// aapt resource value: 0x7f0c0049
 			public const int exitUntilCollapsed = 2131492937;
 			
-			// aapt resource value: 0x7f0c0065
-			public const int expand_activities_button = 2131492965;
+			// aapt resource value: 0x7f0c0074
+			public const int expand_activities_button = 2131492980;
 			
-			// aapt resource value: 0x7f0c0079
-			public const int expanded_menu = 2131492985;
+			// aapt resource value: 0x7f0c0088
+			public const int expanded_menu = 2131493000;
 			
 			// aapt resource value: 0x7f0c0057
 			public const int fill = 2131492951;
@@ -3385,8 +3465,14 @@ namespace AppNotificationCenter.Droid
 			// aapt resource value: 0x7f0c005f
 			public const int forever = 2131492959;
 			
+			// aapt resource value: 0x7f0c0066
+			public const int gearBox = 2131492966;
+			
 			// aapt resource value: 0x7f0c000a
 			public const int ghost_view = 2131492874;
+			
+			// aapt resource value: 0x7f0c0067
+			public const int globe = 2131492967;
 			
 			// aapt resource value: 0x7f0c0005
 			public const int home = 2131492869;
@@ -3394,11 +3480,14 @@ namespace AppNotificationCenter.Droid
 			// aapt resource value: 0x7f0c002a
 			public const int homeAsUp = 2131492906;
 			
-			// aapt resource value: 0x7f0c0069
-			public const int icon = 2131492969;
+			// aapt resource value: 0x7f0c0068
+			public const int horizontalPulsingBox = 2131492968;
 			
-			// aapt resource value: 0x7f0c00cb
-			public const int icon_group = 2131493067;
+			// aapt resource value: 0x7f0c0078
+			public const int icon = 2131492984;
+			
+			// aapt resource value: 0x7f0c00da
+			public const int icon_group = 2131493082;
 			
 			// aapt resource value: 0x7f0c0020
 			public const int icon_only = 2131492896;
@@ -3406,11 +3495,11 @@ namespace AppNotificationCenter.Droid
 			// aapt resource value: 0x7f0c0042
 			public const int ifRoom = 2131492930;
 			
-			// aapt resource value: 0x7f0c0066
-			public const int image = 2131492966;
+			// aapt resource value: 0x7f0c0075
+			public const int image = 2131492981;
 			
-			// aapt resource value: 0x7f0c00c7
-			public const int info = 2131493063;
+			// aapt resource value: 0x7f0c00d6
+			public const int info = 2131493078;
 			
 			// aapt resource value: 0x7f0c0060
 			public const int italic = 2131492960;
@@ -3418,8 +3507,8 @@ namespace AppNotificationCenter.Droid
 			// aapt resource value: 0x7f0c0000
 			public const int item_touch_helper_previous_elevation = 2131492864;
 			
-			// aapt resource value: 0x7f0c0093
-			public const int largeLabel = 2131493011;
+			// aapt resource value: 0x7f0c00a2
+			public const int largeLabel = 2131493026;
 			
 			// aapt resource value: 0x7f0c0050
 			public const int left = 2131492944;
@@ -3436,17 +3525,17 @@ namespace AppNotificationCenter.Droid
 			// aapt resource value: 0x7f0c0026
 			public const int listMode = 2131492902;
 			
-			// aapt resource value: 0x7f0c0068
-			public const int list_item = 2131492968;
+			// aapt resource value: 0x7f0c0077
+			public const int list_item = 2131492983;
 			
-			// aapt resource value: 0x7f0c00d6
-			public const int masked = 2131493078;
+			// aapt resource value: 0x7f0c00e5
+			public const int masked = 2131493093;
 			
-			// aapt resource value: 0x7f0c00c0
-			public const int media_actions = 2131493056;
+			// aapt resource value: 0x7f0c00cf
+			public const int media_actions = 2131493071;
 			
-			// aapt resource value: 0x7f0c00d4
-			public const int message = 2131493076;
+			// aapt resource value: 0x7f0c00e3
+			public const int message = 2131493091;
 			
 			// aapt resource value: 0x7f0c0039
 			public const int middle = 2131492921;
@@ -3454,86 +3543,89 @@ namespace AppNotificationCenter.Droid
 			// aapt resource value: 0x7f0c005a
 			public const int mini = 2131492954;
 			
-			// aapt resource value: 0x7f0c00ac
-			public const int mr_art = 2131493036;
+			// aapt resource value: 0x7f0c0069
+			public const int movieTimer = 2131492969;
 			
-			// aapt resource value: 0x7f0c00a1
-			public const int mr_chooser_list = 2131493025;
-			
-			// aapt resource value: 0x7f0c00a4
-			public const int mr_chooser_route_desc = 2131493028;
-			
-			// aapt resource value: 0x7f0c00a2
-			public const int mr_chooser_route_icon = 2131493026;
-			
-			// aapt resource value: 0x7f0c00a3
-			public const int mr_chooser_route_name = 2131493027;
-			
-			// aapt resource value: 0x7f0c00a0
-			public const int mr_chooser_title = 2131493024;
-			
-			// aapt resource value: 0x7f0c00a9
-			public const int mr_close = 2131493033;
-			
-			// aapt resource value: 0x7f0c00af
-			public const int mr_control_divider = 2131493039;
-			
-			// aapt resource value: 0x7f0c00b5
-			public const int mr_control_playback_ctrl = 2131493045;
-			
-			// aapt resource value: 0x7f0c00b8
-			public const int mr_control_subtitle = 2131493048;
-			
-			// aapt resource value: 0x7f0c00b7
-			public const int mr_control_title = 2131493047;
-			
-			// aapt resource value: 0x7f0c00b6
-			public const int mr_control_title_container = 2131493046;
-			
-			// aapt resource value: 0x7f0c00aa
-			public const int mr_custom_control = 2131493034;
-			
-			// aapt resource value: 0x7f0c00ab
-			public const int mr_default_control = 2131493035;
-			
-			// aapt resource value: 0x7f0c00a6
-			public const int mr_dialog_area = 2131493030;
-			
-			// aapt resource value: 0x7f0c00a5
-			public const int mr_expandable_area = 2131493029;
-			
-			// aapt resource value: 0x7f0c00b9
-			public const int mr_group_expand_collapse = 2131493049;
-			
-			// aapt resource value: 0x7f0c00ad
-			public const int mr_media_main_control = 2131493037;
-			
-			// aapt resource value: 0x7f0c00a8
-			public const int mr_name = 2131493032;
-			
-			// aapt resource value: 0x7f0c00ae
-			public const int mr_playback_control = 2131493038;
-			
-			// aapt resource value: 0x7f0c00a7
-			public const int mr_title_bar = 2131493031;
+			// aapt resource value: 0x7f0c00bb
+			public const int mr_art = 2131493051;
 			
 			// aapt resource value: 0x7f0c00b0
-			public const int mr_volume_control = 2131493040;
-			
-			// aapt resource value: 0x7f0c00b1
-			public const int mr_volume_group_list = 2131493041;
+			public const int mr_chooser_list = 2131493040;
 			
 			// aapt resource value: 0x7f0c00b3
-			public const int mr_volume_item_icon = 2131493043;
+			public const int mr_chooser_route_desc = 2131493043;
+			
+			// aapt resource value: 0x7f0c00b1
+			public const int mr_chooser_route_icon = 2131493041;
+			
+			// aapt resource value: 0x7f0c00b2
+			public const int mr_chooser_route_name = 2131493042;
+			
+			// aapt resource value: 0x7f0c00af
+			public const int mr_chooser_title = 2131493039;
+			
+			// aapt resource value: 0x7f0c00b8
+			public const int mr_close = 2131493048;
+			
+			// aapt resource value: 0x7f0c00be
+			public const int mr_control_divider = 2131493054;
+			
+			// aapt resource value: 0x7f0c00c4
+			public const int mr_control_playback_ctrl = 2131493060;
+			
+			// aapt resource value: 0x7f0c00c7
+			public const int mr_control_subtitle = 2131493063;
+			
+			// aapt resource value: 0x7f0c00c6
+			public const int mr_control_title = 2131493062;
+			
+			// aapt resource value: 0x7f0c00c5
+			public const int mr_control_title_container = 2131493061;
+			
+			// aapt resource value: 0x7f0c00b9
+			public const int mr_custom_control = 2131493049;
+			
+			// aapt resource value: 0x7f0c00ba
+			public const int mr_default_control = 2131493050;
+			
+			// aapt resource value: 0x7f0c00b5
+			public const int mr_dialog_area = 2131493045;
 			
 			// aapt resource value: 0x7f0c00b4
-			public const int mr_volume_slider = 2131493044;
+			public const int mr_expandable_area = 2131493044;
+			
+			// aapt resource value: 0x7f0c00c8
+			public const int mr_group_expand_collapse = 2131493064;
+			
+			// aapt resource value: 0x7f0c00bc
+			public const int mr_media_main_control = 2131493052;
+			
+			// aapt resource value: 0x7f0c00b7
+			public const int mr_name = 2131493047;
+			
+			// aapt resource value: 0x7f0c00bd
+			public const int mr_playback_control = 2131493053;
+			
+			// aapt resource value: 0x7f0c00b6
+			public const int mr_title_bar = 2131493046;
+			
+			// aapt resource value: 0x7f0c00bf
+			public const int mr_volume_control = 2131493055;
+			
+			// aapt resource value: 0x7f0c00c0
+			public const int mr_volume_group_list = 2131493056;
+			
+			// aapt resource value: 0x7f0c00c2
+			public const int mr_volume_item_icon = 2131493058;
+			
+			// aapt resource value: 0x7f0c00c3
+			public const int mr_volume_slider = 2131493059;
 			
 			// aapt resource value: 0x7f0c0030
 			public const int multiply = 2131492912;
 			
-			// aapt resource value: 0x7f0c009a
-			public const int navigation_header_container = 2131493018;
+			// aapt resource value: 0x7f0c00a9
+			public const int navigation_header_container = 2131493033;
 			
 			// aapt resource value: 0x7f0c0043
 			public const int never = 2131492931;
@@ -3544,35 +3636,35 @@ namespace AppNotificationCenter.Droid
 			// aapt resource value: 0x7f0c0027
 			public const int normal = 2131492903;
 			
-			// aapt resource value: 0x7f0c00c9
-			public const int notification_background = 2131493065;
+			// aapt resource value: 0x7f0c00d8
+			public const int notification_background = 2131493080;
 			
-			// aapt resource value: 0x7f0c00c3
-			public const int notification_main_column = 2131493059;
-			
-			// aapt resource value: 0x7f0c00c2
-			public const int notification_main_column_container = 2131493058;
-			
-			// aapt resource value: 0x7f0c00ce
-			public const int os_bgimage_notif_bgimage = 2131493070;
-			
-			// aapt resource value: 0x7f0c00cd
-			public const int os_bgimage_notif_bgimage_align_layout = 2131493069;
-			
-			// aapt resource value: 0x7f0c00cf
-			public const int os_bgimage_notif_bgimage_right_aligned = 2131493071;
+			// aapt resource value: 0x7f0c00d2
+			public const int notification_main_column = 2131493074;
 			
 			// aapt resource value: 0x7f0c00d1
-			public const int os_bgimage_notif_body = 2131493073;
+			public const int notification_main_column_container = 2131493073;
 			
-			// aapt resource value: 0x7f0c00d0
-			public const int os_bgimage_notif_title = 2131493072;
+			// aapt resource value: 0x7f0c00dd
+			public const int os_bgimage_notif_bgimage = 2131493085;
+			
+			// aapt resource value: 0x7f0c00dc
+			public const int os_bgimage_notif_bgimage_align_layout = 2131493084;
+			
+			// aapt resource value: 0x7f0c00de
+			public const int os_bgimage_notif_bgimage_right_aligned = 2131493086;
+			
+			// aapt resource value: 0x7f0c00e0
+			public const int os_bgimage_notif_body = 2131493088;
+			
+			// aapt resource value: 0x7f0c00df
+			public const int os_bgimage_notif_title = 2131493087;
 			
 			// aapt resource value: 0x7f0c0053
 			public const int parallax = 2131492947;
 			
-			// aapt resource value: 0x7f0c006c
-			public const int parentPanel = 2131492972;
+			// aapt resource value: 0x7f0c007b
+			public const int parentPanel = 2131492987;
 			
 			// aapt resource value: 0x7f0c000b
 			public const int parent_matrix = 2131492875;
@@ -3580,23 +3672,32 @@ namespace AppNotificationCenter.Droid
 			// aapt resource value: 0x7f0c0054
 			public const int pin = 2131492948;
 			
+			// aapt resource value: 0x7f0c006a
+			public const int print = 2131492970;
+			
 			// aapt resource value: 0x7f0c0006
 			public const int progress_circular = 2131492870;
 			
 			// aapt resource value: 0x7f0c0007
 			public const int progress_horizontal = 2131492871;
 			
-			// aapt resource value: 0x7f0c007c
-			public const int radio = 2131492988;
+			// aapt resource value: 0x7f0c008b
+			public const int radio = 2131493003;
+			
+			// aapt resource value: 0x7f0c006b
+			public const int rectangle = 2131492971;
 			
 			// aapt resource value: 0x7f0c0051
 			public const int right = 2131492945;
 			
-			// aapt resource value: 0x7f0c00c8
-			public const int right_icon = 2131493064;
+			// aapt resource value: 0x7f0c00d7
+			public const int right_icon = 2131493079;
 			
-			// aapt resource value: 0x7f0c00c4
-			public const int right_side = 2131493060;
+			// aapt resource value: 0x7f0c00d3
+			public const int right_side = 2131493075;
+			
+			// aapt resource value: 0x7f0c006c
+			public const int rollingBall = 2131492972;
 			
 			// aapt resource value: 0x7f0c000c
 			public const int save_image_matrix = 2131492876;
@@ -3613,53 +3714,53 @@ namespace AppNotificationCenter.Droid
 			// aapt resource value: 0x7f0c004a
 			public const int scroll = 2131492938;
 			
-			// aapt resource value: 0x7f0c0072
-			public const int scrollIndicatorDown = 2131492978;
+			// aapt resource value: 0x7f0c0081
+			public const int scrollIndicatorDown = 2131492993;
 			
-			// aapt resource value: 0x7f0c006e
-			public const int scrollIndicatorUp = 2131492974;
+			// aapt resource value: 0x7f0c007d
+			public const int scrollIndicatorUp = 2131492989;
 			
-			// aapt resource value: 0x7f0c006f
-			public const int scrollView = 2131492975;
+			// aapt resource value: 0x7f0c007e
+			public const int scrollView = 2131492990;
 			
 			// aapt resource value: 0x7f0c005c
 			public const int scrollable = 2131492956;
 			
-			// aapt resource value: 0x7f0c0087
-			public const int search_badge = 2131492999;
+			// aapt resource value: 0x7f0c0096
+			public const int search_badge = 2131493014;
 			
-			// aapt resource value: 0x7f0c0086
-			public const int search_bar = 2131492998;
+			// aapt resource value: 0x7f0c0095
+			public const int search_bar = 2131493013;
 			
-			// aapt resource value: 0x7f0c0088
-			public const int search_button = 2131493000;
+			// aapt resource value: 0x7f0c0097
+			public const int search_button = 2131493015;
 			
-			// aapt resource value: 0x7f0c008d
-			public const int search_close_btn = 2131493005;
+			// aapt resource value: 0x7f0c009c
+			public const int search_close_btn = 2131493020;
 			
-			// aapt resource value: 0x7f0c0089
-			public const int search_edit_frame = 2131493001;
+			// aapt resource value: 0x7f0c0098
+			public const int search_edit_frame = 2131493016;
 			
-			// aapt resource value: 0x7f0c008f
-			public const int search_go_btn = 2131493007;
+			// aapt resource value: 0x7f0c009e
+			public const int search_go_btn = 2131493022;
+			
+			// aapt resource value: 0x7f0c0099
+			public const int search_mag_icon = 2131493017;
+			
+			// aapt resource value: 0x7f0c009a
+			public const int search_plate = 2131493018;
+			
+			// aapt resource value: 0x7f0c009b
+			public const int search_src_text = 2131493019;
+			
+			// aapt resource value: 0x7f0c009f
+			public const int search_voice_btn = 2131493023;
+			
+			// aapt resource value: 0x7f0c00a0
+			public const int select_dialog_listview = 2131493024;
 			
 			// aapt resource value: 0x7f0c008a
-			public const int search_mag_icon = 2131493002;
-			
-			// aapt resource value: 0x7f0c008b
-			public const int search_plate = 2131493003;
-			
-			// aapt resource value: 0x7f0c008c
-			public const int search_src_text = 2131493004;
-			
-			// aapt resource value: 0x7f0c0090
-			public const int search_voice_btn = 2131493008;
-			
-			// aapt resource value: 0x7f0c0091
-			public const int select_dialog_listview = 2131493009;
-			
-			// aapt resource value: 0x7f0c007b
-			public const int shortcut = 2131492987;
+			public const int shortcut = 2131493002;
 			
 			// aapt resource value: 0x7f0c002b
 			public const int showCustom = 2131492907;
@@ -3670,23 +3771,29 @@ namespace AppNotificationCenter.Droid
 			// aapt resource value: 0x7f0c002d
 			public const int showTitle = 2131492909;
 			
-			// aapt resource value: 0x7f0c00d2
-			public const int sliding_tabs = 2131493074;
+			// aapt resource value: 0x7f0c006d
+			public const int singleCircle = 2131492973;
 			
-			// aapt resource value: 0x7f0c0092
-			public const int smallLabel = 2131493010;
+			// aapt resource value: 0x7f0c006e
+			public const int slicedCircle = 2131492974;
 			
-			// aapt resource value: 0x7f0c0099
-			public const int snackbar_action = 2131493017;
+			// aapt resource value: 0x7f0c00e1
+			public const int sliding_tabs = 2131493089;
 			
-			// aapt resource value: 0x7f0c0098
-			public const int snackbar_text = 2131493016;
+			// aapt resource value: 0x7f0c00a1
+			public const int smallLabel = 2131493025;
+			
+			// aapt resource value: 0x7f0c00a8
+			public const int snackbar_action = 2131493032;
+			
+			// aapt resource value: 0x7f0c00a7
+			public const int snackbar_text = 2131493031;
 			
 			// aapt resource value: 0x7f0c004b
 			public const int snap = 2131492939;
 			
-			// aapt resource value: 0x7f0c006b
-			public const int spacer = 2131492971;
+			// aapt resource value: 0x7f0c007a
+			public const int spacer = 2131492986;
 			
 			// aapt resource value: 0x7f0c0008
 			public const int split_action_bar = 2131492872;
@@ -3706,14 +3813,14 @@ namespace AppNotificationCenter.Droid
 			// aapt resource value: 0x7f0c0052
 			public const int start = 2131492946;
 			
-			// aapt resource value: 0x7f0c00bf
-			public const int status_bar_latest_event_content = 2131493055;
+			// aapt resource value: 0x7f0c00ce
+			public const int status_bar_latest_event_content = 2131493070;
 			
-			// aapt resource value: 0x7f0c007d
-			public const int submenuarrow = 2131492989;
+			// aapt resource value: 0x7f0c008c
+			public const int submenuarrow = 2131493004;
 			
-			// aapt resource value: 0x7f0c008e
-			public const int submit_area = 2131493006;
+			// aapt resource value: 0x7f0c009d
+			public const int submit_area = 2131493021;
 			
 			// aapt resource value: 0x7f0c0028
 			public const int tabMode = 2131492904;
@@ -3727,14 +3834,14 @@ namespace AppNotificationCenter.Droid
 			// aapt resource value: 0x7f0c001b
 			public const int text2 = 2131492891;
 			
-			// aapt resource value: 0x7f0c0071
-			public const int textSpacerNoButtons = 2131492977;
+			// aapt resource value: 0x7f0c0080
+			public const int textSpacerNoButtons = 2131492992;
 			
-			// aapt resource value: 0x7f0c0070
-			public const int textSpacerNoTitle = 2131492976;
+			// aapt resource value: 0x7f0c007f
+			public const int textSpacerNoTitle = 2131492991;
 			
-			// aapt resource value: 0x7f0c009f
-			public const int text_input_password_toggle = 2131493023;
+			// aapt resource value: 0x7f0c00ae
+			public const int text_input_password_toggle = 2131493038;
 			
 			// aapt resource value: 0x7f0c0014
 			public const int textinput_counter = 2131492884;
@@ -3742,29 +3849,29 @@ namespace AppNotificationCenter.Droid
 			// aapt resource value: 0x7f0c0015
 			public const int textinput_error = 2131492885;
 			
-			// aapt resource value: 0x7f0c00c5
-			public const int time = 2131493061;
+			// aapt resource value: 0x7f0c00d4
+			public const int time = 2131493076;
 			
 			// aapt resource value: 0x7f0c001c
 			public const int title = 2131492892;
 			
-			// aapt resource value: 0x7f0c0078
-			public const int titleDividerNoCustom = 2131492984;
+			// aapt resource value: 0x7f0c0087
+			public const int titleDividerNoCustom = 2131492999;
 			
-			// aapt resource value: 0x7f0c0076
-			public const int title_template = 2131492982;
+			// aapt resource value: 0x7f0c0085
+			public const int title_template = 2131492997;
 			
-			// aapt resource value: 0x7f0c00d3
-			public const int toolbar = 2131493075;
+			// aapt resource value: 0x7f0c00e2
+			public const int toolbar = 2131493090;
 			
 			// aapt resource value: 0x7f0c0046
 			public const int top = 2131492934;
 			
-			// aapt resource value: 0x7f0c0075
-			public const int topPanel = 2131492981;
+			// aapt resource value: 0x7f0c0084
+			public const int topPanel = 2131492996;
 			
-			// aapt resource value: 0x7f0c0096
-			public const int touch_outside = 2131493014;
+			// aapt resource value: 0x7f0c00a5
+			public const int touch_outside = 2131493029;
 			
 			// aapt resource value: 0x7f0c000f
 			public const int transition_current_scene = 2131492879;
@@ -3793,11 +3900,11 @@ namespace AppNotificationCenter.Droid
 			// aapt resource value: 0x7f0c0016
 			public const int view_offset_helper = 2131492886;
 			
-			// aapt resource value: 0x7f0c00d5
-			public const int visible = 2131493077;
+			// aapt resource value: 0x7f0c00e4
+			public const int visible = 2131493092;
 			
-			// aapt resource value: 0x7f0c00b2
-			public const int volume_item_container = 2131493042;
+			// aapt resource value: 0x7f0c00c1
+			public const int volume_item_container = 2131493057;
 			
 			// aapt resource value: 0x7f0c0022
 			public const int wide = 2131492898;
@@ -3807,6 +3914,9 @@ namespace AppNotificationCenter.Droid
 			
 			// aapt resource value: 0x7f0c0036
 			public const int wrap_content = 2131492918;
+			
+			// aapt resource value: 0x7f0c006f
+			public const int zoomingTarget = 2131492975;
 			
 			static Id()
 			{
@@ -4289,6 +4399,9 @@ namespace AppNotificationCenter.Droid
 			
 			// aapt resource value: 0x7f080002
 			public const int gcm_fallback_notification_channel_label = 2131230722;
+			
+			// aapt resource value: 0x7f080050
+			public const int library_name = 2131230800;
 			
 			// aapt resource value: 0x7f080014
 			public const int mr_button_content_description = 2131230740;
@@ -7273,6 +7386,44 @@ namespace AppNotificationCenter.Droid
 			
 			// aapt resource value: 12
 			public const int SearchView_voiceIcon = 12;
+			
+			public static int[] SfBusyIndicator = new int[] {
+					2130772345,
+					2130772346,
+					2130772347,
+					2130772348,
+					2130772349,
+					2130772350,
+					2130772351,
+					2130772352,
+					2130772353};
+			
+			// aapt resource value: 0
+			public const int SfBusyIndicator_busyIndicatorAnimationTypes = 0;
+			
+			// aapt resource value: 8
+			public const int SfBusyIndicator_busyIndicatorIsBusy = 8;
+			
+			// aapt resource value: 6
+			public const int SfBusyIndicator_busyIndicatorSecondaryColor = 6;
+			
+			// aapt resource value: 1
+			public const int SfBusyIndicator_busyIndicatorTextColor = 1;
+			
+			// aapt resource value: 5
+			public const int SfBusyIndicator_busyIndicatorTextSize = 5;
+			
+			// aapt resource value: 4
+			public const int SfBusyIndicator_busyIndicatorTitle = 4;
+			
+			// aapt resource value: 7
+			public const int SfBusyIndicator_busyIndicatorTitlePlacement = 7;
+			
+			// aapt resource value: 2
+			public const int SfBusyIndicator_busyIndicatorViewBoxHeight = 2;
+			
+			// aapt resource value: 3
+			public const int SfBusyIndicator_busyIndicatorViewBoxWidth = 3;
 			
 			public static int[] SignInButton = new int[] {
 					2130771971,
