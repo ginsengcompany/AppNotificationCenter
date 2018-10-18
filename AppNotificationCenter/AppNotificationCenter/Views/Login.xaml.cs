@@ -1,5 +1,6 @@
 ﻿using AppNotificationCenter.Models;
 using AppNotificationCenter.ModelViews;
+using Com.OneSignal;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -42,8 +43,15 @@ namespace AppNotificationCenter.Views
                 {
                     await DisplayAlert("Attenzione", "Connessione non riuscita", "Riprova!");
                 }
-                if (access == true)
+                if (access)
                 {
+                    OneSignal.Current.StartInit(App.APP_ID_ONE_SIGNAL)
+                        .EndInit();
+                    OneSignal.Current.IdsAvailable(((string userID, string pushToken) =>
+                        {
+                            App.Current.Properties["token"] = userID;
+
+                        }));
                     App.Current.MainPage = new NavigationPage(new MainPage());
                     
                 }

@@ -37,57 +37,6 @@ namespace AppNotificationCenter.Models
         public string VisibleWeb { get; set; } = "false";
         public ImageSource Immagine { get; set; }
         public string TestoButtonEliminato { get; set; } = "ELIMINA";
-   /*     public ICommand ButtonConferma
-        {
-            get
-            {
-                return new Command(async ()  =>
-                {
-                    REST<Object, bool> connessione = new REST<Object, bool>();
-                    confermato = true;
-                    eliminato = false;
-                    var user = LoginData.getUser();
-                    organizzazione = user[0].organizzazione;
-                    immagine = null;
-                    var esito = await connessione.PostJson(URL.ConfermaElimina, this);
-                });
-            }
-        }
-        public ICommand btnInfo
-        {
-            get
-            {
-                return new Command(async () =>
-                {
-                    await App.Current.MainPage.Navigation.PushAsync(new VisualizzaEventoInDettaglio(this));
-                });
-            }
-        }
-        public ICommand btnsitoWeb
-        {
-            get
-            {
-                return new Command(async () =>
-                {
-                    Device.OpenUri(new Uri(url_evento));
-                });
-            }
-        }
-        public ICommand btnInSeguito
-        {
-            get
-            {
-                return new Command(async () =>
-                {
-                    REST<Object, bool> connessione = new REST<Object, bool>();
-                    confermato = false;
-                    eliminato = true;
-                    var user = LoginData.getUser();
-                    organizzazione = user[0].organizzazione;
-                    immagine = null;
-                    bool esito = await connessione.PostJson(URL.ConfermaElimina, this);
-                });
-            }
-        }*/
+   
     }
 }
