@@ -31,10 +31,10 @@ namespace AppNotificationCenter.Views
             }
             else
             {
-                Load.IsVisible = true;
-                Load.IsEnabled = true;
-                z.organizzazioneScelta();
-                await Load.ProgressTo(1, 1500, Easing.SinIn);
+                busyindicator.IsBusy = true;
+                busyindicator.IsVisible = true;
+                BtnLogin.IsEnabled = false;
+                await z.organizzazioneScelta();
                 try
                 {
                     access = await z.login();
@@ -42,16 +42,22 @@ namespace AppNotificationCenter.Views
                 catch (Exception)
                 {
                     await DisplayAlert("Attenzione", "Connessione non riuscita", "Riprova!");
+                    busyindicator.IsBusy = false;
+                    busyindicator.IsVisible = false;
+                    BtnLogin.IsVisible = true;
                 }
                 if (access)
                 {
-
                     App.Current.MainPage = new NavigationPage(new MainPage());
-                    
+                    busyindicator.IsBusy = false;
+                    busyindicator.IsVisible = false;
+                    BtnLogin.IsVisible = true;
                 }
                 else
                 {
-                    await Load.ProgressTo(0, 2, Easing.Linear);
+                    busyindicator.IsBusy = false;
+                    busyindicator.IsVisible = false;
+                    BtnLogin.IsVisible = true;
                 }
             }
         }

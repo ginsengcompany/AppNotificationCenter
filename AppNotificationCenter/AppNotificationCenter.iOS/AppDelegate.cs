@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ImageCircle.Forms.Plugin.iOS;
 using Foundation;
 using UIKit;
 using Com.OneSignal;
 using Syncfusion.XForms.iOS.TextInputLayout;
+using Syncfusion.SfBusyIndicator.XForms.iOS;
 
 namespace AppNotificationCenter.iOS
 {
@@ -27,8 +27,7 @@ namespace AppNotificationCenter.iOS
             global::Xamarin.Forms.Forms.Init();
             SfTextInputLayoutRenderer.Init();
             LoadApplication(new App());
-            ImageCircleRenderer.Init();
-
+            new SfBusyIndicatorRenderer();
             return base.FinishedLaunching(app, options);
         }
     }
