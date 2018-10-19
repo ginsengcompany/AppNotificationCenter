@@ -33,7 +33,7 @@ namespace AppNotificationCenter.Views
             {
                 Load.IsVisible = true;
                 Load.IsEnabled = true;
-                await z.organizzazioneScelta();
+                z.organizzazioneScelta();
                 await Load.ProgressTo(1, 1500, Easing.SinIn);
                 try
                 {

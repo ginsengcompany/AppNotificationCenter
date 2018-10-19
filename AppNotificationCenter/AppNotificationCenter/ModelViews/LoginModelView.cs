@@ -111,17 +111,19 @@ namespace AppNotificationCenter.ModelViews
         }
 
   
-        public async Task organizzazioneScelta()
+        public void organizzazioneScelta()
         {
             char[] delimiterChars = {'-', '\t' };
             var temp = user.username.Split(delimiterChars);
-            user.organizzazione = temp[0].ToString();
+            user.organizzazione = temp[0].ToString().ToUpper();
             
         }
         public async Task<bool> login()
         {
             token = App.Current.Properties["token"].ToString();
             REST<Utente, Final> rest = new REST<Utente, Final>();
+            string usernameUp = user.username.ToUpper();
+            user.username = usernameUp;
             var response = await rest.PostJson(URL.Login, user);
             if (response != null)
             {
@@ -137,7 +139,7 @@ namespace AppNotificationCenter.ModelViews
                     {
                         //await App.Current.MainPage.DisplayAlert("Login", "Login Effettuata con successo", "OK");
                         response.final[0].organizzazione = user.organizzazione;
-                        LoginData.InsertUser(new TbLogin(user.username, user.password, user.token, user.organizzazione));
+                        LoginData.InsertUser(new TbLogin(user.username.ToUpper(), user.password, user.token, user.organizzazione));
                         UtenzaData.InsertUser(new TbUtente(response.final[0]));
                         return true;
                     }
