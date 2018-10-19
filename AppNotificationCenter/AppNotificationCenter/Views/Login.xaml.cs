@@ -34,7 +34,7 @@ namespace AppNotificationCenter.Views
                 busyindicator.IsBusy = true;
                 busyindicator.IsVisible = true;
                 BtnLogin.IsEnabled = false;
-                await z.organizzazioneScelta();
+                z.organizzazioneScelta();
                 try
                 {
                     access = await z.login();
