@@ -7,7 +7,7 @@
         <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="White">
             <Grid>
                 <Image Source="{Binding Immagine}" HorizontalOptions="Fill" HeightRequest="375"  Aspect="AspectFit"  Grid.Row="0"></Image>
-                <StackLayout BackgroundColor="Black" Opacity="0.9" Grid.Row="0" VerticalOptions="EndAndExpand">
+                <StackLayout BackgroundColor="Black" Opacity="0.85" Grid.Row="0" VerticalOptions="EndAndExpand">
                     <Label Text="{Binding Titolo}" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Large"  TextColor="#4b8b80" ></Label>
                 <Label Text="{Binding Sottotitolo}" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Medium" TextColor="White"></Label>
                 </StackLayout>

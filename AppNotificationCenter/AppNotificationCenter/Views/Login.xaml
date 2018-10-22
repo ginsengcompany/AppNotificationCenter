@@ -10,11 +10,7 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="0,20,0,0">
-                <Image   
-                                    HeightRequest="250"   
-                                    WidthRequest="250"   
-                                    HorizontalOptions="Center"
-                                    Source="logo.png">
+                <Image HeightRequest="250" WidthRequest="250" HorizontalOptions="Center" Source="logo.png">
                 </Image>
                 <StackLayout  Orientation="Vertical" VerticalOptions="CenterAndExpand" >
 
