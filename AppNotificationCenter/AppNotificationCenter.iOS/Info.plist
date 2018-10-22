@@ -37,7 +37,7 @@
 		<string>arm64</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
-	<string>(non impostato)</string>
+	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>LaunchScreen</string>
 </dict>
