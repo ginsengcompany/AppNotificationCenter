@@ -33,7 +33,7 @@ namespace AppNotificationCenter.Views
             {
                 busyindicator.IsBusy = true;
                 busyindicator.IsVisible = true;
-                BtnLogin.IsEnabled = false;
+                BtnLogin.IsVisible = false;
                 z.organizzazioneScelta();
                 try
                 {

@@ -40,7 +40,7 @@
                     </StackLayout>
 
                     <StackLayout Orientation="Vertical" VerticalOptions="End" HorizontalOptions="Center" >
-                        <busyindicator:SfBusyIndicator x:Name="busyindicator" TextColor="#4b8b80" IsBusy="False" IsVisible="False" AnimationType="HorizontalPulsingBox" Duration="0.5"  />
+                        <busyindicator:SfBusyIndicator x:Name="busyindicator" TextColor="#4b8b80" IsBusy="False" IsVisible="False" AnimationType="SlicedCircle" Duration="0.5"  />
                         <Button BackgroundColor="#4b8b80" x:Name="BtnLogin" WidthRequest="100" CornerRadius="10" Clicked="Button_Clicked" TextColor="White" Text="Login"></Button>
                     </StackLayout>
                 </StackLayout>
