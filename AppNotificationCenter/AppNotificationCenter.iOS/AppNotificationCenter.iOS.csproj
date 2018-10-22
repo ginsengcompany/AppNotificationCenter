@@ -124,7 +124,6 @@
     <ITunesArtwork Include="iTunesArtwork" />
     <ITunesArtwork Include="iTunesArtwork@2x" />
     <None Include="packages.config" />
-    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Com.OneSignal, Version=3.2.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -327,6 +326,16 @@
     <ImageAsset Include="Resources\Media.xcassets\Icone.appiconset\Icon-76x76@2x.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\Image.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Media.xcassets\Image.imageset\Default-Portrait%402x-1536x2048.png" />
+    <ImageAsset Include="Media.xcassets\LaunchImage.launchimage\Contents.json" />
+    <ImageAsset Include="Media.xcassets\LaunchImage.launchimage\Default.png" />
+    <ImageAsset Include="Media.xcassets\LaunchImage.launchimage\Default%402x.png" />
+    <ImageAsset Include="Media.xcassets\LaunchImage.launchimage\Default-568h%402x.png" />
+    <ImageAsset Include="Media.xcassets\LaunchImage.launchimage\Default-Portrait.png" />
+    <ImageAsset Include="Media.xcassets\LaunchImage.launchimage\Default-Landscape.png" />
+    <ImageAsset Include="Media.xcassets\LaunchImage.launchimage\Default-Portrait%402x.png" />
+    <ImageAsset Include="Media.xcassets\LaunchImage.launchimage\Default-Landscape%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Icon-marketing-1024x1024.png" />
@@ -440,31 +449,10 @@
     <BundleResource Include="Resources\Default-Portrait-768x1024.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Default.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Default%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Default%402x-640x960.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Default-568h%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x-640x1136.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-667h%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Default-Landscape.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Default-Landscape%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Default-Landscape%402x-2048x1536.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-Landscape-736h%403x.png" />
@@ -473,16 +461,13 @@
     <BundleResource Include="Resources\Default-Landscape-1024x768.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Default-Portrait.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Default-Portrait%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\Default-Portrait%402x-1536x2048.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-Portrait-736h%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
