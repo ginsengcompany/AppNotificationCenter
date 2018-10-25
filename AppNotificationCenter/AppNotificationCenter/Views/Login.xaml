@@ -30,7 +30,7 @@
                             ContainerType="Outlined"
                             HelperText="Inserisci la password"
                             EnablePasswordVisibilityToggle="True">
-                            <Entry x:Name="entryPassword" Text="{Binding _password}"/>
+                            <Entry x:Name="entryPassword" IsPassword="True" Text="{Binding _password}"/>
                         </inputLayout:SfTextInputLayout>
 
                     </StackLayout>
