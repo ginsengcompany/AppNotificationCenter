@@ -41,32 +41,41 @@ namespace AppNotificationCenter
             if (CrossConnectivity.Current.IsConnected)
             {
                 var response = await rest.PostJson(URL.Login, user);
-                if (response.status)
+                if (response != null)
                 {
-                    if (response.final[0].attivo == false)
+                    if (response.status)
                     {
+                        if (response.final[0].attivo == false)
+                        {
 
-                        await App.Current.MainPage.DisplayAlert("Login", "Utenza non attiva", "OK");
-                        LoginData.dropUser(new TbLogin(user.username, user.password, user.token, user.organizzazione));
-                        UtenzaData.DropUser(new TbUtente(response.final[0]));
-                        App.Current.MainPage = new Login();
+                            await App.Current.MainPage.DisplayAlert("Login", "Utenza non attiva", "OK");
+                            LoginData.dropUser(new TbLogin(user.username, user.password, user.token, user.organizzazione));
+                            UtenzaData.DropUser(new TbUtente(response.final[0]));
+                            App.Current.MainPage = new Login();
+                        }
+                        else
+                        {
+                            //await App.Current.MainPage.DisplayAlert("Login", "Login Effettuata con successo", "OK");
+                            response.final[0].organizzazione = user.organizzazione;
+                            LoginData.updateUser(new TbLogin(user.username, user.password, user.token,
+                                user.organizzazione));
+                            UtenzaData.UpdateUser(new TbUtente(response.final[0]));
+                        }
+
                     }
                     else
                     {
-                        //await App.Current.MainPage.DisplayAlert("Login", "Login Effettuata con successo", "OK");
-                        response.final[0].organizzazione = user.organizzazione;
-                        LoginData.updateUser(new TbLogin(user.username, user.password, user.token,
-                            user.organizzazione));
-                        UtenzaData.UpdateUser(new TbUtente(response.final[0]));
-                    }
 
+                        LoginData.dropUser(new TbLogin(user.username, user.password, user.token, user.organizzazione));
+                        UtenzaData.DropUser(new TbUtente(response.final[0]));
+                        App.Current.MainPage = new NavigationPage(new Login());
+                    }
                 }
                 else
                 {
-
-                    LoginData.dropUser(new TbLogin(user.username, user.password, user.token, user.organizzazione));
-                    UtenzaData.DropUser(new TbUtente(response.final[0]));
-                    App.Current.MainPage = new NavigationPage(new Login());
+                    await DisplayAlert("Attenzione", "Il servizio è momentaneamente non disponibile, riprova più tardi",
+                        "OK");
+                   await check();
                 }
             }
 

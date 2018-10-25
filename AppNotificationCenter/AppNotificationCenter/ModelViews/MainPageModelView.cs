@@ -474,6 +474,7 @@ namespace AppNotificationCenter.ModelViews
             eventoConfermato.immagine = null;
             eventoConfermato.Immagine = null;
             var medico = LoginData.getUser();
+            IsBusy = true;
             bool esito = await connessione.PostJson(URL.ConfermaElimina, eventoConfermato);
             if (esito == true)
             {
@@ -485,6 +486,7 @@ namespace AppNotificationCenter.ModelViews
             ListaNote.Clear();
             GroupDatiEvento.Clear();
             leggiDati();
+            IsBusy = false;
         }
 
         public async Task EliminaButton(DatiEvento eventoDeclinato)
@@ -495,6 +497,7 @@ namespace AppNotificationCenter.ModelViews
             eventoDeclinato.organizzazione = user.organizzazione;
             eventoDeclinato.immagine = null;
             eventoDeclinato.Immagine = null;
+            IsBusy = true;
             bool esito = await connessione.PostJson(URL.ConfermaElimina, eventoDeclinato);
             if (esito)
             {
@@ -506,6 +509,7 @@ namespace AppNotificationCenter.ModelViews
             ListaNote.Clear();
             GroupDatiEvento.Clear();
             leggiDati();
+            IsBusy = false;
         }
 
         public DatiEvento dettaglio()

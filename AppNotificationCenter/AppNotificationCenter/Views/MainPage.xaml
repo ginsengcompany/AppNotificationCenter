@@ -22,6 +22,7 @@
             <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"/>
             <Label HorizontalOptions="Center" Text="{Binding NessunEvento}" FontSize="Medium" FontAttributes="Bold" IsVisible="{Binding IsVoidEvent}"></Label>
             <ListView x:Name="listEventi" 
+                      Footer=" "
                       IsPullToRefreshEnabled="True"
                       RefreshCommand="{Binding RefreshCommand}"
                       IsRefreshing="{Binding IsRefreshing}" 
