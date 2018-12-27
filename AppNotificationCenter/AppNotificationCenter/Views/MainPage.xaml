@@ -17,7 +17,7 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <StackLayout> 
+        <StackLayout>
             <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"/>
             <Label HorizontalOptions="Center" Text="{Binding NessunEvento}" FontSize="Medium" FontAttributes="Bold" IsVisible="{Binding IsVoidEvent}"></Label>
             <ListView x:Name="listEventi" 
@@ -47,48 +47,54 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <customControls:ExtendedViewCell SelectedBackgroundColor="White">
-                        <ViewCell.View>
-                            <StackLayout  BackgroundColor="#e8e8e8" Padding="10" Margin="10">
-                            <StackLayout Orientation="Horizontal">
-                               
-                                <StackLayout Orientation="Vertical">
+                            <ViewCell.View>
+                                <StackLayout  BackgroundColor="#e8e8e8" Padding="10" Margin="10">
                                     <StackLayout Orientation="Horizontal">
-                                        <Label Text="{Binding titolo}" FontAttributes="Bold" FontSize="Medium" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black"/>
-                                    </StackLayout>
-                                    <StackLayout Orientation="Horizontal">
+
+                                        <StackLayout Orientation="Vertical">
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="{Binding titolo}" FontAttributes="Bold" FontSize="Medium" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
                                                 <Label Text="{Binding data}" FontSize="Medium" VerticalOptions="Center" VerticalTextAlignment="Center" IsVisible="{Binding VisibleError}"/>
-                                </StackLayout>
-                                    <StackLayout Orientation="Horizontal">
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
 
                                                 <Label Text="Evento Confermato" FontSize="Medium"  IsVisible="{Binding confermato}" VerticalOptions="Center" HorizontalOptions="Center" TextColor="#4b8b80" VerticalTextAlignment="Center" />
 
-                                    </StackLayout>
+                                            </StackLayout>
                                             <StackLayout Orientation="Horizontal">
-                                                
+
                                                 <Label Text="{Binding luogo}" FontSize="Medium"  IsVisible="{Binding VisibileInfo}" VerticalOptions="Center" VerticalTextAlignment="Center" />
-                                                
+
                                             </StackLayout>
                                         </StackLayout>
-                            </StackLayout>
-                                <!--<StackLayout Orientation="Horizontal">
+                                    </StackLayout>
+                                    <!--<StackLayout Orientation="Horizontal">
                                         <Button x:Name="btnConferma" Text="Conferma" FontSize="Small" IsVisible="{Binding Visible}" BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center" Clicked="ButtonConferma_OnClicked"/>
                                         <Button x:Name="btnInSeguito" Text="Declina" FontSize="Small" IsVisible="{Binding VisibileInSeguito}"  BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center" Clicked="BtnInSeguito_OnClicked"/>
                                         <Button Text="DETTAGLI" Clicked="Button_Clicked" FontSize="Small" IsVisible="{Binding VisibileInfo}"  BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center"/>
                                         <Button Text="Sito web" Clicked="VaiSitoWeb" FontSize="Small" IsVisible="{Binding VisibleWeb}"  BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center"/>
 
                                     </StackLayout>-->
-                            </StackLayout>
-                            
-                        </ViewCell.View>
-                            </customControls:ExtendedViewCell>
+                                </StackLayout>
+
+                            </ViewCell.View>
+                        </customControls:ExtendedViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView> 
-            <StackLayout VerticalOptions="End">
-            <Label Text ="Scorri verso il basso per aggiornare" IsVisible="{Binding VisibleError}" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
+            </ListView>
+            <Grid VerticalOptions="End">
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0">
+                    <Label Text ="Scorri verso il basso per aggiornare" IsVisible="{Binding VisibleError}" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
+                </StackLayout>
+                <StackLayout Grid.Row="1">
+                </StackLayout>
+            </Grid>
         </StackLayout>
-            <StackLayout VerticalOptions="End"/>
-        </StackLayout>
-
     </ContentPage.Content>
 </ContentPage>
