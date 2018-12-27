@@ -1,8 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:ci="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
-             xmlns:CostomControls="clr-namespace:AppNotificationCenter.CostomControls"
              xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
              xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
              x:Class="AppNotificationCenter.Views.Login"
@@ -10,21 +8,18 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="0,20,0,0">
-                <Image HeightRequest="250" WidthRequest="250" HorizontalOptions="Center" Source="logo.png">
+                <Image x:Name="ImmagineLogo"  HorizontalOptions="Center" Source="logo.png">
                 </Image>
                 <StackLayout  Orientation="Vertical" VerticalOptions="CenterAndExpand" >
-
-                    <StackLayout Padding="20">
+                    <StackLayout>
                         <inputLayout:SfTextInputLayout
                                 Hint="Username" 
                                 ContainerType="Outlined"
                                 HelperText="Inserisci l'username">
                             <Entry x:Name="entryUserName" Placeholder="Username" Text="{Binding _nomeUtente}"/>
                         </inputLayout:SfTextInputLayout>
-
                     </StackLayout>
-
-                    <StackLayout Padding="20">
+                    <StackLayout>
                         <inputLayout:SfTextInputLayout
                             Hint="Password"
                             ContainerType="Outlined"
@@ -32,10 +27,8 @@
                             EnablePasswordVisibilityToggle="True">
                             <Entry x:Name="entryPassword" IsPassword="True" Text="{Binding _password}"/>
                         </inputLayout:SfTextInputLayout>
-
                     </StackLayout>
-
-                    <StackLayout Orientation="Vertical" VerticalOptions="End" HorizontalOptions="Center" >
+                    <StackLayout  VerticalOptions="End" HorizontalOptions="Center" Margin="5">
                         <busyindicator:SfBusyIndicator x:Name="busyindicator" TextColor="#4b8b80" IsBusy="False" IsVisible="False" AnimationType="SlicedCircle" Duration="0.5"  />
                         <Button BackgroundColor="#4b8b80" x:Name="BtnLogin" WidthRequest="100" CornerRadius="10" Clicked="Button_Clicked" TextColor="White" Text="Login"></Button>
                     </StackLayout>

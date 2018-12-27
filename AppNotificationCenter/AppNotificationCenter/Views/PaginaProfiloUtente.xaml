@@ -4,14 +4,12 @@
              xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
              x:Class="AppNotificationCenter.Views.PaginaProfiloUtente" Title="Info personali">
     <ContentPage.ToolbarItems>
-
         <ToolbarItem 
             Text="Modifica"
             Order="Primary"
             Command="{Binding ModificaInfo}"
             Priority="0"
             IsEnabled="{Binding IsEnabledModifica}"/>
-
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ScrollView>
@@ -31,13 +29,11 @@
                     ContainerType="Outlined">
                     <Entry Placeholder="Specializzazione" Text="{Binding UtenteProfilo.specializzazione}" IsEnabled="False"></Entry>
                 </inputLayout:SfTextInputLayout>
-
                 <inputLayout:SfTextInputLayout
                     Hint="Provincia" 
                     ContainerType="Outlined">
                     <Entry Placeholder="provincia" Text="{Binding UtenteProfilo.provincia}" IsEnabled="False"></Entry>
                 </inputLayout:SfTextInputLayout>
-
                 <inputLayout:SfTextInputLayout
                     Hint="Numero telefono" 
                     FocusedColor="{Binding ColoreModifica}"
@@ -45,7 +41,6 @@
                     ContainerType="Outlined">
                     <Entry Keyboard="Numeric" Placeholder="Numero telefono" Text="{Binding UtenteProfilo.numero_telefono, Mode=TwoWay}" IsEnabled="{Binding IsEnabled}"></Entry>
                 </inputLayout:SfTextInputLayout>
-
                 <inputLayout:SfTextInputLayout
                     Hint="E-mail" 
                     FocusedColor="{Binding ColoreModifica}"
@@ -53,7 +48,6 @@
                     ContainerType="Outlined">
                     <Entry Placeholder="E-Mail" Text="{Binding UtenteProfilo.mail, Mode=TwoWay}" IsEnabled="{Binding IsEnabled}"></Entry>
                 </inputLayout:SfTextInputLayout>
-
                 <inputLayout:SfTextInputLayout
                     Hint="Pec" 
                     FocusedColor="{Binding ColoreModifica}"
@@ -61,12 +55,10 @@
                     ContainerType="Outlined">
                     <Entry Placeholder="Pec" Text="{Binding UtenteProfilo.pec, Mode=TwoWay}" IsEnabled="{Binding IsEnabled}"></Entry>
                 </inputLayout:SfTextInputLayout>
-
-            <StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="EndAndExpand">
-
-                    <Button Text="Conferma" IsVisible="{Binding IsEnabled}" Command="{Binding btnConferma}" BackgroundColor="#4b8b80" TextColor="White"/>
-                    <Button Text="Annulla" IsVisible ="{Binding IsEnabled}" Command="{Binding btnAnnulla}" BackgroundColor="#4b8b80" TextColor="White"/>
-            </StackLayout>
+                <StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="EndAndExpand">
+                    <Button Text="Conferma" IsVisible="{Binding IsEnabled}" IsEnabled="{Binding IsEnabledConnection}" Command="{Binding btnConferma}" BackgroundColor="#4b8b80" TextColor="White"/>
+                    <Button Text="Annulla" IsVisible ="{Binding IsEnabled}" IsEnabled="{Binding IsEnabledConnection}" Command="{Binding btnAnnulla}" BackgroundColor="#4b8b80" TextColor="White"/>
+                </StackLayout>
         </StackLayout>
         </ScrollView>
     </ContentPage.Content>
