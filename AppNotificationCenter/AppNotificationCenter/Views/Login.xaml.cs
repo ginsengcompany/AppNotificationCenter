@@ -22,6 +22,12 @@ namespace AppNotificationCenter.Views
             BindingContext = z;
         }
 
+        protected override void OnSizeAllocated(double width, double height)
+        {
+            base.OnSizeAllocated(width, height);
+            ImmagineLogo.WidthRequest =  width;
+            ImmagineLogo.HeightRequest = height / 2.152; //given that image is 411 x 191
+        }
         private async void Button_Clicked(object sender, EventArgs e)
         {
 

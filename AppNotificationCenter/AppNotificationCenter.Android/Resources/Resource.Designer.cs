@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("AppNotificationCenter.Droid.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("AppNotificationCenter.Resource", IsApplication=true)]
 
-namespace AppNotificationCenter.Droid
+namespace AppNotificationCenter
 {
 	
 	
@@ -26,49 +26,49 @@ namespace AppNotificationCenter.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::PCLStorage.Resource.String.ApplicationName = global::AppNotificationCenter.Droid.Resource.String.ApplicationName;
-			global::PCLStorage.Resource.String.Hello = global::AppNotificationCenter.Droid.Resource.String.Hello;
-			global::Syncfusion.XForms.Android.Core.Resource.Drawable.inputlayout_togglecollapseicon = global::AppNotificationCenter.Droid.Resource.Drawable.inputlayout_togglecollapseicon;
-			global::Syncfusion.XForms.Android.Core.Resource.Drawable.inputlayout_togglevisibleicon = global::AppNotificationCenter.Droid.Resource.Drawable.inputlayout_togglevisibleicon;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.Attribute.busyIndicatorAnimationTypes = global::AppNotificationCenter.Droid.Resource.Attribute.busyIndicatorAnimationTypes;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.Attribute.busyIndicatorIsBusy = global::AppNotificationCenter.Droid.Resource.Attribute.busyIndicatorIsBusy;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.Attribute.busyIndicatorSecondaryColor = global::AppNotificationCenter.Droid.Resource.Attribute.busyIndicatorSecondaryColor;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.Attribute.busyIndicatorTextColor = global::AppNotificationCenter.Droid.Resource.Attribute.busyIndicatorTextColor;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.Attribute.busyIndicatorTextSize = global::AppNotificationCenter.Droid.Resource.Attribute.busyIndicatorTextSize;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.Attribute.busyIndicatorTitle = global::AppNotificationCenter.Droid.Resource.Attribute.busyIndicatorTitle;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.Attribute.busyIndicatorTitlePlacement = global::AppNotificationCenter.Droid.Resource.Attribute.busyIndicatorTitlePlacement;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.Attribute.busyIndicatorViewBoxHeight = global::AppNotificationCenter.Droid.Resource.Attribute.busyIndicatorViewBoxHeight;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.Attribute.busyIndicatorViewBoxWidth = global::AppNotificationCenter.Droid.Resource.Attribute.busyIndicatorViewBoxWidth;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.ball = global::AppNotificationCenter.Droid.Resource.Id.ball;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.battery = global::AppNotificationCenter.Droid.Resource.Id.battery;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.bottom = global::AppNotificationCenter.Droid.Resource.Id.bottom;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.box = global::AppNotificationCenter.Droid.Resource.Id.box;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.doubleCircle = global::AppNotificationCenter.Droid.Resource.Id.doubleCircle;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.ecg = global::AppNotificationCenter.Droid.Resource.Id.ecg;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.gearBox = global::AppNotificationCenter.Droid.Resource.Id.gearBox;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.globe = global::AppNotificationCenter.Droid.Resource.Id.globe;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.horizontalPulsingBox = global::AppNotificationCenter.Droid.Resource.Id.horizontalPulsingBox;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.movieTimer = global::AppNotificationCenter.Droid.Resource.Id.movieTimer;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.none = global::AppNotificationCenter.Droid.Resource.Id.none;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.print = global::AppNotificationCenter.Droid.Resource.Id.print;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.rectangle = global::AppNotificationCenter.Droid.Resource.Id.rectangle;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.rollingBall = global::AppNotificationCenter.Droid.Resource.Id.rollingBall;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.singleCircle = global::AppNotificationCenter.Droid.Resource.Id.singleCircle;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.slicedCircle = global::AppNotificationCenter.Droid.Resource.Id.slicedCircle;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.top = global::AppNotificationCenter.Droid.Resource.Id.top;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.zoomingTarget = global::AppNotificationCenter.Droid.Resource.Id.zoomingTarget;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.String.library_name = global::AppNotificationCenter.Droid.Resource.String.library_name;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator = global::AppNotificationCenter.Droid.Resource.Styleable.SfBusyIndicator;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator_busyIndicatorAnimationTypes = global::AppNotificationCenter.Droid.Resource.Styleable.SfBusyIndicator_busyIndicatorAnimationTypes;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator_busyIndicatorIsBusy = global::AppNotificationCenter.Droid.Resource.Styleable.SfBusyIndicator_busyIndicatorIsBusy;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator_busyIndicatorSecondaryColor = global::AppNotificationCenter.Droid.Resource.Styleable.SfBusyIndicator_busyIndicatorSecondaryColor;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator_busyIndicatorTextColor = global::AppNotificationCenter.Droid.Resource.Styleable.SfBusyIndicator_busyIndicatorTextColor;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator_busyIndicatorTextSize = global::AppNotificationCenter.Droid.Resource.Styleable.SfBusyIndicator_busyIndicatorTextSize;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator_busyIndicatorTitle = global::AppNotificationCenter.Droid.Resource.Styleable.SfBusyIndicator_busyIndicatorTitle;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator_busyIndicatorTitlePlacement = global::AppNotificationCenter.Droid.Resource.Styleable.SfBusyIndicator_busyIndicatorTitlePlacement;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator_busyIndicatorViewBoxHeight = global::AppNotificationCenter.Droid.Resource.Styleable.SfBusyIndicator_busyIndicatorViewBoxHeight;
-			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator_busyIndicatorViewBoxWidth = global::AppNotificationCenter.Droid.Resource.Styleable.SfBusyIndicator_busyIndicatorViewBoxWidth;
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::AppNotificationCenter.Droid.Resource.Attribute.actionBarSize;
+			global::PCLStorage.Resource.String.ApplicationName = global::AppNotificationCenter.Resource.String.ApplicationName;
+			global::PCLStorage.Resource.String.Hello = global::AppNotificationCenter.Resource.String.Hello;
+			global::Syncfusion.XForms.Android.Core.Resource.Drawable.inputlayout_togglecollapseicon = global::AppNotificationCenter.Resource.Drawable.inputlayout_togglecollapseicon;
+			global::Syncfusion.XForms.Android.Core.Resource.Drawable.inputlayout_togglevisibleicon = global::AppNotificationCenter.Resource.Drawable.inputlayout_togglevisibleicon;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Attribute.busyIndicatorAnimationTypes = global::AppNotificationCenter.Resource.Attribute.busyIndicatorAnimationTypes;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Attribute.busyIndicatorIsBusy = global::AppNotificationCenter.Resource.Attribute.busyIndicatorIsBusy;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Attribute.busyIndicatorSecondaryColor = global::AppNotificationCenter.Resource.Attribute.busyIndicatorSecondaryColor;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Attribute.busyIndicatorTextColor = global::AppNotificationCenter.Resource.Attribute.busyIndicatorTextColor;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Attribute.busyIndicatorTextSize = global::AppNotificationCenter.Resource.Attribute.busyIndicatorTextSize;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Attribute.busyIndicatorTitle = global::AppNotificationCenter.Resource.Attribute.busyIndicatorTitle;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Attribute.busyIndicatorTitlePlacement = global::AppNotificationCenter.Resource.Attribute.busyIndicatorTitlePlacement;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Attribute.busyIndicatorViewBoxHeight = global::AppNotificationCenter.Resource.Attribute.busyIndicatorViewBoxHeight;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Attribute.busyIndicatorViewBoxWidth = global::AppNotificationCenter.Resource.Attribute.busyIndicatorViewBoxWidth;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.ball = global::AppNotificationCenter.Resource.Id.ball;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.battery = global::AppNotificationCenter.Resource.Id.battery;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.bottom = global::AppNotificationCenter.Resource.Id.bottom;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.box = global::AppNotificationCenter.Resource.Id.box;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.doubleCircle = global::AppNotificationCenter.Resource.Id.doubleCircle;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.ecg = global::AppNotificationCenter.Resource.Id.ecg;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.gearBox = global::AppNotificationCenter.Resource.Id.gearBox;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.globe = global::AppNotificationCenter.Resource.Id.globe;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.horizontalPulsingBox = global::AppNotificationCenter.Resource.Id.horizontalPulsingBox;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.movieTimer = global::AppNotificationCenter.Resource.Id.movieTimer;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.none = global::AppNotificationCenter.Resource.Id.none;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.print = global::AppNotificationCenter.Resource.Id.print;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.rectangle = global::AppNotificationCenter.Resource.Id.rectangle;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.rollingBall = global::AppNotificationCenter.Resource.Id.rollingBall;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.singleCircle = global::AppNotificationCenter.Resource.Id.singleCircle;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.slicedCircle = global::AppNotificationCenter.Resource.Id.slicedCircle;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.top = global::AppNotificationCenter.Resource.Id.top;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.zoomingTarget = global::AppNotificationCenter.Resource.Id.zoomingTarget;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.String.library_name = global::AppNotificationCenter.Resource.String.library_name;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator = global::AppNotificationCenter.Resource.Styleable.SfBusyIndicator;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator_busyIndicatorAnimationTypes = global::AppNotificationCenter.Resource.Styleable.SfBusyIndicator_busyIndicatorAnimationTypes;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator_busyIndicatorIsBusy = global::AppNotificationCenter.Resource.Styleable.SfBusyIndicator_busyIndicatorIsBusy;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator_busyIndicatorSecondaryColor = global::AppNotificationCenter.Resource.Styleable.SfBusyIndicator_busyIndicatorSecondaryColor;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator_busyIndicatorTextColor = global::AppNotificationCenter.Resource.Styleable.SfBusyIndicator_busyIndicatorTextColor;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator_busyIndicatorTextSize = global::AppNotificationCenter.Resource.Styleable.SfBusyIndicator_busyIndicatorTextSize;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator_busyIndicatorTitle = global::AppNotificationCenter.Resource.Styleable.SfBusyIndicator_busyIndicatorTitle;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator_busyIndicatorTitlePlacement = global::AppNotificationCenter.Resource.Styleable.SfBusyIndicator_busyIndicatorTitlePlacement;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator_busyIndicatorViewBoxHeight = global::AppNotificationCenter.Resource.Styleable.SfBusyIndicator_busyIndicatorViewBoxHeight;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator_busyIndicatorViewBoxWidth = global::AppNotificationCenter.Resource.Styleable.SfBusyIndicator_busyIndicatorViewBoxWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::AppNotificationCenter.Resource.Attribute.actionBarSize;
 		}
 		
 		public partial class Animation

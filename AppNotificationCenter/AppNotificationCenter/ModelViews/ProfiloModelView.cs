@@ -10,6 +10,7 @@ using AppNotificationCenter.Database.Data;
 using AppNotificationCenter.Database.Models;
 using AppNotificationCenter.Models;
 using AppNotificationCenter.Services;
+using Plugin.Connectivity;
 using Xamarin.Forms;
 
 namespace AppNotificationCenter.ModelViews
@@ -17,7 +18,7 @@ namespace AppNotificationCenter.ModelViews
     public class ProfiloModelView:INotifyPropertyChanged
     {
         private TbUtente utenteProfilo;
-        private bool isEnabled=false;
+        private bool isEnabled=false,isEnabledConnection=true;
         private bool isEnabledModifica = true;
         private string helper="";
         private Color coloreModifica = Color.Default;
@@ -42,6 +43,15 @@ namespace AppNotificationCenter.ModelViews
             }
         }
 
+        public bool IsEnabledConnection
+        {
+            get { return isEnabledConnection; }
+            set
+            {
+                OnPropertychanged();
+                isEnabledConnection = value;
+            }
+        }
         public bool IsEnabledModifica
         {
             get { return isEnabledModifica; }
@@ -76,6 +86,15 @@ namespace AppNotificationCenter.ModelViews
             IsEnabled = false;
             isEnabledModifica = true;
             UtenteProfilo = UtenzaData.getUser();
+            if (CrossConnectivity.Current.IsConnected)
+            {
+                IsEnabledConnection = false;
+            }
+            else
+            {
+                IsEnabledConnection = true;
+            }
+
         }
         public ICommand ModificaInfo
         {
@@ -83,9 +102,18 @@ namespace AppNotificationCenter.ModelViews
             {
                 return new Command(() =>
                 {
-                    IsEnabled = true;
-                    Helper = "Questo campo è modificabile";
-                    isEnabledModifica = false;
+                    if (CrossConnectivity.Current.IsConnected)
+                    {
+                        IsEnabledConnection = true;
+                        IsEnabled = true;
+                        Helper = "Questo campo è modificabile";
+                        isEnabledModifica = false;
+                    }
+                    else
+                    {
+                        IsEnabledConnection = false;
+                    }
+                   
                 });
             }
         }
