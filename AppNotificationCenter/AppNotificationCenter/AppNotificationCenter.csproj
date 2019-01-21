@@ -66,6 +66,9 @@
     <Compile Include="Views\EventiInSeguitoIoS.xaml.cs">
       <DependentUpon>EventiInSeguitoIoS.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ListaEventiIoS.xaml.cs">
       <DependentUpon>ListaEventiIoS.xaml</DependentUpon>
     </Compile>
@@ -207,6 +210,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\MainPageNew.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Home.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
