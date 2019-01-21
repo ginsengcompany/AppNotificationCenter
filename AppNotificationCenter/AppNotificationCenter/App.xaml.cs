@@ -25,7 +25,7 @@ namespace AppNotificationCenter
         {
             if (checkUser())
             {
-                MainPage = new NavigationPage(new MainPage());
+                MainPage = new NavigationPage(new Home());
             }
             else
                 MainPage = new NavigationPage(new Login());

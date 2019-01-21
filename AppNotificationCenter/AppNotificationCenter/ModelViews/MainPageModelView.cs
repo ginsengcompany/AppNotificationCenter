@@ -220,6 +220,7 @@ namespace AppNotificationCenter.ModelViews
                                     formaDateTime = Convert.ToDateTime(i.data, culture);
                                     i.data = formaDateTime.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
                                     i.data_ordinamento = formaDateTime;
+                                    
                                     string img = "";
                                 try
                                 {
@@ -263,11 +264,18 @@ namespace AppNotificationCenter.ModelViews
                             listaNote = listaNote.OrderByDescending(o => o.data_ordinamento).ToList();
                             GroupDatiEvento cGroupListNote = new GroupDatiEvento(listaNote);
                             cGroupListNote.Heading = "Note";
+                          
                             groupList.Add(cGroupListNote);
                             //ListaEventi = listaEventi;
                             GroupDatiEvento = groupList;
-
-                            IsBusy = false;
+                        foreach (var i in List)
+                        {
+                            if (i.tipo == "2")
+                            {
+                                i.data = " ";
+                            }
+                        }
+                        IsBusy = false;
                         }
                         else
                         {
@@ -325,10 +333,10 @@ namespace AppNotificationCenter.ModelViews
                         {
                             if (urlScelto != null)
                             {
-                                var actionSheet = await App.Current.MainPage.DisplayActionSheet("Attenzione", "Cancel", null, "Conferma", "Declina", "Dettagli", "Sito web");
+                                var actionSheet = await App.Current.MainPage.DisplayActionSheet("Attenzione", "Cancel", null, "Partecipa", "Declina", "Dettagli", "Sito web");
                                 switch (actionSheet)
                                 {
-                                    case "Conferma":
+                                    case "Partecipa":
                                         await ConfermaButton(eventoSelezionato);
                                         break;
                                     case "Declina":
@@ -348,10 +356,10 @@ namespace AppNotificationCenter.ModelViews
                             }
                             else
                             {
-                                var actionSheet = await App.Current.MainPage.DisplayActionSheet("Attenzione", "Cancel", null, "Conferma", "Declina", "Dettagli");
+                                var actionSheet = await App.Current.MainPage.DisplayActionSheet("Attenzione", "Cancel", null, "Partecipa", "Declina", "Dettagli");
                                 switch (actionSheet)
                                 {
-                                    case "Conferma":
+                                    case "Partecipa":
                                         await ConfermaButton(eventoSelezionato);
                                         break;
                                     case "Declina":
@@ -478,7 +486,7 @@ namespace AppNotificationCenter.ModelViews
             bool esito = await connessione.PostJson(URL.ConfermaElimina, eventoConfermato);
             if (esito == true)
             {
-                await App.Current.MainPage.DisplayAlert("CONFERMA", "L'evento è stato confermato", "Ok");
+                await App.Current.MainPage.DisplayAlert("CONFERMA", "Complimenti la partecipazione è andata a buon fine", "Ok");
             }
             else
                 await App.Current.MainPage.DisplayAlert("Attenzione", "Connessione non riuscita riprovare", "Ok");
