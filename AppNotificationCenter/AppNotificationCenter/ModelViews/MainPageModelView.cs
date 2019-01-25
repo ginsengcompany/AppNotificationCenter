@@ -268,13 +268,7 @@ namespace AppNotificationCenter.ModelViews
                             groupList.Add(cGroupListNote);
                             //ListaEventi = listaEventi;
                             GroupDatiEvento = groupList;
-                        foreach (var i in List)
-                        {
-                            if (i.tipo == "2")
-                            {
-                                i.data = " ";
-                            }
-                        }
+               
                         IsBusy = false;
                         }
                         else
@@ -509,7 +503,11 @@ namespace AppNotificationCenter.ModelViews
             bool esito = await connessione.PostJson(URL.ConfermaElimina, eventoDeclinato);
             if (esito)
             {
-                await App.Current.MainPage.DisplayAlert("Attenzione", "L'evento è stato declinato", "Ok");
+                if (eventoDeclinato.tipo == "1")
+                    await App.Current.MainPage.DisplayAlert("Attenzione", "L'evento è stato declinato", "Ok");
+                else
+                    await App.Current.MainPage.DisplayAlert("Attenzione", "La nota è stata eliminata", "Ok");
+
             }
             else
                 await App.Current.MainPage.DisplayAlert("Attenzione", "Connessione non riuscita, riprovare", "Ok");
