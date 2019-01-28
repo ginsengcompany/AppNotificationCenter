@@ -267,7 +267,9 @@ namespace AppNotificationCenter.ModelViews
                 Informazioni = dettagliEvento.informazioni;
 
             Descrizione = dettagliEvento.descrizione;
-                string img = "";
+            string img = "";
+            if(dettagliEvento.immagine!=null)
+            {
                 if (dettagliEvento.immagine.Contains("jpeg;"))
                 {
                     img = dettagliEvento.immagine.Substring(23);
@@ -276,7 +278,7 @@ namespace AppNotificationCenter.ModelViews
                 {
                     img = dettagliEvento.immagine.Substring(22);
                 }
-
+            }
                 Immagine = Xamarin.Forms.ImageSource.FromStream(
                     () => new MemoryStream(Convert.FromBase64String(img)));
             
