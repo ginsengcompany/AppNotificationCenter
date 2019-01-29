@@ -23,6 +23,8 @@ namespace AppNotificationCenter.Models
         public string titolo { get; set; }
         public string sottotitolo { get; set; }
         public string data { get; set; }
+        public string dat_fine { get; set; }
+        public DateTime data_fine { get; set; }
         public DateTime data_ordinamento { get; set; }
         public string luogo { get; set; }
         public string informazioni { get; set; }

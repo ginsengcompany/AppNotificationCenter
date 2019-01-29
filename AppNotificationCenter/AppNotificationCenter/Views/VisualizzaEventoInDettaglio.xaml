@@ -93,9 +93,9 @@
                 
             </ScrollView>
             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" Margin="2">
-                <Button BackgroundColor="#4b8b80" TextColor="White" Text="Sito" BorderRadius="15" Command="{Binding LinkSito}" ></Button>
-                <Button BackgroundColor="#4b8b80" TextColor="White" Text="Partecipo" BorderRadius="15" Command="{Binding Partecipo}" IsVisible="{Binding VisiblePartecipo}" IsEnabled="{Binding EnablePartecipo}"></Button>
-                <Button BackgroundColor="#4b8b80" TextColor="White" Text="Elimina" BorderRadius="15" Command="{Binding Declino}" ></Button>
+                <Button BackgroundColor="#4b8b80" TextColor="White" Text="Sito" BorderRadius="15" Command="{Binding LinkSito}" WidthRequest="100" Margin="6"></Button>
+                <Button BackgroundColor="#4b8b80" TextColor="White" Text="Partecipo" BorderRadius="15" Command="{Binding Partecipo}" WidthRequest="100" IsVisible="{Binding VisiblePartecipo}" IsEnabled="{Binding EnablePartecipo}"></Button>
+                <Button BackgroundColor="#4b8b80" TextColor="White" Text="Elimina" BorderRadius="15" Command="{Binding Declino}" WidthRequest="100"></Button>
             </StackLayout>
         </StackLayout>
         

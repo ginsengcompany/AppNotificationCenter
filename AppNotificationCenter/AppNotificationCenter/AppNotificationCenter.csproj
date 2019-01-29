@@ -63,6 +63,9 @@
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Services\REST.cs" />
     <Compile Include="Services\URL.cs" />
+    <Compile Include="Views\CambioAccount.xaml.cs">
+      <DependentUpon>CambioAccount.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\EventiInSeguitoIoS.xaml.cs">
       <DependentUpon>EventiInSeguitoIoS.xaml</DependentUpon>
     </Compile>
@@ -216,6 +219,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\Home.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\CambioAccount.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

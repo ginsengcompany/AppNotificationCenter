@@ -139,9 +139,30 @@ namespace AppNotificationCenter.ModelViews
                     {
                         //await App.Current.MainPage.DisplayAlert("Login", "Login Effettuata con successo", "OK");
                         response.final[0].organizzazione = user.organizzazione;
-                        LoginData.InsertUser(new TbLogin(user.username.ToUpper(), user.password, user.token, user.organizzazione));
-                        UtenzaData.InsertUser(new TbUtente(response.final[0]));
-                        return true;
+                        var medico = LoginData.getUser();
+                        bool flag = true;
+                        for (int i = 0; i < medico.Count; i++)
+                        {
+                            if (user.username == medico[i].username)
+                            {
+                                await App.Current.MainPage.DisplayAlert("Attenzione", "Utenza per la quale prova ad accedere è già collegata", "ok");
+                                flag = false;
+                                break;
+                            }
+                        }
+                        if (flag)
+                        {
+                            foreach (var i in medico)
+                            {
+                                i.attivo = false;
+                                LoginData.updateUser(i);
+                            }
+                            LoginData.InsertUser(new TbLogin(user.username.ToUpper(), user.password, user.token, user.organizzazione,true));
+                            UtenzaData.InsertUser(new TbUtente(response.final[0]));
+
+                        }
+                        return flag;
+                        
                     }
                 }
                 else

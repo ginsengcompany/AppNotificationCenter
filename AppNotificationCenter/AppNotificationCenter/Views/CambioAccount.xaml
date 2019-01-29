@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppNotificationCenter.Views.CambioAccount">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="ListaUtenze" HasUnevenRows="True" ItemTapped="ListaUtenze_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="logo.png" WidthRequest="100"/>
+                                <StackLayout>
+                                    <Label Text="{Binding username}"/>
+                                    <Label Text="{Binding organizzazione}"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

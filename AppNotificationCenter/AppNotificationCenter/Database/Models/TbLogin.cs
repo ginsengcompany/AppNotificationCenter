@@ -20,15 +20,19 @@ namespace AppNotificationCenter.Database.Models
         public string token { get; set; }
         [NotNull, Column("organizzazione")]
         public string organizzazione { get; set; }
+        [Column("attivo")]
+        public Boolean attivo { get; set; }
 
         public TbLogin() { }
 
-        public TbLogin(string username, string password, string token, string organizzazione)
+        public TbLogin(string username, string password, string token, string organizzazione,Boolean attivo)
         {
             this.username = username;
             this.password = password;
             this.token = token;
             this.organizzazione = organizzazione;
+            this.attivo = attivo;
+
         }
     }
 }
