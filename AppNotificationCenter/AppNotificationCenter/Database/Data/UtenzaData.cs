@@ -14,9 +14,9 @@ namespace AppNotificationCenter.Database.Data
             return Database.Connection.ExecuteScalar<int>("SELECT COUNT(*) FROM Utente");
         }
 
-        public static TbUtente getUser()
+        public static TbUtente getUser(string organizzazione)
         {
-            var temp = Database.Connection.Query<TbUtente>("SELECT * FROM Utente");
+            var temp = Database.Connection.Query<TbUtente>("SELECT * FROM Utente WHERE organizzazione=?",organizzazione);
             return temp[0];
         }
 

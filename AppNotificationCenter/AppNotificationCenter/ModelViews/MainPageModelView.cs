@@ -189,7 +189,6 @@ namespace AppNotificationCenter.ModelViews
             {
                 return new Command(() =>
                 {
-                    
                     App.Current.MainPage.Navigation.PushAsync(new Login());
                 });
             }

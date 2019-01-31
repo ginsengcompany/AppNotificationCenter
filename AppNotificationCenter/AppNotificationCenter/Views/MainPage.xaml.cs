@@ -42,6 +42,8 @@ namespace AppNotificationCenter
                     user.token = i.token;
                     user.organizzazione = i.organizzazione;
                     user.eliminato = "false";
+                    user.splash_logo = i.splash_logo;
+                    user.circle_logo = i.circle_logo;
                 }
             }
             if (string.IsNullOrEmpty(user.username))
@@ -52,6 +54,8 @@ namespace AppNotificationCenter
                 user.password = utente[0].password;
                 user.token = utente[0].token;
                 user.organizzazione = utente[0].organizzazione;
+                user.splash_logo = utente[0].splash_logo;
+                user.circle_logo = utente[0].circle_logo;
                 user.eliminato = "false";
             }
             REST<Utente, Final> rest = new REST<Utente, Final>();
@@ -66,7 +70,7 @@ namespace AppNotificationCenter
                         {
 
                             await App.Current.MainPage.DisplayAlert("Login", "Utenza non attiva", "OK");
-                            LoginData.dropUser(new TbLogin(user.username, user.password, user.token, user.organizzazione,true));
+                            LoginData.dropUser(new TbLogin(user.username, user.password, user.token, user.organizzazione,user.circle_logo,user.splash_logo,true));
                             UtenzaData.DropUser(new TbUtente(response.final[0]));
                             App.Current.MainPage = new Login();
                         }
@@ -79,7 +83,7 @@ namespace AppNotificationCenter
                                 i.attivo = false;
                                 LoginData.updateUser(i);
                             }
-                            TbLogin us = new TbLogin(user.username, user.password, user.token, user.organizzazione, user.attivo);
+                            TbLogin us = new TbLogin(user.username, user.password, user.token, user.organizzazione, user.circle_logo, user.splash_logo,  user.attivo);
                             us.id = user.id;
                             us.attivo = true;
                             LoginData.updateUser(us);
@@ -89,7 +93,7 @@ namespace AppNotificationCenter
                     }
                     else
                     {
-                        LoginData.dropUser(new TbLogin(user.username, user.password, user.token, user.organizzazione,true));
+                        LoginData.dropUser(new TbLogin(user.username, user.password, user.token, user.organizzazione, user.circle_logo, user.splash_logo, true));
                         UtenzaData.DropUser(new TbUtente(response.final[0]));
                         App.Current.MainPage = new NavigationPage(new Login());
                     }

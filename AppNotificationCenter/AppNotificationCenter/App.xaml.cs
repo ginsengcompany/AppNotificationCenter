@@ -37,7 +37,14 @@ namespace AppNotificationCenter
         {
             int count = LoginData.GetCountUser();
             if (count > 0)
+            {
+                var utenza = LoginData.getUserAttivo();
+                if (utenza.Count == 0 || string.IsNullOrEmpty(utenza[0].splash_logo))
+                {
+                    return false;
+                }
                 return true;
+            }
             else
                 return false;
         }

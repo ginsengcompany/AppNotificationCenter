@@ -22,7 +22,7 @@ namespace AppNotificationCenter.ModelViews
         private bool isEnabledModifica = true;
         private string helper="";
         private Color coloreModifica = Color.Default;
-
+        List<TbLogin> org = LoginData.getUserAttivo();
 
         public string Helper
         {
@@ -83,9 +83,10 @@ namespace AppNotificationCenter.ModelViews
     
         public ProfiloModelView()
         {
+            
             IsEnabled = false;
             isEnabledModifica = true;
-            UtenteProfilo = UtenzaData.getUser();
+            UtenteProfilo = UtenzaData.getUser(org[0].organizzazione);
             if (CrossConnectivity.Current.IsConnected)
             {
                 IsEnabledConnection = false;
@@ -126,7 +127,7 @@ namespace AppNotificationCenter.ModelViews
                     IsEnabled = false;
                     isEnabledModifica = true;
                     Helper = "";
-                    UtenteProfilo = UtenzaData.getUser();
+                    UtenteProfilo = UtenzaData.getUser(org[0].organizzazione);
                 });
             }
         }
@@ -148,7 +149,7 @@ namespace AppNotificationCenter.ModelViews
                     else
                     {
                        await App.Current.MainPage.DisplayAlert("Attenzione", "aggiornamento dati non riuscito", "ok");
-                        UtenteProfilo = UtenzaData.getUser();
+                        UtenteProfilo = UtenzaData.getUser(org[0].organizzazione);
                     }
                 });
             }
