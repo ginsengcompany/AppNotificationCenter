@@ -14,6 +14,17 @@
                      Order="Primary"
                      Command="{Binding visualizzaInfo}"
                      Priority="0"/>
+
+        <ToolbarItem Name="aggiungiOrg" 
+                     Text="Aggiungi organizzazione"
+                     Order="Secondary"
+                     Command="{Binding AggiungiOrganizzazione}"
+                     Priority="0"/>
+        <ToolbarItem Name="listaOrg" 
+                     Text="Organizzazioni attive"
+                     Order="Secondary"
+                     Command="{Binding GuardaListaOrg}"
+                     Priority="0"/>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
@@ -57,6 +68,8 @@
                                             </StackLayout>
                                             <StackLayout Orientation="Horizontal">
                                                 <Label Text="{Binding data}" FontSize="Medium" VerticalOptions="Center" VerticalTextAlignment="Center" IsVisible="{Binding VisibleError}"/>
+                                                <Label Text="-"/>
+                                                <Label Text="{Binding dat_fine}" FontSize="Medium" VerticalOptions="Center" VerticalTextAlignment="Center" IsVisible="{Binding VisibleError}"/>
                                             </StackLayout>
                                             <StackLayout Orientation="Horizontal">
 
@@ -70,15 +83,7 @@
                                             </StackLayout>
                                         </StackLayout>
                                     </StackLayout>
-                                    <!--<StackLayout Orientation="Horizontal">
-                                        <Button x:Name="btnConferma" Text="Conferma" FontSize="Small" IsVisible="{Binding Visible}" BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center" Clicked="ButtonConferma_OnClicked"/>
-                                        <Button x:Name="btnInSeguito" Text="Declina" FontSize="Small" IsVisible="{Binding VisibileInSeguito}"  BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center" Clicked="BtnInSeguito_OnClicked"/>
-                                        <Button Text="DETTAGLI" Clicked="Button_Clicked" FontSize="Small" IsVisible="{Binding VisibileInfo}"  BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center"/>
-                                        <Button Text="Sito web" Clicked="VaiSitoWeb" FontSize="Small" IsVisible="{Binding VisibleWeb}"  BackgroundColor="#4b8b80" TextColor="White" HorizontalOptions="Center"/>
-
-                                    </StackLayout>-->
                                 </StackLayout>
-
                             </ViewCell.View>
                         </customControls:ExtendedViewCell>
                     </DataTemplate>

@@ -29,15 +29,36 @@ namespace AppNotificationCenter
         }
         private async Task check()
         {
-         
-                var utente = LoginData.getUser();
-                Utente user = new Utente();
+            var utente = LoginData.getUser();
+            Utente user = new Utente();
+            foreach(var i in utente)
+            {
+                if (i.attivo)
+                {
+                    user.id = i.id;
+                    user.attivo = i.attivo;
+                    user.username = i.username;
+                    user.password = i.password;
+                    user.token = i.token;
+                    user.organizzazione = i.organizzazione;
+                    user.eliminato = "false";
+                    user.splash_logo = i.splash_logo;
+                    user.circle_logo = i.circle_logo;
+                }
+            }
+            if (string.IsNullOrEmpty(user.username))
+            {
+                user.id = utente[0].id;
+                user.attivo = true;
                 user.username = utente[0].username;
                 user.password = utente[0].password;
                 user.token = utente[0].token;
                 user.organizzazione = utente[0].organizzazione;
+                user.splash_logo = utente[0].splash_logo;
+                user.circle_logo = utente[0].circle_logo;
                 user.eliminato = "false";
-                REST<Utente, Final> rest = new REST<Utente, Final>();
+            }
+            REST<Utente, Final> rest = new REST<Utente, Final>();
             if (CrossConnectivity.Current.IsConnected)
             {
                 var response = await rest.PostJson(URL.Login, user);
@@ -49,7 +70,7 @@ namespace AppNotificationCenter
                         {
 
                             await App.Current.MainPage.DisplayAlert("Login", "Utenza non attiva", "OK");
-                            LoginData.dropUser(new TbLogin(user.username, user.password, user.token, user.organizzazione));
+                            LoginData.dropUser(new TbLogin(user.username, user.password, user.token, user.organizzazione,user.circle_logo,user.splash_logo,true));
                             UtenzaData.DropUser(new TbUtente(response.final[0]));
                             App.Current.MainPage = new Login();
                         }
@@ -57,16 +78,22 @@ namespace AppNotificationCenter
                         {
                             //await App.Current.MainPage.DisplayAlert("Login", "Login Effettuata con successo", "OK");
                             response.final[0].organizzazione = user.organizzazione;
-                            LoginData.updateUser(new TbLogin(user.username, user.password, user.token,
-                                user.organizzazione));
+                            foreach (var i in utente)
+                            {
+                                i.attivo = false;
+                                LoginData.updateUser(i);
+                            }
+                            TbLogin us = new TbLogin(user.username, user.password, user.token, user.organizzazione, user.circle_logo, user.splash_logo,  user.attivo);
+                            us.id = user.id;
+                            us.attivo = true;
+                            LoginData.updateUser(us);
                             UtenzaData.UpdateUser(new TbUtente(response.final[0]));
                         }
 
                     }
                     else
                     {
-
-                        LoginData.dropUser(new TbLogin(user.username, user.password, user.token, user.organizzazione));
+                        LoginData.dropUser(new TbLogin(user.username, user.password, user.token, user.organizzazione, user.circle_logo, user.splash_logo, true));
                         UtenzaData.DropUser(new TbUtente(response.final[0]));
                         App.Current.MainPage = new NavigationPage(new Login());
                     }

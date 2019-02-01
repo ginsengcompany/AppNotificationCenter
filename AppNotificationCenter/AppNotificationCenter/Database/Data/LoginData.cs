@@ -33,6 +33,11 @@ namespace AppNotificationCenter.Database.Data
             return Database.Connection.Query<TbLogin>("SELECT * FROM login");
         }
 
+        public static List<TbLogin> getUserAttivo()
+        {
+            return Database.Connection.Query<TbLogin>("SELECT * FROM login WHERE attivo=?",true);
+        }
+
         public static int InsertUser(TbLogin user)
         {
            return Database.Connection.Insert(user);
