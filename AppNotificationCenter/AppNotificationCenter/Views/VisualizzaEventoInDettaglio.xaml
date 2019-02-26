@@ -73,6 +73,24 @@
                     <StackLayout BackgroundColor="White">
                         <Grid>
                             <Grid.RowDefinitions>
+                                <RowDefinition Height="2*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="1.5*" />
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Orientation="Horizontal" Padding="10,0,10,0" Grid.Column="0" Grid.Row="0" >
+                                <Image Source="logoRelatore" VerticalOptions="Center"></Image>
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical" Padding="10,0,10,0" Grid.Column="1" Grid.Row="0" VerticalOptions="CenterAndExpand">
+                                <Label Text="A cura di" FontSize="Medium" FontAttributes="Bold" TextColor="#4b8b80" HorizontalOptions="Center"></Label>
+                                <Label Text="{Binding Curatore}" TextColor="Black" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand"></Label>
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout BackgroundColor="GhostWhite">
+                        <Grid>
+                            <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>

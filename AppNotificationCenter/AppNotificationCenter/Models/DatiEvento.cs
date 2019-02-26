@@ -30,6 +30,7 @@ namespace AppNotificationCenter.Models
         public string informazioni { get; set; }
         public string relatori { get; set; }
         public string descrizione { get; set; }
+        public string curatore { get; set; }
         public string immagine { get; set; }
         public string tipo { get; set; }
         public string Visible { get; set; } = "false";

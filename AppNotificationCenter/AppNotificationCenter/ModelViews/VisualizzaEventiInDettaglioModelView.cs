@@ -17,7 +17,7 @@ namespace AppNotificationCenter.ModelViews
     class VisualizzaEventiInDettaglioModelView : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        string titolo,sottotitolo, data, luogo, informazioni, relatori, descrizione;
+        string titolo,sottotitolo, data, luogo, informazioni, relatori, descrizione,curatore;
         private bool enablePartecipo = true;
         private bool visiblePartecipo = false;
         ImageSource immagine;
@@ -70,6 +70,21 @@ namespace AppNotificationCenter.ModelViews
             }
 
         }
+
+        public string Curatore
+        {
+            set
+            {
+                curatore = value;
+                OnPropertychanged();
+            }
+            get
+            {
+                return curatore;
+            }
+
+        }
+
         public ICommand LinkSito
         {
             get
@@ -255,6 +270,11 @@ namespace AppNotificationCenter.ModelViews
                 Relatori = "Non disponibile";
             else
                 Relatori = dettagliEvento.relatori;
+
+            if (string.IsNullOrEmpty(dettagliEvento.curatore))
+                Curatore = "Non disponibile";
+            else
+                Curatore = dettagliEvento.curatore;
 
             if (string.IsNullOrEmpty(dettagliEvento.luogo))
                 Luogo = "Non disponibile";

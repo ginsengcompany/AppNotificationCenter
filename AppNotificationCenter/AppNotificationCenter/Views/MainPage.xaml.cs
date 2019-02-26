@@ -1,12 +1,7 @@
 ﻿using AppNotificationCenter.Models;
 using AppNotificationCenter.ModelViews;
 using AppNotificationCenter.Views;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using Com.OneSignal;
 using Xamarin.Forms;
 using AppNotificationCenter.Database.Data;
 using AppNotificationCenter.Services;
@@ -125,7 +120,6 @@ namespace AppNotificationCenter
         {
             evento = e.Item as DatiEvento;
             z.displayButtons(evento);
-
         }
 
      /*   private async void ButtonConferma_OnClicked(object sender, EventArgs e)
