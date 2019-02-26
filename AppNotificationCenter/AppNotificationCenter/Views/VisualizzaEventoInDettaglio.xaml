@@ -4,7 +4,7 @@
              x:Class="AppNotificationCenter.Views.VisualizzaEventoInDettaglio"
              Title="{Binding Titolo}">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="White">
+        <StackLayout BackgroundColor="White">
             <Grid>
                 <Image Source="{Binding Immagine}" HorizontalOptions="Fill" HeightRequest="375"  Aspect="AspectFit"  Grid.Row="0"></Image>
                 <StackLayout BackgroundColor="Black" Opacity="0.85" Grid.Row="0" VerticalOptions="EndAndExpand">
@@ -28,9 +28,9 @@
                             <StackLayout Orientation="Horizontal" Padding="10,0,10,0" Grid.Column="0" Grid.Row="0">
                                 <Image Source="logoLuogo" VerticalOptions="Center"></Image>
                             </StackLayout>
-                            <StackLayout Orientation="Vertical" Padding="10,0,10,0" Grid.Column="1" Grid.Row="0" VerticalOptions="StartAndExpand">
+                            <StackLayout Orientation="Vertical" Padding="10,0,10,0" Grid.Column="1" Grid.Row="0" VerticalOptions="StartAndExpand" >
                                 <Label Text="Luogo evento" FontSize="Medium" FontAttributes="Bold" TextColor="#4b8b80" HorizontalOptions="Center" />
-                                <Label Text="{Binding Luogo}" TextColor="Black" HorizontalTextAlignment="Center" VerticalOptions="StartAndExpand"></Label>
+                                <Label Text="{Binding Luogo}" TextColor="Black" HorizontalTextAlignment="Center" VerticalOptions="StartAndExpand"/>
                             </StackLayout>
                         </Grid>
                     </StackLayout>
@@ -73,6 +73,24 @@
                     <StackLayout BackgroundColor="White">
                         <Grid>
                             <Grid.RowDefinitions>
+                                <RowDefinition Height="2*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="1.5*" />
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Orientation="Horizontal" Padding="10,0,10,0" Grid.Column="0" Grid.Row="0" >
+                                <Image Source="logoRelatore" VerticalOptions="Center"></Image>
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical" Padding="10,0,10,0" Grid.Column="1" Grid.Row="0" VerticalOptions="CenterAndExpand">
+                                <Label Text="A cura di" FontSize="Medium" FontAttributes="Bold" TextColor="#4b8b80" HorizontalOptions="Center"></Label>
+                                <Label Text="{Binding Curatore}" TextColor="Black" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand"></Label>
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout BackgroundColor="GhostWhite">
+                        <Grid>
+                            <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
@@ -90,8 +108,15 @@
                     </StackLayout>
                     <StackLayout/>
                 </StackLayout>
+                
             </ScrollView>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand"  Margin="5" Padding="2">
+                <Button BackgroundColor="#4b8b80"  TextColor="White" Text="    Sito    " BorderRadius="15" Command="{Binding LinkSito}" Margin="5"></Button>
+                <Button BackgroundColor="#4b8b80" TextColor="White" Text="   Partecipo  "  BorderRadius="15" Command="{Binding Partecipo}" Margin="10" IsVisible="{Binding VisiblePartecipo}" IsEnabled="{Binding EnablePartecipo}"></Button>
+                <Button BackgroundColor="#4b8b80" TextColor="White" Text="  Elimina  " BorderRadius="15" Command="{Binding Declino}" Margin="5"></Button>
+            </StackLayout>
         </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>
  

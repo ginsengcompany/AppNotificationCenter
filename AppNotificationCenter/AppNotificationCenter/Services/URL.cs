@@ -3,11 +3,9 @@
     public static class URL
     {
         public const string urlRemoto = "https://notification-center.ak12srl.it/";
-        public const string urlLocale = "http://192.168.125.9:3004";
+        public const string urlLocale = "http://192.168.125.97:3004";
         public static string Eventi = urlRemoto + "/getEventiByID";
-
         public static string Login = urlRemoto + "/cercaUsername";
-
         public static string ConfermaElimina = urlRemoto + "/setEliminatoConfermato";
         public static string listaOrganizzazione = urlRemoto + "/getListaOrganizzazione";
         public static string modificaContatto = urlRemoto + "/modificaContatto";

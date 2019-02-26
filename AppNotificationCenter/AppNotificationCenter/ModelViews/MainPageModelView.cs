@@ -183,6 +183,32 @@ namespace AppNotificationCenter.ModelViews
             }
         }
 
+        public ICommand AggiungiOrganizzazione
+        {
+            get
+            {
+                return new Command(() =>
+                {
+                    App.Current.MainPage.Navigation.PushAsync(new Login());
+                });
+            }
+        }
+        public ICommand GuardaListaOrg
+        {
+            get
+            {
+                return new Command(() =>
+                {
+                    GetLista();
+                });
+            }
+        }
+
+
+        public async void GetLista()
+        {
+           await App.Current.MainPage.Navigation.PushAsync(new CambioAccount());
+        }
 
         private void OnPropertychanged([CallerMemberName] string name = "")
         {
@@ -197,11 +223,25 @@ namespace AppNotificationCenter.ModelViews
             REST<Object, DatiEvento> connessione = new REST<Object, DatiEvento>();
             List<DatiEvento> List = new List<DatiEvento>();
             var medico = LoginData.getUser();
-            user.username = medico[0].username;
-            user.token = medico[0].token;
-            user.organizzazione = medico[0].organizzazione;
-            user.eliminato = "false";
-
+        
+            foreach(var i in medico)
+            {
+                if (i.attivo)
+                {
+                    user.username = i.username;
+                    user.token = i.token;
+                    user.organizzazione = i.organizzazione;
+                    user.eliminato = "false";
+                }
+            }
+            if (string.IsNullOrEmpty(user.username))
+            {
+                user.username = medico[0].username;
+                user.password = medico[0].password;
+                user.token = medico[0].token;
+                user.organizzazione = medico[0].organizzazione;
+                user.eliminato = "false";
+            }
             if (CrossConnectivity.Current.IsConnected)
             {
                 List = await connessione.PostJsonList(URL.Eventi, user);
@@ -220,7 +260,10 @@ namespace AppNotificationCenter.ModelViews
                                     formaDateTime = Convert.ToDateTime(i.data, culture);
                                     i.data = formaDateTime.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
                                     i.data_ordinamento = formaDateTime;
-                                    string img = "";
+                                    i.dat_fine = i.data_fine.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
+
+
+                            string img = "";
                                 try
                                 {
                                     if (!String.IsNullOrEmpty(i.immagine))
@@ -263,11 +306,12 @@ namespace AppNotificationCenter.ModelViews
                             listaNote = listaNote.OrderByDescending(o => o.data_ordinamento).ToList();
                             GroupDatiEvento cGroupListNote = new GroupDatiEvento(listaNote);
                             cGroupListNote.Heading = "Note";
+                          
                             groupList.Add(cGroupListNote);
                             //ListaEventi = listaEventi;
                             GroupDatiEvento = groupList;
-
-                            IsBusy = false;
+               
+                        IsBusy = false;
                         }
                         else
                         {
@@ -325,10 +369,10 @@ namespace AppNotificationCenter.ModelViews
                         {
                             if (urlScelto != null)
                             {
-                                var actionSheet = await App.Current.MainPage.DisplayActionSheet("Attenzione", "Cancel", null, "Conferma", "Declina", "Dettagli", "Sito web");
+                                var actionSheet = await App.Current.MainPage.DisplayActionSheet("Attenzione", "Cancel", null, "Partecipa", "Declina", "Dettagli", "Sito web");
                                 switch (actionSheet)
                                 {
-                                    case "Conferma":
+                                    case "Partecipa":
                                         await ConfermaButton(eventoSelezionato);
                                         break;
                                     case "Declina":
@@ -348,10 +392,10 @@ namespace AppNotificationCenter.ModelViews
                             }
                             else
                             {
-                                var actionSheet = await App.Current.MainPage.DisplayActionSheet("Attenzione", "Cancel", null, "Conferma", "Declina", "Dettagli");
+                                var actionSheet = await App.Current.MainPage.DisplayActionSheet("Attenzione", "Cancel", null, "Partecipa", "Declina", "Dettagli");
                                 switch (actionSheet)
                                 {
-                                    case "Conferma":
+                                    case "Partecipa":
                                         await ConfermaButton(eventoSelezionato);
                                         break;
                                     case "Declina":
@@ -478,7 +522,7 @@ namespace AppNotificationCenter.ModelViews
             bool esito = await connessione.PostJson(URL.ConfermaElimina, eventoConfermato);
             if (esito == true)
             {
-                await App.Current.MainPage.DisplayAlert("CONFERMA", "L'evento è stato confermato", "Ok");
+                await App.Current.MainPage.DisplayAlert("CONFERMA", "Complimenti la partecipazione è andata a buon fine", "Ok");
             }
             else
                 await App.Current.MainPage.DisplayAlert("Attenzione", "Connessione non riuscita riprovare", "Ok");
@@ -501,7 +545,11 @@ namespace AppNotificationCenter.ModelViews
             bool esito = await connessione.PostJson(URL.ConfermaElimina, eventoDeclinato);
             if (esito)
             {
-                await App.Current.MainPage.DisplayAlert("Attenzione", "L'evento è stato declinato", "Ok");
+                if (eventoDeclinato.tipo == "1")
+                    await App.Current.MainPage.DisplayAlert("Attenzione", "L'evento è stato declinato", "Ok");
+                else
+                    await App.Current.MainPage.DisplayAlert("Attenzione", "La nota è stata eliminata", "Ok");
+
             }
             else
                 await App.Current.MainPage.DisplayAlert("Attenzione", "Connessione non riuscita, riprovare", "Ok");

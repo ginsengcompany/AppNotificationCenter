@@ -107,7 +107,16 @@ namespace AppNotificationCenter.ModelViews
             token = "";
             organizzazione = "";
             LogoOrganizzazione = "logoOrdineMedici.png";
-            organizzazioniDisponibli();
+            var utenza = LoginData.getUser();
+            if(utenza.Count > 0)
+            {
+                if (string.IsNullOrEmpty(utenza[0].splash_logo))
+                {
+                    LoginData.dropUser(utenza[0]);
+                    //App.Current.MainPage.DisplayAlert("ATTENZIONE", "Rieffettuare la login per adeguarsi al nuovo aggiornamento", "OK");
+                }
+            }
+           organizzazioniDisponibli();
         }
 
   
@@ -116,6 +125,14 @@ namespace AppNotificationCenter.ModelViews
             char[] delimiterChars = {'-', '\t' };
             var temp = user.username.Split(delimiterChars);
             user.organizzazione = temp[0].ToString().ToUpper();
+            foreach(var i in _organizzazionePicker)
+            {
+                if(user.organizzazione==i.cod_org)
+                {
+                    user.circle_logo = i.circle_logo;
+                    user.splash_logo = i.splash_logo;
+                }
+            }
             
         }
         public async Task<bool> login()
@@ -123,7 +140,7 @@ namespace AppNotificationCenter.ModelViews
             token = App.Current.Properties["token"].ToString();
             REST<Utente, Final> rest = new REST<Utente, Final>();
             string usernameUp = user.username.ToUpper();
-            user.username = usernameUp;
+            user.username = usernameUp.Trim();
             var response = await rest.PostJson(URL.Login, user);
             if (response != null)
             {
@@ -139,9 +156,30 @@ namespace AppNotificationCenter.ModelViews
                     {
                         //await App.Current.MainPage.DisplayAlert("Login", "Login Effettuata con successo", "OK");
                         response.final[0].organizzazione = user.organizzazione;
-                        LoginData.InsertUser(new TbLogin(user.username.ToUpper(), user.password, user.token, user.organizzazione));
-                        UtenzaData.InsertUser(new TbUtente(response.final[0]));
-                        return true;
+                        var medico = LoginData.getUser();
+                        bool flag = true;
+                        for (int i = 0; i < medico.Count; i++)
+                        {
+                            if (user.username == medico[i].username)
+                            {
+                                await App.Current.MainPage.DisplayAlert("Attenzione", "Utenza per la quale prova ad accedere è già collegata", "ok");
+                                flag = false;
+                                break;
+                            }
+                        }
+                        if (flag)
+                        {
+                            foreach (var i in medico)
+                            {
+                                i.attivo = false;
+                                LoginData.updateUser(i);
+                            }
+                            LoginData.InsertUser(new TbLogin(user.username.ToUpper(), user.password, user.token, user.organizzazione,user.circle_logo,user.splash_logo,true));
+                            UtenzaData.InsertUser(new TbUtente(response.final[0]));
+
+                        }
+                        return flag;
+                        
                     }
                 }
                 else
