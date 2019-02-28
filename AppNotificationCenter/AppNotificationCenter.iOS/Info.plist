@@ -23,11 +23,7 @@
 	<key>CFBundleIdentifier</key>
 	<string>com.AK12.AppNotificationCenter</string>
 	<key>CFBundleVersion</key>
-<<<<<<< HEAD
-	<string>1.0.1</string>
-=======
-	<string>1.2.2</string>
->>>>>>> 9fbb9b85ddaab9d2d45b7b68fd0d0ec732c53bc8
+	<string>1.2.4</string>
 	<key>CFBundleName</key>
 	<string>AppNotificationCenter</string>
 	<key>UIBackgroundModes</key>
@@ -44,14 +40,9 @@
 	<string>LaunchScreen</string>
 	<key>UIRequiresFullScreen</key>
 	<true/>
-<<<<<<< HEAD
-	<key>CFBundleShortVersionString</key>
-	<string>2</string>
-=======
 	<key>XSAppIconAssets</key>
 	<string>Media.xcassets/AppIcon.appiconset</string>
 	<key>CFBundleShortVersionString</key>
-	<string>5</string>
->>>>>>> 9fbb9b85ddaab9d2d45b7b68fd0d0ec732c53bc8
+	<string>7</string>
 </dict>
 </plist>
